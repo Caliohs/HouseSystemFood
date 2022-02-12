@@ -1,0 +1,9 @@
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\bin\Debug\Controlador.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\bin\Debug\Controlador.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\bin\Debug\Modelo.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\bin\Debug\Modelo.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\obj\Debug\Controlador.csprojAssemblyReference.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\obj\Debug\Controlador.csproj.CoreCompileInputs.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\obj\Debug\Controlador.csproj.CopyComplete
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\obj\Debug\Controlador.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Controlador\obj\Debug\Controlador.pdb

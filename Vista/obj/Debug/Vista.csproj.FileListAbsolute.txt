@@ -1,0 +1,17 @@
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Vista.exe.config
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Vista.exe
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Vista.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Controlador.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Modelo.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Controlador.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\Modelo.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.csprojAssemblyReference.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Properties.Resources.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.csproj.GenerateResource.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.csproj.CoreCompileInputs.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.csproj.CopyComplete
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.exe
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Principal.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Acercade.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Login.resources

@@ -1,0 +1,6 @@
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Modelo\bin\Debug\Modelo.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Modelo\bin\Debug\Modelo.pdb
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Modelo\obj\Debug\Modelo.csprojAssemblyReference.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Modelo\obj\Debug\Modelo.csproj.CoreCompileInputs.cache
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Modelo\obj\Debug\Modelo.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Modelo\obj\Debug\Modelo.pdb
