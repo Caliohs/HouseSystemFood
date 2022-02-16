@@ -8,14 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Vista;
+using Vista.Seguridad;
 
 namespace HouseSystemFood.Vista
 {
     public partial class Principal : Form
     {
-        //private GestionarHoteles addHoteles;
-        //private GestionarReservas addReservas;
-        //private GestionarClientes addClientes;
+        private Usuario_View usuario_view;
+        private Menus_View menus_View;
+        private Roles_View roles_View;
        
         //private Acercade acerca;
 
@@ -103,6 +105,37 @@ namespace HouseSystemFood.Vista
         private void archivosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void UsuariosUsuatoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.usuario_view = new Usuario_View();
+            this.usuario_view.MdiParent = this;
+            this.usuario_view.Show();
+        }
+
+        private void PermisostoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.menus_View = new Menus_View();
+            this.menus_View.MdiParent = this;
+            this.menus_View.Show();
+        }
+
+        private void RolestoolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.roles_View = new Roles_View();
+            this.roles_View.MdiParent = this;
+            this.roles_View.Show();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void CerrarToolStripMenu_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
         }
     }
 }

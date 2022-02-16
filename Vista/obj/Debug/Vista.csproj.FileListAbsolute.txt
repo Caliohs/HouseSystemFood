@@ -15,3 +15,7 @@ C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vist
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Principal.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Acercade.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Login.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Usuario_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Menus_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Seguridad.Roles_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Seguridad.Permisos_View.resources

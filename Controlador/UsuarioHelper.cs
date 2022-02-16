@@ -29,7 +29,7 @@ namespace HouseSystemFood.Controlador
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[5];
+                SqlParameter[] parParameter = new SqlParameter[7];
         //        private string user;
         //private string nombre;
         //private string puesto;
@@ -58,7 +58,7 @@ namespace HouseSystemFood.Controlador
                 parParameter[3].ParameterName = "@Contraseña";
                 parParameter[3].SqlDbType = SqlDbType.VarChar;
                 parParameter[3].Size = 30;
-                parParameter[3].SqlValue = objUsuario.Contraeña;
+                parParameter[3].SqlValue = objUsuario.Contraseña;
 
                 parParameter[4] = new SqlParameter();
                 parParameter[4].ParameterName = "@Estado";
@@ -86,6 +86,90 @@ namespace HouseSystemFood.Controlador
             return tblDatos;
         }
 
+        public DataTable Guardar()
+        {
 
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[6];          
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Usuario";
+                parParameter[0].SqlDbType = SqlDbType.VarChar;
+                parParameter[0].Size = 30;
+                parParameter[0].SqlValue = objUsuario.User;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].Size = 30;
+                parParameter[1].SqlValue = objUsuario.Nombre;
+
+                parParameter[2] = new SqlParameter();
+                parParameter[2].ParameterName = "@Puesto";
+                parParameter[2].SqlDbType = SqlDbType.VarChar;
+                parParameter[2].Size = 30;
+                parParameter[2].SqlValue = objUsuario.Puesto;
+
+                parParameter[3] = new SqlParameter();
+                parParameter[3].ParameterName = "@Contrasena";
+                parParameter[3].SqlDbType = SqlDbType.VarChar;
+                parParameter[3].Size = 30;
+                parParameter[3].SqlValue = objUsuario.Contraseña;
+
+                parParameter[4] = new SqlParameter();
+                parParameter[4].ParameterName = "@Estado";
+                parParameter[4].SqlDbType = SqlDbType.Int;
+                parParameter[4].SqlValue = objUsuario.Estado;
+
+                parParameter[5] = new SqlParameter();
+                parParameter[5].ParameterName = "@Opc";
+                parParameter[5].SqlDbType = SqlDbType.Int;
+                parParameter[5].SqlValue = objUsuario.Opc;
+
+            
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
+        public DataTable Listar()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[1];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = objUsuario.Opc;
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SpUsuario");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
     }
+
 }

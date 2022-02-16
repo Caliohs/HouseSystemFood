@@ -52,11 +52,35 @@
     <Compile Include="Acercade.designer.cs">
       <DependentUpon>Acercade.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs">
+    <Compile Include="Seguridad\Permisos_View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="Seguridad\Permisos_View.Designer.cs">
+      <DependentUpon>Permisos_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Menus_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Menus_View.Designer.cs">
+      <DependentUpon>Menus_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Roles_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Roles_View.Designer.cs">
+      <DependentUpon>Roles_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Usuario_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuario_View.Designer.cs">
+      <DependentUpon>Usuario_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login_View.designer.cs">
+      <DependentUpon>Login_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Principal.cs">
       <SubType>Form</SubType>
@@ -69,8 +93,14 @@
     <EmbeddedResource Include="Acercade.resx">
       <DependentUpon>Acercade.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="Login_View.resx">
+      <DependentUpon>Login_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Permisos_View.resx">
+      <DependentUpon>Permisos_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Menus_View.resx">
+      <DependentUpon>Menus_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal.resx">
       <DependentUpon>Principal.cs</DependentUpon>
@@ -84,6 +114,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Seguridad\Roles_View.resx">
+      <DependentUpon>Roles_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuario_View.resx">
+      <DependentUpon>Usuario_View.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -103,5 +139,6 @@
       <Name>Controlador</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
