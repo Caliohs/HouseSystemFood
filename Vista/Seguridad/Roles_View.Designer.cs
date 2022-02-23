@@ -36,16 +36,21 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripPermisos = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripEditar = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lbNombre = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.lbEstado = new System.Windows.Forms.Label();
-            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.toolStripEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.lbInfo = new System.Windows.Forms.Label();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lbBuscar = new System.Windows.Forms.Label();
+            this.groupBox = new System.Windows.Forms.GroupBox();
+            this.cmbEstado = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.lbNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lbEstado = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoles)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            this.groupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -55,29 +60,30 @@
             this.panel2.Controls.Add(this.lbTitulo);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(568, 30);
+            this.panel2.Size = new System.Drawing.Size(612, 30);
             this.panel2.TabIndex = 42;
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Red;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(530, 1);
+            this.btnCerrar.Location = new System.Drawing.Point(581, 3);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(33, 26);
+            this.btnCerrar.Size = new System.Drawing.Size(28, 24);
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "x";
             this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // lbTitulo
             // 
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitulo.ForeColor = System.Drawing.Color.White;
             this.lbTitulo.Location = new System.Drawing.Point(31, 2);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(148, 20);
+            this.lbTitulo.Size = new System.Drawing.Size(132, 20);
             this.lbTitulo.TabIndex = 6;
             this.lbTitulo.Text = "Gestion de Roles";
             // 
@@ -87,20 +93,21 @@
             this.dtgRoles.BackgroundColor = System.Drawing.Color.White;
             this.dtgRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoles.ContextMenuStrip = this.contextMenuStrip1;
-            this.dtgRoles.Location = new System.Drawing.Point(265, 57);
+            this.dtgRoles.Location = new System.Drawing.Point(246, 55);
             this.dtgRoles.Name = "dtgRoles";
             this.dtgRoles.ReadOnly = true;
             this.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgRoles.Size = new System.Drawing.Size(280, 220);
+            this.dtgRoles.Size = new System.Drawing.Size(321, 199);
             this.dtgRoles.TabIndex = 70;
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripPermisos,
-            this.toolStripEditar});
+            this.toolStripEditar,
+            this.toolStripEliminar});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(184, 70);
             // 
             // toolStripPermisos
             // 
@@ -114,39 +121,76 @@
             this.toolStripEditar.Name = "toolStripEditar";
             this.toolStripEditar.Size = new System.Drawing.Size(183, 22);
             this.toolStripEditar.Text = "Editar Rol";
+            this.toolStripEditar.Click += new System.EventHandler(this.toolStripEditar_Click);
             // 
-            // txtNombre
+            // toolStripEliminar
             // 
-            this.txtNombre.Location = new System.Drawing.Point(23, 73);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(214, 20);
-            this.txtNombre.TabIndex = 67;
+            this.toolStripEliminar.Name = "toolStripEliminar";
+            this.toolStripEliminar.Size = new System.Drawing.Size(183, 22);
+            this.toolStripEliminar.Text = "Eliminar";
+            this.toolStripEliminar.Click += new System.EventHandler(this.toolStripEliminar_Click);
             // 
-            // lbNombre
+            // lbInfo
             // 
-            this.lbNombre.AutoSize = true;
-            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(20, 55);
-            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbNombre.Name = "lbNombre";
-            this.lbNombre.Size = new System.Drawing.Size(199, 15);
-            this.lbNombre.TabIndex = 66;
-            this.lbNombre.Text = "Ingrese el nombre del Rol o puesto";
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfo.ForeColor = System.Drawing.Color.Red;
+            this.lbInfo.Location = new System.Drawing.Point(243, 257);
+            this.lbInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(210, 13);
+            this.lbInfo.TabIndex = 73;
+            this.lbInfo.Text = "Para dar un permiso dar clic derecho al Rol";
             // 
-            // btnCancelar
+            // txtBuscar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.Location = new System.Drawing.Point(126, 219);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 39);
-            this.btnCancelar.TabIndex = 65;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.txtBuscar.Location = new System.Drawing.Point(431, 30);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(136, 20);
+            this.txtBuscar.TabIndex = 75;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
+            // 
+            // lbBuscar
+            // 
+            this.lbBuscar.AutoSize = true;
+            this.lbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBuscar.Location = new System.Drawing.Point(382, 35);
+            this.lbBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbBuscar.Name = "lbBuscar";
+            this.lbBuscar.Size = new System.Drawing.Size(45, 15);
+            this.lbBuscar.TabIndex = 81;
+            this.lbBuscar.Text = "Buscar";
+            // 
+            // groupBox
+            // 
+            this.groupBox.Controls.Add(this.cmbEstado);
+            this.groupBox.Controls.Add(this.btnAceptar);
+            this.groupBox.Controls.Add(this.lbInfo);
+            this.groupBox.Controls.Add(this.txtBuscar);
+            this.groupBox.Controls.Add(this.dtgRoles);
+            this.groupBox.Controls.Add(this.lbBuscar);
+            this.groupBox.Controls.Add(this.btnCancelar);
+            this.groupBox.Controls.Add(this.lbNombre);
+            this.groupBox.Controls.Add(this.txtNombre);
+            this.groupBox.Controls.Add(this.lbEstado);
+            this.groupBox.Location = new System.Drawing.Point(12, 49);
+            this.groupBox.Name = "groupBox";
+            this.groupBox.Size = new System.Drawing.Size(588, 277);
+            this.groupBox.TabIndex = 82;
+            this.groupBox.TabStop = false;
+            this.groupBox.Text = "Roles";
+            // 
+            // cmbEstado
+            // 
+            this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.Items.AddRange(new object[] {
+            "Inactivo",
+            "Activo"});
+            this.cmbEstado.Location = new System.Drawing.Point(8, 131);
+            this.cmbEstado.Name = "cmbEstado";
+            this.cmbEstado.Size = new System.Drawing.Size(135, 21);
+            this.cmbEstado.TabIndex = 71;
             // 
             // btnAceptar
             // 
@@ -154,7 +198,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAceptar.Location = new System.Drawing.Point(24, 219);
+            this.btnAceptar.Location = new System.Drawing.Point(9, 170);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(98, 39);
@@ -163,53 +207,57 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnCancelar.Location = new System.Drawing.Point(111, 170);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(93, 39);
+            this.btnCancelar.TabIndex = 65;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lbNombre
+            // 
+            this.lbNombre.AutoSize = true;
+            this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNombre.Location = new System.Drawing.Point(5, 56);
+            this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNombre.Name = "lbNombre";
+            this.lbNombre.Size = new System.Drawing.Size(199, 15);
+            this.lbNombre.TabIndex = 66;
+            this.lbNombre.Text = "Ingrese el nombre del Rol o puesto";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(8, 74);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(214, 20);
+            this.txtNombre.TabIndex = 67;
+            // 
             // lbEstado
             // 
             this.lbEstado.AutoSize = true;
             this.lbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEstado.Location = new System.Drawing.Point(20, 112);
+            this.lbEstado.Location = new System.Drawing.Point(5, 113);
             this.lbEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEstado.Name = "lbEstado";
             this.lbEstado.Size = new System.Drawing.Size(45, 15);
             this.lbEstado.TabIndex = 72;
             this.lbEstado.Text = "Estado";
             // 
-            // cmbEstado
-            // 
-            this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Items.AddRange(new object[] {
-            "Inactivo",
-            "Activo"});
-            this.cmbEstado.Location = new System.Drawing.Point(23, 130);
-            this.cmbEstado.Name = "cmbEstado";
-            this.cmbEstado.Size = new System.Drawing.Size(135, 21);
-            this.cmbEstado.TabIndex = 71;
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfo.ForeColor = System.Drawing.Color.Red;
-            this.lbInfo.Location = new System.Drawing.Point(262, 39);
-            this.lbInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(208, 13);
-            this.lbInfo.TabIndex = 73;
-            this.lbInfo.Text = "Para dar un permso dar clic derecho al Rol";
-            // 
             // Roles_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 308);
-            this.Controls.Add(this.lbInfo);
-            this.Controls.Add(this.lbEstado);
-            this.Controls.Add(this.cmbEstado);
-            this.Controls.Add(this.dtgRoles);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lbNombre);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnAceptar);
+            this.ClientSize = new System.Drawing.Size(612, 341);
+            this.Controls.Add(this.groupBox);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Roles_View";
@@ -220,8 +268,9 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgRoles)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            this.groupBox.ResumeLayout(false);
+            this.groupBox.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -231,15 +280,19 @@
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.DataGridView dtgRoles;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.Label lbEstado;
-        private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lbInfo;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label lbBuscar;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripPermisos;
         private System.Windows.Forms.ToolStripMenuItem toolStripEditar;
+        private System.Windows.Forms.ToolStripMenuItem toolStripEliminar;
+        private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.ComboBox cmbEstado;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label lbNombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lbEstado;
     }
 }

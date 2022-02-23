@@ -88,6 +88,113 @@ namespace HouseSystemFood.Controlador
 
             return tblDatos;
         }
+
+        public DataTable Buscar()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = obj.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].SqlValue = obj.Nombre;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPMenu");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
+        public DataTable Actualizar()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[4];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = obj.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].SqlValue = obj.Nombre;
+
+                parParameter[2] = new SqlParameter();
+                parParameter[2].ParameterName = "@Estado";
+                parParameter[2].SqlDbType = SqlDbType.Int;
+                parParameter[2].SqlValue = obj.Estado;
+
+                parParameter[3] = new SqlParameter();
+                parParameter[3].ParameterName = "@Id";
+                parParameter[3].SqlDbType = SqlDbType.Int;
+                parParameter[3].SqlValue = obj.Id;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPMenu");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
+        public DataTable Eliminar()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = obj.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Id";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = obj.Id;
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPMenu");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
     }
 
 }

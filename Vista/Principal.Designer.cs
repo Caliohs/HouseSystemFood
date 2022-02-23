@@ -56,6 +56,8 @@ namespace HouseSystemFood.Vista
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MantenimientoToolStripMenuItem,
             this.OrdenesToolStripMenuItem,
@@ -68,7 +70,7 @@ namespace HouseSystemFood.Vista
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 35, 0, 0);
-            this.menuStrip1.Size = new System.Drawing.Size(908, 54);
+            this.menuStrip1.Size = new System.Drawing.Size(1200, 55);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,21 +82,21 @@ namespace HouseSystemFood.Vista
             this.SeguridadtoolStripMenuItem,
             this.UsuariosUsuatoolStripMenuItem});
             this.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem";
-            this.MantenimientoToolStripMenuItem.Size = new System.Drawing.Size(94, 19);
+            this.MantenimientoToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
             this.MantenimientoToolStripMenuItem.Text = "Matenimiento";
             this.MantenimientoToolStripMenuItem.Click += new System.EventHandler(this.archivosToolStripMenuItem_Click);
             // 
             // CategoriasToolStripMenuItem
             // 
             this.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem";
-            this.CategoriasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CategoriasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.CategoriasToolStripMenuItem.Text = "Categorias";
             this.CategoriasToolStripMenuItem.Click += new System.EventHandler(this.reIngresarToolStripMenuItem_Click);
             // 
             // ProductosToolStripMenuItem
             // 
             this.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem";
-            this.ProductosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ProductosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.ProductosToolStripMenuItem.Text = "Productos";
             this.ProductosToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -105,71 +107,71 @@ namespace HouseSystemFood.Vista
             this.PermisostoolStripMenuItem1,
             this.BitacorastoolStripMenuItem1});
             this.SeguridadtoolStripMenuItem.Name = "SeguridadtoolStripMenuItem";
-            this.SeguridadtoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SeguridadtoolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.SeguridadtoolStripMenuItem.Text = "Seguridad";
             // 
             // RolestoolStripMenuItem1
             // 
             this.RolestoolStripMenuItem1.Name = "RolestoolStripMenuItem1";
-            this.RolestoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.RolestoolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.RolestoolStripMenuItem1.Text = "Registro de Roles";
             this.RolestoolStripMenuItem1.Click += new System.EventHandler(this.RolestoolStripMenuItem1_Click);
             // 
             // PermisostoolStripMenuItem1
             // 
             this.PermisostoolStripMenuItem1.Name = "PermisostoolStripMenuItem1";
-            this.PermisostoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.PermisostoolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.PermisostoolStripMenuItem1.Text = "Registro de menu";
             this.PermisostoolStripMenuItem1.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
             // 
             // BitacorastoolStripMenuItem1
             // 
             this.BitacorastoolStripMenuItem1.Name = "BitacorastoolStripMenuItem1";
-            this.BitacorastoolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.BitacorastoolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
             this.BitacorastoolStripMenuItem1.Text = "Ver Bitacoras";
             // 
             // UsuariosUsuatoolStripMenuItem
             // 
             this.UsuariosUsuatoolStripMenuItem.Name = "UsuariosUsuatoolStripMenuItem";
-            this.UsuariosUsuatoolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UsuariosUsuatoolStripMenuItem.Size = new System.Drawing.Size(135, 22);
             this.UsuariosUsuatoolStripMenuItem.Text = "Usuarios";
             this.UsuariosUsuatoolStripMenuItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
             // 
             // OrdenesToolStripMenuItem
             // 
             this.OrdenesToolStripMenuItem.Name = "OrdenesToolStripMenuItem";
-            this.OrdenesToolStripMenuItem.Size = new System.Drawing.Size(63, 19);
+            this.OrdenesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
             this.OrdenesToolStripMenuItem.Text = "Ordenes";
             // 
             // CierresToolStripMenuItem
             // 
             this.CierresToolStripMenuItem.Name = "CierresToolStripMenuItem";
-            this.CierresToolStripMenuItem.Size = new System.Drawing.Size(55, 19);
+            this.CierresToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.CierresToolStripMenuItem.Text = "Cierres";
             // 
             // GastostoolStripMenuItem
             // 
             this.GastostoolStripMenuItem.Name = "GastostoolStripMenuItem";
-            this.GastostoolStripMenuItem.Size = new System.Drawing.Size(54, 19);
+            this.GastostoolStripMenuItem.Size = new System.Drawing.Size(58, 20);
             this.GastostoolStripMenuItem.Text = "Gastos";
             // 
             // ReportesToolStripMenuItem
             // 
             this.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem";
-            this.ReportesToolStripMenuItem.Size = new System.Drawing.Size(65, 19);
+            this.ReportesToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.ReportesToolStripMenuItem.Text = "Reportes";
             // 
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(74, 19);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de ";
             this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // CerrarToolStripMenu
             // 
             this.CerrarToolStripMenu.Name = "CerrarToolStripMenu";
-            this.CerrarToolStripMenu.Size = new System.Drawing.Size(88, 19);
+            this.CerrarToolStripMenu.Size = new System.Drawing.Size(96, 20);
             this.CerrarToolStripMenu.Text = "Cerrar Sesion";
             this.CerrarToolStripMenu.Click += new System.EventHandler(this.CerrarToolStripMenu_Click);
             // 
@@ -177,9 +179,9 @@ namespace HouseSystemFood.Vista
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 495);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 678);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(908, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1200, 22);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -196,28 +198,29 @@ namespace HouseSystemFood.Vista
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(908, 30);
+            this.panel1.Size = new System.Drawing.Size(1200, 30);
             this.panel1.TabIndex = 4;
+            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(377, 6);
+            this.lbTitle.Location = new System.Drawing.Point(511, 4);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(140, 20);
+            this.lbTitle.Size = new System.Drawing.Size(124, 20);
             this.lbTitle.TabIndex = 6;
             this.lbTitle.Text = "Modulo Principal";
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(875, 1);
+            this.btnSalir.Location = new System.Drawing.Point(1169, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(33, 26);
+            this.btnSalir.Size = new System.Drawing.Size(28, 24);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "x";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -228,7 +231,7 @@ namespace HouseSystemFood.Vista
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(908, 517);
+            this.ClientSize = new System.Drawing.Size(1200, 700);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);

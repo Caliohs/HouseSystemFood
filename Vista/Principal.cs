@@ -5,16 +5,21 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Vista;
 using Vista.Seguridad;
 
+
+
 namespace HouseSystemFood.Vista
 {
+    
     public partial class Principal : Form
     {
+        public int xClick = 0, yClick = 0;
         private Usuario_View usuario_view;
         private Menus_View menus_View;
         private Roles_View roles_View;
@@ -136,6 +141,14 @@ namespace HouseSystemFood.Vista
         private void CerrarToolStripMenu_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left)
+            { xClick = e.X; yClick = e.Y; }
+            else
+            { this.Left = this.Left + (e.X - xClick); this.Top = this.Top + (e.Y - yClick); }
         }
     }
 }
