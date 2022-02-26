@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,30 +32,31 @@ namespace HouseSystemFood.Vista
         {
             try
             {
-                //if (this.txtUsuario.Text != "" && this.txtClave.Text != "")
-                //{
+                if (this.txtUsuario.Text != "" && this.txtContraseña.Text != "")
+                {
 
-                //    user = new Usuario();
-                //    user.User = this.txtUsuario.Text;
-                //    user.Clave = this.txtClave.Text;
-                   
-                //    userH = new UsuarioHelper(user);
-                //    datos = userH.validarLogin();
+                    user = new Usuario();
+                    user.User = this.txtUsuario.Text;
+                    user.Contraseña = Encriptar(this.txtContraseña.Text).ToString();
+                    user.Opc = 6;
+                    userH = new UsuarioHelper(user);
+                    datos = userH.validarLogin();
 
-                //    if (datos.Rows.Count > 0)
-                //    {
-                //        DataRow fila = datos.Rows[0];
-                //        user.Nombre = fila["nombre"].ToString();
-                //        user.Perfil = fila["perfil"].ToString();
+                    if (datos.Rows.Count > 0)
+                    {
+                        DataRow fila = datos.Rows[0];
+                        user.Nombre = fila["Nombre"].ToString();
+                        user.RolId = int.Parse(fila["RolId"].ToString());
 
-                //        Principal inicio = new Principal(user);
-                //        inicio.Show();
-                //        this.Hide();
-                //    }
-                //    else MessageBox.Show("Datos de inicio de sesion incorrectos");
+                        Principal inicio = new Principal(user);
+                        //Principal inicio = new Principal();
+                        inicio.Show();
+                        this.Hide();
+                    }
+                    else MessageBox.Show("Datos de inicio de sesion incorrectos");
 
-                //}
-                //else MessageBox.Show("Debe completar los campos");
+                }
+                else MessageBox.Show("Debe completar los campos");
 
             }
             catch (Exception ex)
@@ -78,6 +80,25 @@ namespace HouseSystemFood.Vista
         {
             Application.Exit();
         }
+        //aqui encripto la contraseña
+        public string Encriptar(string clave)
+        {
+
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(clave));
+
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
+        }
+
     }
  }
 

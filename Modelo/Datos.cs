@@ -16,6 +16,7 @@ namespace HouseSystemFood.Modelo
         SqlCommand cmdComando = null;
         SqlDataAdapter daAdaptador = null;
         DataTable Dtt = null;
+       
         string strCadenaConexion = string.Empty;
 
         #endregion
@@ -110,6 +111,8 @@ namespace HouseSystemFood.Modelo
             }
             return Dtt;
         }
+
+
 
 
         #endregion

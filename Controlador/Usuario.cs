@@ -12,7 +12,7 @@ namespace HouseSystemFood.Controlador
        
         private string user;    
         private string nombre;
-        private string puesto;
+        private int rolId;
         private string contraseña;
         private int estado;
         private int opc;
@@ -20,11 +20,11 @@ namespace HouseSystemFood.Controlador
 
 
 
-        public Usuario(string user, string nombre, string puesto, string contraseña, int estado, int opc, int id )
+        public Usuario(string user, string nombre, int rolId, string contraseña, int estado, int opc, int id )
         {
             this.user = user;
             this.nombre = nombre;
-            this.puesto = puesto;
+            this.rolId = rolId;
             this.contraseña = contraseña;
             this.estado = estado;
             this.opc = opc;
@@ -34,7 +34,7 @@ namespace HouseSystemFood.Controlador
         {
             this.user = "";
             this.nombre = "";
-            this.puesto = "";
+            this.rolId = 0;
             this.contraseña = "";
             this.estado = 1;
             this.opc = 0;
@@ -43,7 +43,7 @@ namespace HouseSystemFood.Controlador
 
         public string User { get => user; set => user = value; }
         public string Nombre { get => nombre; set => nombre = value; }
-        public string Puesto { get => puesto; set => puesto = value; }
+        public int RolId { get => rolId; set => rolId = value; }
         public string Contraseña { get => contraseña; set => contraseña = value; }
         public int Estado { get => estado; set => estado = value; }
         public int Opc { get => opc; set => opc = value; }

@@ -73,7 +73,7 @@ namespace HouseSystemFood.Controlador
                 SqlParameter[] parParameter = new SqlParameter[1];
 
                 parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
+                parParameter[0].ParameterName = "@Opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = obj.Opc;
 
@@ -101,7 +101,7 @@ namespace HouseSystemFood.Controlador
                 SqlParameter[] parParameter = new SqlParameter[2];
 
                 parParameter[0] = new SqlParameter();
-                parParameter[0].ParameterName = "@opc";
+                parParameter[0].ParameterName = "@Opc";
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = obj.Opc;
 
@@ -195,6 +195,40 @@ namespace HouseSystemFood.Controlador
 
             return tblDatos;
         }
+
+        public DataTable GetRolId(string Rol)
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = 6;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].SqlValue = Rol;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPRoles");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
+
     }
 
 }

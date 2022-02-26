@@ -16,14 +16,18 @@ using Vista.Seguridad;
 
 namespace HouseSystemFood.Vista
 {
-    
+
     public partial class Principal : Form
     {
         public int xClick = 0, yClick = 0;
         private Usuario_View usuario_view;
         private Menus_View menus_View;
         private Roles_View roles_View;
-       
+        private Permisos permisos;
+        private PermisosHelper permisosH;
+        private DataTable datos;
+
+
         //private Acercade acerca;
 
         public Principal()
@@ -33,23 +37,62 @@ namespace HouseSystemFood.Vista
 
         public Principal(Usuario obj)
         {
-            //InitializeComponent();
-            //this.statusUsuario.Text = "Bienvenid@ " + obj.Nombre;
-            //validarPerfil(obj.Perfil);
+            InitializeComponent();
+            this.statusUsuario.Text = "Bienvenid@ " + obj.Nombre;
+            validarPerfil(obj.RolId);
         }
 
-        private void validarPerfil(object perfil)
+        private void validarPerfil(int RolId)
         {
-            switch (perfil)
+            try
             {
-                case "Plataforma":
-                    this.OrdenesToolStripMenuItem.Visible = false;             
-                    this.ReportesToolStripMenuItem.Visible = false;
-                    break;
+                permisos = new Permisos();
+                permisos.Opc = 4;
+                permisos.Rolid = RolId;
+                permisosH = new PermisosHelper(permisos);
+                datos= permisosH.ValidarPermisos();
+                if (datos.Rows.Count > 0)
+                {
+                    for(int i=0; i< datos.Rows.Count; i++)
+                    {
+                        DataRow fila = datos.Rows[i];
+                        string nombre = fila["Nombre_del_modulo"].ToString();
+                        int estado = 0;
+                        if (fila["Estado"].Equals(true))
+                            estado =1;
+                       
+                        if (this.MantenimientoToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.MantenimientoToolStripMenuItem.Visible = false;
+                        }
+                        if (this.OrdenesToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.OrdenesToolStripMenuItem.Visible = false;
+                        }
+                        if (this.CierresToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.CierresToolStripMenuItem.Visible = false;
+                        }
+                        if (this.GastostoolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.GastostoolStripMenuItem.Visible = false;
+                        }
+                        if (this.ReportesToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.ReportesToolStripMenuItem.Visible = false;
+                        }
+                        if (this.acercaDeToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.acercaDeToolStripMenuItem.Visible = false;
+                        }
 
-                case "Administrador":
-                    this.OrdenesToolStripMenuItem.Visible = false;              
-                    break;
+                    }
+
+                 }              
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -93,7 +136,7 @@ namespace HouseSystemFood.Vista
             //this.addClientes.Show();
         }
 
-       
+
 
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {

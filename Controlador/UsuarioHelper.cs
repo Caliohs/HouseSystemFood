@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using HouseSystemFood.Modelo;
@@ -29,7 +30,7 @@ namespace HouseSystemFood.Controlador
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[7];
+                SqlParameter[] parParameter = new SqlParameter[3];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@Usuario";
@@ -37,38 +38,38 @@ namespace HouseSystemFood.Controlador
                 parParameter[0].Size = 30;
                 parParameter[0].SqlValue = obj.User;
 
+                //parParameter[1] = new SqlParameter();
+                //parParameter[1].ParameterName = "@Nombre";
+                //parParameter[1].SqlDbType = SqlDbType.VarChar;
+                //parParameter[1].Size = 30;
+                //parParameter[1].SqlValue = obj.Nombre;
+
+                //parParameter[2] = new SqlParameter();
+                //parParameter[2].ParameterName = "@Puesto";
+                //parParameter[2].SqlDbType = SqlDbType.VarChar;
+                //parParameter[2].Size = 30;
+                //parParameter[2].SqlValue = obj.Puesto;
+
                 parParameter[1] = new SqlParameter();
-                parParameter[1].ParameterName = "@Nombre";
+                parParameter[1].ParameterName = "@Contrasena";
                 parParameter[1].SqlDbType = SqlDbType.VarChar;
                 parParameter[1].Size = 30;
-                parParameter[1].SqlValue = obj.Nombre;
+                parParameter[1].SqlValue = obj.Contraseña;
+
+                //parParameter[4] = new SqlParameter();
+                //parParameter[4].ParameterName = "@Estado";
+                //parParameter[4].SqlDbType = SqlDbType.Int;
+                //parParameter[4].SqlValue = obj.Estado;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@Puesto";
-                parParameter[2].SqlDbType = SqlDbType.VarChar;
-                parParameter[2].Size = 30;
-                parParameter[2].SqlValue = obj.Puesto;
+                parParameter[2].ParameterName = "@Opc";
+                parParameter[2].SqlDbType = SqlDbType.Int;
+                parParameter[2].SqlValue = obj.Opc;
 
-                parParameter[3] = new SqlParameter();
-                parParameter[3].ParameterName = "@Contraseña";
-                parParameter[3].SqlDbType = SqlDbType.VarChar;
-                parParameter[3].Size = 30;
-                parParameter[3].SqlValue = obj.Contraseña;
-
-                parParameter[4] = new SqlParameter();
-                parParameter[4].ParameterName = "@Estado";
-                parParameter[4].SqlDbType = SqlDbType.Int;
-                parParameter[4].SqlValue = obj.Estado;
-
-                parParameter[5] = new SqlParameter();
-                parParameter[5].ParameterName = "@Opc";
-                parParameter[5].SqlDbType = SqlDbType.Int;
-                parParameter[5].SqlValue = obj.Opc;
-
-                parParameter[6] = new SqlParameter();
-                parParameter[6].ParameterName = "@Id";
-                parParameter[6].SqlDbType = SqlDbType.Int;
-                parParameter[6].SqlValue = obj.Id;
+                //parParameter[6] = new SqlParameter();
+                //parParameter[6].ParameterName = "@Id";
+                //parParameter[6].SqlDbType = SqlDbType.Int;
+                //parParameter[6].SqlValue = obj.Id;
 
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
 
@@ -104,10 +105,9 @@ namespace HouseSystemFood.Controlador
                 parParameter[1].SqlValue = obj.Nombre;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@Puesto";
-                parParameter[2].SqlDbType = SqlDbType.VarChar;
-                parParameter[2].Size = 30;
-                parParameter[2].SqlValue = obj.Puesto;
+                parParameter[2].ParameterName = "@RolId";
+                parParameter[2].SqlDbType = SqlDbType.Int;
+                parParameter[2].SqlValue = obj.RolId;
 
                 parParameter[3] = new SqlParameter();
                 parParameter[3].ParameterName = "@Contrasena";
@@ -221,10 +221,9 @@ namespace HouseSystemFood.Controlador
                 parParameter[1].SqlValue = obj.Nombre;
 
                 parParameter[2] = new SqlParameter();
-                parParameter[2].ParameterName = "@Puesto";
-                parParameter[2].SqlDbType = SqlDbType.VarChar;
-                parParameter[2].Size = 30;
-                parParameter[2].SqlValue = obj.Puesto;
+                parParameter[2].ParameterName = "@RolId";
+                parParameter[2].SqlDbType = SqlDbType.Int;
+                parParameter[2].SqlValue = obj.RolId;
 
                 parParameter[3] = new SqlParameter();
                 parParameter[3].ParameterName = "@Contrasena";
@@ -292,6 +291,8 @@ namespace HouseSystemFood.Controlador
 
             return tblDatos;
         }
+
+        
     }
 
 }

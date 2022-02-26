@@ -60,15 +60,22 @@ namespace HouseSystemFood.Vista
         {
             //guarda un nuevo usuario
             try
-            {   //encripto la confirmación
+            { 
+            
+                //obtengo elrol Id
+                datos = rolesH.GetRolId(this.cmbRoles.Text);            
+                string[] dt = new string[datos.Rows.Count];           
+                dt[0] = datos.Rows[0]["RolId"].ToString();
+
                
+
                 if (this.txtContraeña.Text.Equals(this.txtConfirmar.Text))
                 {
                     usuario = new Usuario();
                    
                     usuario.User = this.txtUsuario.Text;
                     usuario.Nombre = this.txtNombre.Text;
-                    usuario.Puesto = this.cmbRoles.Text;
+                    usuario.RolId = int.Parse(dt[0]);
                     usuario.Contraseña = Encriptar(this.txtContraeña.Text); // se encripta la clave
                     usuario.Estado = int.Parse(this.cmbEstado.SelectedIndex.ToString());
 
@@ -109,25 +116,6 @@ namespace HouseSystemFood.Vista
             }
         }
 
-        //aqui encripto la contraseña
-        public string Encriptar(string clave)
-        {
-            
-            MD5 md5 = new MD5CryptoServiceProvider();
-
-            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(clave));
-
-            byte[] result = md5.Hash;
-
-            StringBuilder strBuilder = new StringBuilder();
-            for (int i = 0; i < result.Length; i++)
-            {
-                strBuilder.Append(result[i].ToString("x2"));
-            }
-
-            return strBuilder.ToString();
-        }
-
         private void txtBuscar_TextChanged(object sender, EventArgs e)
         {
             try
@@ -160,7 +148,7 @@ namespace HouseSystemFood.Vista
                 DataRow fila = datos.Rows[indice];
                 this.txtUsuario.Text = fila["Usuario"].ToString();
                 this.txtNombre.Text = fila["Nombre"].ToString();
-                this.cmbRoles.Text = fila["Puesto"].ToString();
+                this.cmbRoles.Text = fila["Nombre_del_rol"].ToString();
                 this.txtContraeña.Text = fila["Contrasena"].ToString();
                 this.txtConfirmar.Text = fila["Contrasena"].ToString();
                
@@ -231,11 +219,14 @@ namespace HouseSystemFood.Vista
                 datos = rolesH.Listar();
 
                 string[] dt = new string[datos.Rows.Count];
+               
                 for (int i = 0; i < datos.Rows.Count; i++)
                 {
                     dt[i] = datos.Rows[i]["Nombre_del_rol"].ToString();
+                   
                 }
                 this.cmbRoles.DataSource = dt;
+               
             }
             catch (Exception ex)
             {
@@ -251,6 +242,25 @@ namespace HouseSystemFood.Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //aqui encripto la contraseña
+        public string Encriptar(string clave)
+        {
+
+            MD5 md5 = new MD5CryptoServiceProvider();
+
+            md5.ComputeHash(ASCIIEncoding.ASCII.GetBytes(clave));
+
+            byte[] result = md5.Hash;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < result.Length; i++)
+            {
+                strBuilder.Append(result[i].ToString("x2"));
+            }
+
+            return strBuilder.ToString();
         }
     }
 
