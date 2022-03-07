@@ -60,14 +60,14 @@
             this.panel2.Controls.Add(this.lbTitulo);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(612, 30);
+            this.panel2.Size = new System.Drawing.Size(756, 30);
             this.panel2.TabIndex = 42;
             // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(581, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(725, 3);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 24);
             this.btnCerrar.TabIndex = 7;
@@ -93,11 +93,11 @@
             this.dtgRoles.BackgroundColor = System.Drawing.Color.White;
             this.dtgRoles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgRoles.ContextMenuStrip = this.contextMenuStrip1;
-            this.dtgRoles.Location = new System.Drawing.Point(246, 55);
+            this.dtgRoles.Location = new System.Drawing.Point(275, 53);
             this.dtgRoles.Name = "dtgRoles";
             this.dtgRoles.ReadOnly = true;
             this.dtgRoles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgRoles.Size = new System.Drawing.Size(321, 199);
+            this.dtgRoles.Size = new System.Drawing.Size(401, 247);
             this.dtgRoles.TabIndex = 70;
             // 
             // contextMenuStrip1
@@ -135,7 +135,7 @@
             this.lbInfo.AutoSize = true;
             this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInfo.ForeColor = System.Drawing.Color.Red;
-            this.lbInfo.Location = new System.Drawing.Point(243, 257);
+            this.lbInfo.Location = new System.Drawing.Point(272, 303);
             this.lbInfo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbInfo.Name = "lbInfo";
             this.lbInfo.Size = new System.Drawing.Size(210, 13);
@@ -144,10 +144,10 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(431, 30);
+            this.txtBuscar.Location = new System.Drawing.Point(460, 28);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(136, 20);
+            this.txtBuscar.Size = new System.Drawing.Size(216, 20);
             this.txtBuscar.TabIndex = 75;
             this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
@@ -155,7 +155,7 @@
             // 
             this.lbBuscar.AutoSize = true;
             this.lbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuscar.Location = new System.Drawing.Point(382, 35);
+            this.lbBuscar.Location = new System.Drawing.Point(408, 33);
             this.lbBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(45, 15);
@@ -174,9 +174,9 @@
             this.groupBox.Controls.Add(this.lbNombre);
             this.groupBox.Controls.Add(this.txtNombre);
             this.groupBox.Controls.Add(this.lbEstado);
-            this.groupBox.Location = new System.Drawing.Point(12, 49);
+            this.groupBox.Location = new System.Drawing.Point(25, 50);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(588, 277);
+            this.groupBox.Size = new System.Drawing.Size(705, 344);
             this.groupBox.TabIndex = 82;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Roles";
@@ -187,7 +187,7 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "Inactivo",
             "Activo"});
-            this.cmbEstado.Location = new System.Drawing.Point(8, 131);
+            this.cmbEstado.Location = new System.Drawing.Point(32, 133);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(135, 21);
             this.cmbEstado.TabIndex = 71;
@@ -198,7 +198,7 @@
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAceptar.Location = new System.Drawing.Point(9, 170);
+            this.btnAceptar.Location = new System.Drawing.Point(33, 204);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(98, 39);
@@ -213,7 +213,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.Location = new System.Drawing.Point(111, 170);
+            this.btnCancelar.Location = new System.Drawing.Point(135, 204);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(93, 39);
@@ -226,7 +226,7 @@
             // 
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(5, 56);
+            this.lbNombre.Location = new System.Drawing.Point(29, 58);
             this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(199, 15);
@@ -235,7 +235,7 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(8, 74);
+            this.txtNombre.Location = new System.Drawing.Point(32, 76);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(214, 20);
@@ -245,7 +245,7 @@
             // 
             this.lbEstado.AutoSize = true;
             this.lbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEstado.Location = new System.Drawing.Point(5, 113);
+            this.lbEstado.Location = new System.Drawing.Point(29, 115);
             this.lbEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEstado.Name = "lbEstado";
             this.lbEstado.Size = new System.Drawing.Size(45, 15);
@@ -256,7 +256,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 341);
+            this.ClientSize = new System.Drawing.Size(756, 413);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

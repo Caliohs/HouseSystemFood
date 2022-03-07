@@ -1,6 +1,6 @@
 ﻿namespace HouseSystemFood.Vista
 {
-    partial class Usuario_View
+    partial class Productos_View
     {
         /// <summary>
         /// Required designer variable.
@@ -34,27 +34,27 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
-            this.txtContraeña = new System.Windows.Forms.TextBox();
-            this.lbContraseña = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.lblUsuario = new System.Windows.Forms.Label();
+            this.lbStock = new System.Windows.Forms.Label();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lbNombre = new System.Windows.Forms.Label();
-            this.lbPuesto = new System.Windows.Forms.Label();
+            this.lbPrecio = new System.Windows.Forms.Label();
             this.cmbEstado = new System.Windows.Forms.ComboBox();
             this.lbEstado = new System.Windows.Forms.Label();
-            this.dtgUsuario = new System.Windows.Forms.DataGridView();
+            this.dtgProductos = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolStripEditar = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.lbBuscar = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.gbox = new System.Windows.Forms.GroupBox();
-            this.cmbRoles = new System.Windows.Forms.ComboBox();
-            this.lbConfirmar = new System.Windows.Forms.Label();
-            this.txtConfirmar = new System.Windows.Forms.TextBox();
+            this.mskStock = new System.Windows.Forms.MaskedTextBox();
+            this.mskPrecio = new System.Windows.Forms.MaskedTextBox();
+            this.cmbCategorias = new System.Windows.Forms.ComboBox();
+            this.lbCat = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.gbox.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +63,7 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(947, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(947, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 24);
             this.btnCerrar.TabIndex = 10;
@@ -79,9 +79,9 @@
             this.lbTitulo.ForeColor = System.Drawing.Color.White;
             this.lbTitulo.Location = new System.Drawing.Point(31, 6);
             this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(154, 20);
+            this.lbTitulo.Size = new System.Drawing.Size(163, 20);
             this.lbTitulo.TabIndex = 6;
-            this.lbTitulo.Text = "Gestion de Usuarios";
+            this.lbTitulo.Text = "Gestion de Productos";
             // 
             // panel2
             // 
@@ -123,79 +123,70 @@
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
-            // txtContraeña
+            // lbStock
             // 
-            this.txtContraeña.Location = new System.Drawing.Point(24, 210);
-            this.txtContraeña.Margin = new System.Windows.Forms.Padding(2);
-            this.txtContraeña.Name = "txtContraeña";
-            this.txtContraeña.PasswordChar = '*';
-            this.txtContraeña.Size = new System.Drawing.Size(157, 21);
-            this.txtContraeña.TabIndex = 4;
-            this.txtContraeña.UseSystemPasswordChar = true;
+            this.lbStock.AutoSize = true;
+            this.lbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStock.Location = new System.Drawing.Point(21, 191);
+            this.lbStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbStock.Name = "lbStock";
+            this.lbStock.Size = new System.Drawing.Size(106, 15);
+            this.lbStock.TabIndex = 38;
+            this.lbStock.Text = "Cantidad en Stock";
             // 
-            // lbContraseña
+            // txtDescripcion
             // 
-            this.lbContraseña.AutoSize = true;
-            this.lbContraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbContraseña.Location = new System.Drawing.Point(21, 190);
-            this.lbContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbContraseña.Name = "lbContraseña";
-            this.lbContraseña.Size = new System.Drawing.Size(70, 15);
-            this.lbContraseña.TabIndex = 38;
-            this.lbContraseña.Text = "Contraseña";
+            this.txtDescripcion.Location = new System.Drawing.Point(22, 116);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(157, 21);
+            this.txtDescripcion.TabIndex = 2;
             // 
-            // txtUsuario
+            // lblDesc
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(22, 64);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(157, 21);
-            this.txtUsuario.TabIndex = 1;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(19, 43);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(50, 15);
-            this.lblUsuario.TabIndex = 35;
-            this.lblUsuario.Text = "Usuario";
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDesc.Location = new System.Drawing.Point(19, 95);
+            this.lblDesc.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(72, 15);
+            this.lblDesc.TabIndex = 35;
+            this.lblDesc.Text = "Descripcion";
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(22, 110);
+            this.txtNombre.Location = new System.Drawing.Point(22, 64);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(157, 21);
-            this.txtNombre.TabIndex = 2;
+            this.txtNombre.TabIndex = 1;
             // 
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
             this.lbNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNombre.Location = new System.Drawing.Point(19, 89);
+            this.lbNombre.Location = new System.Drawing.Point(19, 43);
             this.lbNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(52, 15);
             this.lbNombre.TabIndex = 42;
             this.lbNombre.Text = "Nombre";
             // 
-            // lbPuesto
+            // lbPrecio
             // 
-            this.lbPuesto.AutoSize = true;
-            this.lbPuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPuesto.Location = new System.Drawing.Point(21, 139);
-            this.lbPuesto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbPuesto.Name = "lbPuesto";
-            this.lbPuesto.Size = new System.Drawing.Size(45, 15);
-            this.lbPuesto.TabIndex = 44;
-            this.lbPuesto.Text = "Puesto";
+            this.lbPrecio.AutoSize = true;
+            this.lbPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPrecio.Location = new System.Drawing.Point(21, 144);
+            this.lbPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbPrecio.Name = "lbPrecio";
+            this.lbPrecio.Size = new System.Drawing.Size(42, 15);
+            this.lbPrecio.TabIndex = 44;
+            this.lbPrecio.Text = "Precio";
             // 
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
+            this.cmbEstado.ItemHeight = 15;
             this.cmbEstado.Items.AddRange(new object[] {
             "Inactivo",
             "Activo"});
@@ -203,6 +194,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(157, 23);
             this.cmbEstado.TabIndex = 6;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // lbEstado
             // 
@@ -215,18 +207,18 @@
             this.lbEstado.TabIndex = 47;
             this.lbEstado.Text = "Estado";
             // 
-            // dtgUsuario
+            // dtgProductos
             // 
-            this.dtgUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgUsuario.BackgroundColor = System.Drawing.Color.White;
-            this.dtgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgUsuario.ContextMenuStrip = this.contextMenuStrip1;
-            this.dtgUsuario.Location = new System.Drawing.Point(251, 64);
-            this.dtgUsuario.Name = "dtgUsuario";
-            this.dtgUsuario.ReadOnly = true;
-            this.dtgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgUsuario.Size = new System.Drawing.Size(680, 405);
-            this.dtgUsuario.TabIndex = 48;
+            this.dtgProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgProductos.BackgroundColor = System.Drawing.Color.White;
+            this.dtgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProductos.ContextMenuStrip = this.contextMenuStrip1;
+            this.dtgProductos.Location = new System.Drawing.Point(235, 64);
+            this.dtgProductos.Name = "dtgProductos";
+            this.dtgProductos.ReadOnly = true;
+            this.dtgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgProductos.Size = new System.Drawing.Size(701, 451);
+            this.dtgProductos.TabIndex = 9;
             // 
             // contextMenuStrip1
             // 
@@ -254,16 +246,16 @@
             // 
             this.lbBuscar.AutoSize = true;
             this.lbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuscar.Location = new System.Drawing.Point(615, 43);
+            this.lbBuscar.Location = new System.Drawing.Point(614, 43);
             this.lbBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBuscar.Name = "lbBuscar";
-            this.lbBuscar.Size = new System.Drawing.Size(112, 15);
+            this.lbBuscar.Size = new System.Drawing.Size(118, 15);
             this.lbBuscar.TabIndex = 83;
-            this.lbBuscar.Text = "Buscar por nombre";
+            this.lbBuscar.Text = "Buscar por Producto";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(731, 38);
+            this.txtBuscar.Location = new System.Drawing.Point(736, 38);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(200, 21);
@@ -272,61 +264,69 @@
             // 
             // gbox
             // 
-            this.gbox.Controls.Add(this.cmbRoles);
-            this.gbox.Controls.Add(this.lbConfirmar);
-            this.gbox.Controls.Add(this.txtConfirmar);
+            this.gbox.Controls.Add(this.mskStock);
+            this.gbox.Controls.Add(this.mskPrecio);
+            this.gbox.Controls.Add(this.cmbCategorias);
+            this.gbox.Controls.Add(this.lbCat);
             this.gbox.Controls.Add(this.btnCancelar);
-            this.gbox.Controls.Add(this.lblUsuario);
+            this.gbox.Controls.Add(this.lblDesc);
             this.gbox.Controls.Add(this.btnAceptar);
             this.gbox.Controls.Add(this.txtBuscar);
             this.gbox.Controls.Add(this.lbBuscar);
-            this.gbox.Controls.Add(this.txtUsuario);
-            this.gbox.Controls.Add(this.lbContraseña);
-            this.gbox.Controls.Add(this.dtgUsuario);
-            this.gbox.Controls.Add(this.txtContraeña);
+            this.gbox.Controls.Add(this.txtDescripcion);
+            this.gbox.Controls.Add(this.lbStock);
+            this.gbox.Controls.Add(this.dtgProductos);
             this.gbox.Controls.Add(this.lbEstado);
             this.gbox.Controls.Add(this.lbNombre);
             this.gbox.Controls.Add(this.cmbEstado);
             this.gbox.Controls.Add(this.txtNombre);
-            this.gbox.Controls.Add(this.lbPuesto);
-            this.gbox.Location = new System.Drawing.Point(12, 49);
+            this.gbox.Controls.Add(this.lbPrecio);
+            this.gbox.Location = new System.Drawing.Point(12, 36);
             this.gbox.Name = "gbox";
             this.gbox.Size = new System.Drawing.Size(963, 550);
             this.gbox.TabIndex = 84;
             this.gbox.TabStop = false;
-            this.gbox.Text = "Usuarios";
+            this.gbox.Text = "Productos";
             // 
-            // cmbRoles
+            // mskStock
             // 
-            this.cmbRoles.FormattingEnabled = true;
-            this.cmbRoles.ItemHeight = 15;
-            this.cmbRoles.Location = new System.Drawing.Point(24, 164);
-            this.cmbRoles.Name = "cmbRoles";
-            this.cmbRoles.Size = new System.Drawing.Size(157, 23);
-            this.cmbRoles.TabIndex = 86;
+            this.mskStock.Location = new System.Drawing.Point(24, 209);
+            this.mskStock.Mask = "99999";
+            this.mskStock.Name = "mskStock";
+            this.mskStock.Size = new System.Drawing.Size(155, 21);
+            this.mskStock.TabIndex = 3;
+            this.mskStock.ValidatingType = typeof(int);
             // 
-            // lbConfirmar
+            // mskPrecio
             // 
-            this.lbConfirmar.AutoSize = true;
-            this.lbConfirmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirmar.Location = new System.Drawing.Point(21, 241);
-            this.lbConfirmar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbConfirmar.Name = "lbConfirmar";
-            this.lbConfirmar.Size = new System.Drawing.Size(127, 15);
-            this.lbConfirmar.TabIndex = 85;
-            this.lbConfirmar.Text = "Confirmar Contraseña";
+            this.mskPrecio.Location = new System.Drawing.Point(24, 162);
+            this.mskPrecio.Mask = "99999";
+            this.mskPrecio.Name = "mskPrecio";
+            this.mskPrecio.Size = new System.Drawing.Size(155, 21);
+            this.mskPrecio.TabIndex = 3;
+            this.mskPrecio.ValidatingType = typeof(int);
             // 
-            // txtConfirmar
+            // cmbCategorias
             // 
-            this.txtConfirmar.Location = new System.Drawing.Point(24, 261);
-            this.txtConfirmar.Margin = new System.Windows.Forms.Padding(2);
-            this.txtConfirmar.Name = "txtConfirmar";
-            this.txtConfirmar.PasswordChar = '*';
-            this.txtConfirmar.Size = new System.Drawing.Size(157, 21);
-            this.txtConfirmar.TabIndex = 5;
-            this.txtConfirmar.UseSystemPasswordChar = true;
+            this.cmbCategorias.FormattingEnabled = true;
+            this.cmbCategorias.ItemHeight = 15;
+            this.cmbCategorias.Location = new System.Drawing.Point(24, 260);
+            this.cmbCategorias.Name = "cmbCategorias";
+            this.cmbCategorias.Size = new System.Drawing.Size(157, 23);
+            this.cmbCategorias.TabIndex = 4;
             // 
-            // Usuario_View
+            // lbCat
+            // 
+            this.lbCat.AutoSize = true;
+            this.lbCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCat.Location = new System.Drawing.Point(21, 242);
+            this.lbCat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbCat.Name = "lbCat";
+            this.lbCat.Size = new System.Drawing.Size(60, 15);
+            this.lbCat.TabIndex = 85;
+            this.lbCat.Text = "Categoria";
+            // 
+            // Productos_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -335,13 +335,13 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Usuario_View";
+            this.Name = "Productos_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
-            this.Load += new System.EventHandler(this.Usuario_View_Load);
+            this.Load += new System.EventHandler(this.Productos_View_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.gbox.ResumeLayout(false);
             this.gbox.PerformLayout();
@@ -356,24 +356,24 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
-        private System.Windows.Forms.TextBox txtContraeña;
-        private System.Windows.Forms.Label lbContraseña;
-        private System.Windows.Forms.TextBox txtUsuario;
-        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label lbStock;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lbNombre;
-        private System.Windows.Forms.Label lbPuesto;
+        private System.Windows.Forms.Label lbPrecio;
         private System.Windows.Forms.ComboBox cmbEstado;
         private System.Windows.Forms.Label lbEstado;
-        private System.Windows.Forms.DataGridView dtgUsuario;
+        private System.Windows.Forms.DataGridView dtgProductos;
         private System.Windows.Forms.Label lbBuscar;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.GroupBox gbox;
-        private System.Windows.Forms.Label lbConfirmar;
-        private System.Windows.Forms.TextBox txtConfirmar;
+        private System.Windows.Forms.Label lbCat;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem toolStripEditar;
         private System.Windows.Forms.ToolStripMenuItem toolStripEliminar;
-        private System.Windows.Forms.ComboBox cmbRoles;
+        private System.Windows.Forms.ComboBox cmbCategorias;
+        private System.Windows.Forms.MaskedTextBox mskPrecio;
+        private System.Windows.Forms.MaskedTextBox mskStock;
     }
 }

@@ -96,12 +96,8 @@ namespace Vista.Seguridad
             try
             {
                 //actualiza los permisos
-
-
                 datos = (DataTable)dtgPermisos.DataSource;
-
-                {
-                   
+                  
                         int n_indices = dtgPermisos.RowCount;
                         for (int i = 0; i < n_indices; i++)
                         {
@@ -122,18 +118,14 @@ namespace Vista.Seguridad
                                      }
                                    
 
-                        }
-                        permisos.Opc = 1;
-                        permisosH = new PermisosHelper(permisos);
-                        permisosH.Guardar();
-                    }
+                            }
+                             permisos.Opc = 1;
+                             permisosH = new PermisosHelper(permisos);
+                             permisosH.Guardar();
+                         }
 
                         MessageBox.Show("Se han actualizado los permisos");
-                        cargarDatosDtg();              
-
-                }
-              
-               
+                        cargarDatosDtg();                                       
             }
             catch (Exception ex)
             {

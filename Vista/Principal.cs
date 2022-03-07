@@ -23,8 +23,11 @@ namespace HouseSystemFood.Vista
         private Usuario_View usuario_view;
         private Menus_View menus_View;
         private Roles_View roles_View;
+        private Productos_View productos_View;
+        private Categorias_View categorias_View;
         private Permisos permisos;
         private PermisosHelper permisosH;
+        private Ordenes_View Ordenes_View;
         private DataTable datos;
 
 
@@ -61,29 +64,49 @@ namespace HouseSystemFood.Vista
                         if (fila["Estado"].Equals(true))
                             estado =1;
                        
-                        if (this.MantenimientoToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        if (this.MantenimientoItem.Text.Equals(nombre) && estado.Equals(0))
                         {
-                            this.MantenimientoToolStripMenuItem.Visible = false;
+                            this.MantenimientoItem.Visible = false;
                         }
-                        if (this.OrdenesToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        if (this.OrdenesItem.Text.Equals(nombre) && estado.Equals(0))
                         {
-                            this.OrdenesToolStripMenuItem.Visible = false;
+                            this.OrdenesItem.Visible = false;
                         }
-                        if (this.CierresToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        if (this.CierresItem.Text.Equals(nombre) && estado.Equals(0))
                         {
-                            this.CierresToolStripMenuItem.Visible = false;
+                            this.CierresItem.Visible = false;
                         }
-                        if (this.GastostoolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        if (this.GastosItem.Text.Equals(nombre) && estado.Equals(0))
                         {
-                            this.GastostoolStripMenuItem.Visible = false;
+                            this.GastosItem.Visible = false;
                         }
-                        if (this.ReportesToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        if (this.ReportesItem.Text.Equals(nombre) && estado.Equals(0))
                         {
-                            this.ReportesToolStripMenuItem.Visible = false;
+                            this.ReportesItem.Visible = false;
                         }
-                        if (this.acercaDeToolStripMenuItem.Text.Equals(nombre) && estado.Equals(0))
+                        if (this.acercaDeItem.Text.Equals(nombre) && estado.Equals(0))
                         {
-                            this.acercaDeToolStripMenuItem.Visible = false;
+                            this.acercaDeItem.Visible = false;
+                        }
+                        if (this.AyudaItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.AyudaItem.Visible = false;
+                        }
+                        if (this.CategoriasItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.CategoriasItem.Visible = false;
+                        }
+                        if (this.ProductosItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.ProductosItem.Visible = false;
+                        }
+                        if (this.UsuariosItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.UsuariosItem.Visible = false;
+                        }
+                        if (this.SeguridadItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.SeguridadItem.Visible = false;
                         }
 
                     }
@@ -98,20 +121,12 @@ namespace HouseSystemFood.Vista
 
         private void reIngresarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.addHoteles = null;
-            //this.addReservas = null;
-            //this.addClientes = null;
-            //this.acerca = null;
-            //Application.Restart();
+            
         }
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.addHoteles = null;
-            //this.addReservas = null;
-            //this.addClientes = null;
-            //this.acerca = null;
-            //Application.Exit();
+            
         }
 
         private void gestionarHotelesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -184,6 +199,32 @@ namespace HouseSystemFood.Vista
         private void CerrarToolStripMenu_Click(object sender, EventArgs e)
         {
             Application.Restart();
+        }
+
+        private void CategoriasItem_Click(object sender, EventArgs e)
+        {
+            this.categorias_View = new Categorias_View();
+            this.categorias_View.MdiParent = this;
+            this.categorias_View.Show();
+        }
+
+        private void ProductosItem_Click(object sender, EventArgs e)
+        {
+            this.productos_View = new Productos_View();
+            this.productos_View.MdiParent = this;
+            this.productos_View.Show();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void OrdenesItem_Click(object sender, EventArgs e)
+        {
+            this.Ordenes_View = new Ordenes_View();
+            this.Ordenes_View.MdiParent = this;
+            this.Ordenes_View.Show();
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)

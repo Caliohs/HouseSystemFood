@@ -52,6 +52,18 @@
     <Compile Include="Acercade.designer.cs">
       <DependentUpon>Acercade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ordenes_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ordenes_View.Designer.cs">
+      <DependentUpon>Ordenes_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Productos_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos_View.Designer.cs">
+      <DependentUpon>Productos_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Seguridad\Permisos_View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,6 +81,12 @@
     </Compile>
     <Compile Include="Seguridad\Roles_View.Designer.cs">
       <DependentUpon>Roles_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Categorias_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Categorias_View.Designer.cs">
+      <DependentUpon>Categorias_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Usuario_View.cs">
       <SubType>Form</SubType>
@@ -93,6 +111,12 @@
     <EmbeddedResource Include="Acercade.resx">
       <DependentUpon>Acercade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Ordenes_View.resx">
+      <DependentUpon>Ordenes_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos_View.resx">
+      <DependentUpon>Productos_View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_View.resx">
       <DependentUpon>Login_View.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +140,9 @@
     </Compile>
     <EmbeddedResource Include="Seguridad\Roles_View.resx">
       <DependentUpon>Roles_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Categorias_View.resx">
+      <DependentUpon>Categorias_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuario_View.resx">
       <DependentUpon>Usuario_View.cs</DependentUpon>

@@ -19,3 +19,6 @@ C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vist
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Menus_View.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Seguridad.Roles_View.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Seguridad.Permisos_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Productos_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Categorias_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Ordenes_View.resources

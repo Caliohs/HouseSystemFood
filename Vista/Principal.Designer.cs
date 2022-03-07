@@ -30,20 +30,21 @@ namespace HouseSystemFood.Vista
         private void InitializeComponent()
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.MantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CategoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.SeguridadtoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.RolestoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.PermisostoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.BitacorastoolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.UsuariosUsuatoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.OrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CierresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.GastostoolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ReportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CerrarToolStripMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CategoriasItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ProductosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UsuariosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.SeguridadItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.RolesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PermisosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.BitacorasItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OrdenesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CierresItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.GastosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ReportesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.acercaDeItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AyudaItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CerrarSesionItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -56,139 +57,150 @@ namespace HouseSystemFood.Vista
             // 
             // menuStrip1
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.Lavender;
-            this.menuStrip1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.Menu;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MantenimientoToolStripMenuItem,
-            this.OrdenesToolStripMenuItem,
-            this.CierresToolStripMenuItem,
-            this.GastostoolStripMenuItem,
-            this.ReportesToolStripMenuItem,
-            this.acercaDeToolStripMenuItem,
-            this.CerrarToolStripMenu});
+            this.MantenimientoItem,
+            this.OrdenesItem,
+            this.CierresItem,
+            this.GastosItem,
+            this.ReportesItem,
+            this.acercaDeItem,
+            this.AyudaItem,
+            this.CerrarSesionItem});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.Flow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 35, 0, 0);
-            this.menuStrip1.Size = new System.Drawing.Size(1200, 55);
+            this.menuStrip1.Size = new System.Drawing.Size(1350, 60);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // MantenimientoToolStripMenuItem
+            // MantenimientoItem
             // 
-            this.MantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CategoriasToolStripMenuItem,
-            this.ProductosToolStripMenuItem,
-            this.SeguridadtoolStripMenuItem,
-            this.UsuariosUsuatoolStripMenuItem});
-            this.MantenimientoToolStripMenuItem.Name = "MantenimientoToolStripMenuItem";
-            this.MantenimientoToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-            this.MantenimientoToolStripMenuItem.Text = "Matenimiento";
-            this.MantenimientoToolStripMenuItem.Click += new System.EventHandler(this.archivosToolStripMenuItem_Click);
+            this.MantenimientoItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CategoriasItem,
+            this.ProductosItem,
+            this.UsuariosItem,
+            this.SeguridadItem});
+            this.MantenimientoItem.Name = "MantenimientoItem";
+            this.MantenimientoItem.Size = new System.Drawing.Size(128, 25);
+            this.MantenimientoItem.Text = "Mantenimiento";
+            this.MantenimientoItem.Click += new System.EventHandler(this.archivosToolStripMenuItem_Click);
             // 
-            // CategoriasToolStripMenuItem
+            // CategoriasItem
             // 
-            this.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem";
-            this.CategoriasToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.CategoriasToolStripMenuItem.Text = "Categorias";
-            this.CategoriasToolStripMenuItem.Click += new System.EventHandler(this.reIngresarToolStripMenuItem_Click);
+            this.CategoriasItem.Name = "CategoriasItem";
+            this.CategoriasItem.Size = new System.Drawing.Size(180, 26);
+            this.CategoriasItem.Text = "Categorias";
+            this.CategoriasItem.Click += new System.EventHandler(this.CategoriasItem_Click);
             // 
-            // ProductosToolStripMenuItem
+            // ProductosItem
             // 
-            this.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem";
-            this.ProductosToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.ProductosToolStripMenuItem.Text = "Productos";
-            this.ProductosToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            this.ProductosItem.Name = "ProductosItem";
+            this.ProductosItem.Size = new System.Drawing.Size(180, 26);
+            this.ProductosItem.Text = "Productos";
+            this.ProductosItem.Click += new System.EventHandler(this.ProductosItem_Click);
             // 
-            // SeguridadtoolStripMenuItem
+            // UsuariosItem
             // 
-            this.SeguridadtoolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.RolestoolStripMenuItem1,
-            this.PermisostoolStripMenuItem1,
-            this.BitacorastoolStripMenuItem1});
-            this.SeguridadtoolStripMenuItem.Name = "SeguridadtoolStripMenuItem";
-            this.SeguridadtoolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.SeguridadtoolStripMenuItem.Text = "Seguridad";
+            this.UsuariosItem.Name = "UsuariosItem";
+            this.UsuariosItem.Size = new System.Drawing.Size(180, 26);
+            this.UsuariosItem.Text = "Usuarios";
+            this.UsuariosItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
             // 
-            // RolestoolStripMenuItem1
+            // SeguridadItem
             // 
-            this.RolestoolStripMenuItem1.Name = "RolestoolStripMenuItem1";
-            this.RolestoolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.RolestoolStripMenuItem1.Text = "Registro de Roles";
-            this.RolestoolStripMenuItem1.Click += new System.EventHandler(this.RolestoolStripMenuItem1_Click);
+            this.SeguridadItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.RolesItem,
+            this.PermisosItem,
+            this.BitacorasItem});
+            this.SeguridadItem.Name = "SeguridadItem";
+            this.SeguridadItem.Size = new System.Drawing.Size(180, 26);
+            this.SeguridadItem.Text = "Seguridad";
             // 
-            // PermisostoolStripMenuItem1
+            // RolesItem
             // 
-            this.PermisostoolStripMenuItem1.Name = "PermisostoolStripMenuItem1";
-            this.PermisostoolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.PermisostoolStripMenuItem1.Text = "Registro de menu";
-            this.PermisostoolStripMenuItem1.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
+            this.RolesItem.Name = "RolesItem";
+            this.RolesItem.Size = new System.Drawing.Size(201, 26);
+            this.RolesItem.Text = "Registro de Roles";
+            this.RolesItem.Click += new System.EventHandler(this.RolestoolStripMenuItem1_Click);
             // 
-            // BitacorastoolStripMenuItem1
+            // PermisosItem
             // 
-            this.BitacorastoolStripMenuItem1.Name = "BitacorastoolStripMenuItem1";
-            this.BitacorastoolStripMenuItem1.Size = new System.Drawing.Size(176, 22);
-            this.BitacorastoolStripMenuItem1.Text = "Ver Bitacoras";
+            this.PermisosItem.Name = "PermisosItem";
+            this.PermisosItem.Size = new System.Drawing.Size(201, 26);
+            this.PermisosItem.Text = "Items de menu";
+            this.PermisosItem.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
             // 
-            // UsuariosUsuatoolStripMenuItem
+            // BitacorasItem
             // 
-            this.UsuariosUsuatoolStripMenuItem.Name = "UsuariosUsuatoolStripMenuItem";
-            this.UsuariosUsuatoolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-            this.UsuariosUsuatoolStripMenuItem.Text = "Usuarios";
-            this.UsuariosUsuatoolStripMenuItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
+            this.BitacorasItem.Name = "BitacorasItem";
+            this.BitacorasItem.Size = new System.Drawing.Size(201, 26);
+            this.BitacorasItem.Text = "Bitacoras";
             // 
-            // OrdenesToolStripMenuItem
+            // OrdenesItem
             // 
-            this.OrdenesToolStripMenuItem.Name = "OrdenesToolStripMenuItem";
-            this.OrdenesToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
-            this.OrdenesToolStripMenuItem.Text = "Ordenes";
+            this.OrdenesItem.Name = "OrdenesItem";
+            this.OrdenesItem.Size = new System.Drawing.Size(81, 25);
+            this.OrdenesItem.Text = "Ordenes";
+            this.OrdenesItem.Click += new System.EventHandler(this.OrdenesItem_Click);
             // 
-            // CierresToolStripMenuItem
+            // CierresItem
             // 
-            this.CierresToolStripMenuItem.Name = "CierresToolStripMenuItem";
-            this.CierresToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
-            this.CierresToolStripMenuItem.Text = "Cierres";
+            this.CierresItem.Name = "CierresItem";
+            this.CierresItem.Size = new System.Drawing.Size(71, 25);
+            this.CierresItem.Text = "Cierres";
             // 
-            // GastostoolStripMenuItem
+            // GastosItem
             // 
-            this.GastostoolStripMenuItem.Name = "GastostoolStripMenuItem";
-            this.GastostoolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.GastostoolStripMenuItem.Text = "Gastos";
+            this.GastosItem.Name = "GastosItem";
+            this.GastosItem.Size = new System.Drawing.Size(69, 25);
+            this.GastosItem.Text = "Gastos";
             // 
-            // ReportesToolStripMenuItem
+            // ReportesItem
             // 
-            this.ReportesToolStripMenuItem.Name = "ReportesToolStripMenuItem";
-            this.ReportesToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.ReportesToolStripMenuItem.Text = "Reportes";
+            this.ReportesItem.Name = "ReportesItem";
+            this.ReportesItem.Size = new System.Drawing.Size(84, 25);
+            this.ReportesItem.Text = "Reportes";
             // 
-            // acercaDeToolStripMenuItem
+            // acercaDeItem
             // 
-            this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.acercaDeToolStripMenuItem.Text = "Acerca de ";
-            this.acercaDeToolStripMenuItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
+            this.acercaDeItem.Name = "acercaDeItem";
+            this.acercaDeItem.Size = new System.Drawing.Size(91, 25);
+            this.acercaDeItem.Text = "AcercaDe ";
+            this.acercaDeItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
-            // CerrarToolStripMenu
+            // AyudaItem
             // 
-            this.CerrarToolStripMenu.Name = "CerrarToolStripMenu";
-            this.CerrarToolStripMenu.Size = new System.Drawing.Size(96, 20);
-            this.CerrarToolStripMenu.Text = "Cerrar Sesion";
-            this.CerrarToolStripMenu.Click += new System.EventHandler(this.CerrarToolStripMenu_Click);
+            this.AyudaItem.Name = "AyudaItem";
+            this.AyudaItem.Size = new System.Drawing.Size(73, 25);
+            this.AyudaItem.Text = "Ayuda?";
+            // 
+            // CerrarSesionItem
+            // 
+            this.CerrarSesionItem.Name = "CerrarSesionItem";
+            this.CerrarSesionItem.Size = new System.Drawing.Size(112, 25);
+            this.CerrarSesionItem.Text = "CerrarSesion";
+            this.CerrarSesionItem.Click += new System.EventHandler(this.CerrarToolStripMenu_Click);
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.statusUsuario});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 678);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 704);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1200, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1350, 26);
             this.statusStrip1.TabIndex = 2;
             this.statusStrip1.Text = "statusStrip1";
             // 
             // statusUsuario
             // 
+            this.statusUsuario.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.statusUsuario.ForeColor = System.Drawing.Color.Green;
             this.statusUsuario.Name = "statusUsuario";
-            this.statusUsuario.Size = new System.Drawing.Size(47, 17);
+            this.statusUsuario.Size = new System.Drawing.Size(65, 21);
             this.statusUsuario.Text = "Usuario";
             // 
             // panel1
@@ -198,7 +210,7 @@ namespace HouseSystemFood.Vista
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1200, 30);
+            this.panel1.Size = new System.Drawing.Size(1350, 30);
             this.panel1.TabIndex = 4;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
             // 
@@ -206,11 +218,11 @@ namespace HouseSystemFood.Vista
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(511, 4);
+            this.lbTitle.Location = new System.Drawing.Point(615, 3);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(124, 20);
+            this.lbTitle.Size = new System.Drawing.Size(151, 24);
             this.lbTitle.TabIndex = 6;
             this.lbTitle.Text = "Modulo Principal";
             // 
@@ -218,7 +230,7 @@ namespace HouseSystemFood.Vista
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(1169, 3);
+            this.btnSalir.Location = new System.Drawing.Point(1319, 3);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(28, 24);
             this.btnSalir.TabIndex = 5;
@@ -230,8 +242,8 @@ namespace HouseSystemFood.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1200, 700);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1350, 730);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
@@ -256,24 +268,25 @@ namespace HouseSystemFood.Vista
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem MantenimientoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CategoriasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem OrdenesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem CierresToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ReportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoItem;
+        private System.Windows.Forms.ToolStripMenuItem CategoriasItem;
+        private System.Windows.Forms.ToolStripMenuItem ProductosItem;
+        private System.Windows.Forms.ToolStripMenuItem OrdenesItem;
+        private System.Windows.Forms.ToolStripMenuItem CierresItem;
+        private System.Windows.Forms.ToolStripMenuItem ReportesItem;
+        private System.Windows.Forms.ToolStripMenuItem acercaDeItem;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel statusUsuario;
-        private System.Windows.Forms.ToolStripMenuItem CerrarToolStripMenu;
-        private System.Windows.Forms.ToolStripMenuItem SeguridadtoolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem RolestoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem PermisostoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem BitacorastoolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem UsuariosUsuatoolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem GastostoolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem CerrarSesionItem;
+        private System.Windows.Forms.ToolStripMenuItem SeguridadItem;
+        private System.Windows.Forms.ToolStripMenuItem RolesItem;
+        private System.Windows.Forms.ToolStripMenuItem PermisosItem;
+        private System.Windows.Forms.ToolStripMenuItem BitacorasItem;
+        private System.Windows.Forms.ToolStripMenuItem UsuariosItem;
+        private System.Windows.Forms.ToolStripMenuItem GastosItem;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.ToolStripMenuItem AyudaItem;
     }
 }

@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ordenes.cs" />
+    <Compile Include="Productos.cs" />
+    <Compile Include="Categorias.cs" />
+    <Compile Include="OrdenesHelper.cs" />
+    <Compile Include="ProductosHelper.cs" />
+    <Compile Include="CategoriasHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Seguridad\Permisos.cs" />
     <Compile Include="Seguridad\PermisosHelper.cs" />
