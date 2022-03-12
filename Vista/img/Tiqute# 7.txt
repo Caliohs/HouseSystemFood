@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        7
+Metodo de pago   Mixto
+Subtotal         17500
+Descuento        0
+Transporte       0
+IVA              2275
+Total            0
+
+:::::::: Gracias por su compra !!:::::::::

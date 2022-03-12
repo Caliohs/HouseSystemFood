@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        58
+Metodo de pago   Mixto
+Subtotal         8800
+Descuento        0
+Transporte       0
+IVA              1144
+Total            0
+
+:::::::: Gracias por su compra !!:::::::::

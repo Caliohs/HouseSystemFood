@@ -294,7 +294,7 @@
             this.mskStock.Mask = "99999";
             this.mskStock.Name = "mskStock";
             this.mskStock.Size = new System.Drawing.Size(155, 21);
-            this.mskStock.TabIndex = 3;
+            this.mskStock.TabIndex = 4;
             this.mskStock.ValidatingType = typeof(int);
             // 
             // mskPrecio
@@ -313,7 +313,7 @@
             this.cmbCategorias.Location = new System.Drawing.Point(24, 260);
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(157, 23);
-            this.cmbCategorias.TabIndex = 4;
+            this.cmbCategorias.TabIndex = 5;
             // 
             // lbCat
             // 

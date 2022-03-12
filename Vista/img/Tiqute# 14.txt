@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        14
+Metodo de pago   Efectivo Colon
+Subtotal         8250
+Descuento        825
+Transporte       500
+IVA              965,25
+Total            7925
+
+:::::::: Gracias por su compra !!:::::::::

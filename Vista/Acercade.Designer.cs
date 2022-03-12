@@ -64,6 +64,8 @@ namespace HouseSystemFood.Vista
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btnAceptar.Location = new System.Drawing.Point(125, 334);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
@@ -74,10 +76,10 @@ namespace HouseSystemFood.Vista
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Red;
-            this.btnSalir.Location = new System.Drawing.Point(323, 0);
+            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.Location = new System.Drawing.Point(334, 0);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(33, 26);
+            this.btnSalir.Size = new System.Drawing.Size(25, 26);
             this.btnSalir.TabIndex = 7;
             this.btnSalir.Text = "x";
             this.btnSalir.UseVisualStyleBackColor = false;
@@ -99,12 +101,12 @@ namespace HouseSystemFood.Vista
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.Location = new System.Drawing.Point(148, 6);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 20);
+            this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Login";
+            this.label3.Text = "Acerca de";
             // 
             // button1
             // 
@@ -120,7 +122,7 @@ namespace HouseSystemFood.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 361);
+            this.ClientSize = new System.Drawing.Size(359, 400);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.textBox1);

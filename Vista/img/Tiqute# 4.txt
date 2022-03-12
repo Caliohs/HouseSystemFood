@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        4
+Metodo de pago   Tarjeta
+Subtotal         4100
+Descuento        0
+Transporte       0
+IVA              533
+Total            4100
+
+:::::::: Gracias por su compra !!:::::::::

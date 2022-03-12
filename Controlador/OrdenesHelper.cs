@@ -32,8 +32,7 @@ namespace HouseSystemFood.Controlador
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[6];          
-               
-             
+                          
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@Num_Orden";
                 parParameter[0].SqlDbType = SqlDbType.Int;
@@ -122,7 +121,7 @@ namespace HouseSystemFood.Controlador
 
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@Num_Mesa";
-                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].SqlDbType = SqlDbType.Int;
                 parParameter[1].SqlValue = obj.Num_Mesa;
 
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOrdenes");
@@ -135,6 +134,39 @@ namespace HouseSystemFood.Controlador
 
             return tblDatos;
         }
+
+        public DataTable ListarOrden()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = obj.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Num_Orden";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = obj.Num_Orden;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOrdenes");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
         //no hacer
         //public DataTable Actualizar()
         //{

@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        6
+Metodo de pago   Transferencia
+Subtotal         21000
+Descuento        2100
+Transporte       300
+IVA              2457
+Total            19200
+
+:::::::: Gracias por su compra !!:::::::::

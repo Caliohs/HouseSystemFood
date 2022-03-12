@@ -50,6 +50,8 @@ namespace HouseSystemFood.Vista
             this.panel1 = new System.Windows.Forms.Panel();
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.OrdenarItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CobrarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,21 +94,21 @@ namespace HouseSystemFood.Vista
             // CategoriasItem
             // 
             this.CategoriasItem.Name = "CategoriasItem";
-            this.CategoriasItem.Size = new System.Drawing.Size(180, 26);
+            this.CategoriasItem.Size = new System.Drawing.Size(154, 26);
             this.CategoriasItem.Text = "Categorias";
             this.CategoriasItem.Click += new System.EventHandler(this.CategoriasItem_Click);
             // 
             // ProductosItem
             // 
             this.ProductosItem.Name = "ProductosItem";
-            this.ProductosItem.Size = new System.Drawing.Size(180, 26);
+            this.ProductosItem.Size = new System.Drawing.Size(154, 26);
             this.ProductosItem.Text = "Productos";
             this.ProductosItem.Click += new System.EventHandler(this.ProductosItem_Click);
             // 
             // UsuariosItem
             // 
             this.UsuariosItem.Name = "UsuariosItem";
-            this.UsuariosItem.Size = new System.Drawing.Size(180, 26);
+            this.UsuariosItem.Size = new System.Drawing.Size(154, 26);
             this.UsuariosItem.Text = "Usuarios";
             this.UsuariosItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
             // 
@@ -117,7 +119,7 @@ namespace HouseSystemFood.Vista
             this.PermisosItem,
             this.BitacorasItem});
             this.SeguridadItem.Name = "SeguridadItem";
-            this.SeguridadItem.Size = new System.Drawing.Size(180, 26);
+            this.SeguridadItem.Size = new System.Drawing.Size(154, 26);
             this.SeguridadItem.Text = "Seguridad";
             // 
             // RolesItem
@@ -142,10 +144,12 @@ namespace HouseSystemFood.Vista
             // 
             // OrdenesItem
             // 
+            this.OrdenesItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OrdenarItem,
+            this.CobrarItem});
             this.OrdenesItem.Name = "OrdenesItem";
             this.OrdenesItem.Size = new System.Drawing.Size(81, 25);
             this.OrdenesItem.Text = "Ordenes";
-            this.OrdenesItem.Click += new System.EventHandler(this.OrdenesItem_Click);
             // 
             // CierresItem
             // 
@@ -238,6 +242,20 @@ namespace HouseSystemFood.Vista
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // OrdenarItem
+            // 
+            this.OrdenarItem.Name = "OrdenarItem";
+            this.OrdenarItem.Size = new System.Drawing.Size(180, 26);
+            this.OrdenarItem.Text = "Ordenar";
+            this.OrdenarItem.Click += new System.EventHandler(this.OrdenarItem_Click);
+            // 
+            // CobrarItem
+            // 
+            this.CobrarItem.Name = "CobrarItem";
+            this.CobrarItem.Size = new System.Drawing.Size(180, 26);
+            this.CobrarItem.Text = "Cobrar";
+            this.CobrarItem.Click += new System.EventHandler(this.CobrarItem_Click);
+            // 
             // Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +306,7 @@ namespace HouseSystemFood.Vista
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ToolStripMenuItem AyudaItem;
+        private System.Windows.Forms.ToolStripMenuItem OrdenarItem;
+        private System.Windows.Forms.ToolStripMenuItem CobrarItem;
     }
 }

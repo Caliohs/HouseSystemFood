@@ -21,8 +21,9 @@ namespace HouseSystemFood.Vista
         private Categorias categorias;
         private CategoriasHelper categoriasH;
         private Ordenes ordenes;
-        private OrdenesHelper ordenesH;
-
+        private OrdenesHelper ordenesH; 
+        private Cobros_View cobros_View;
+        private Principal principal;
 
         public Ordenes_View()
         {
@@ -61,36 +62,45 @@ namespace HouseSystemFood.Vista
 
         public void Guardar()
         {
-            //guarda nueva orden
             try
             {
-                //genero un numero de orden aleatorio con el num_mesa + random 
-                string Num_orden = "0";
-                Random rnd = new Random();
-                Num_orden = this.cmbMesa.Text + (rnd.Next());
+                //guarda nueva orden
+                if (!this.cmbMesa.Text.Equals(""))
+            {
+                    //genero un numero de orden aleatorio con el num_mesa + random 
+                    string Num_orden = "0";
+                    Random rnd = new Random();
+                    Num_orden = this.cmbMesa.Text + (rnd.Next());
 
-                int n_indices = dtgOrdenes.RowCount;
-                for (int i = 0; i < n_indices; i++)
-                {
-                                    
-                    if (dtgOrdenes.CurrentRow != null)
+                    int n_indices = dtgOrdenes.RowCount;
+                    for (int i = 0; i < n_indices; i++)
                     {
-                        ordenes = new Ordenes();
-                       
-                        ordenes.Num_Orden = int.Parse(Num_orden.Substring(0,4));
-                        ordenes.IdProducto = int.Parse(dtgOrdenes.Rows[i].Cells[0].Value.ToString());
-                        ordenes.Cantidad = int.Parse(dtgOrdenes.Rows[i].Cells[1].Value.ToString());
-                        ordenes.Total = int.Parse(dtgOrdenes.Rows[i].Cells[4].Value.ToString());                      
-                        ordenes.Num_Mesa = int.Parse(this.cmbMesa.Text);
 
+                        if (dtgOrdenes.CurrentRow != null)
+                        {
+                            ordenes = new Ordenes();
+
+                            ordenes.Num_Orden = int.Parse(Num_orden.Substring(0, 6));
+                            ordenes.IdProducto = int.Parse(dtgOrdenes.Rows[i].Cells[0].Value.ToString());
+                            ordenes.Cantidad = int.Parse(dtgOrdenes.Rows[i].Cells[1].Value.ToString());
+                            ordenes.Total = int.Parse(dtgOrdenes.Rows[i].Cells[4].Value.ToString());
+                            ordenes.Num_Mesa = int.Parse(this.cmbMesa.Text);
+
+                        }
+                        ordenes.Opc = 1;
+                        ordenesH = new OrdenesHelper(ordenes);
+                        ordenesH.Guardar();
                     }
-                    ordenes.Opc = 1;
-                    ordenesH = new OrdenesHelper(ordenes);
-                    ordenesH.Guardar();
-                }
 
-                MessageBox.Show("Se ha almacenado la orden n° " + Num_orden.Substring(0, 4));
-                dtgOrdenes.Columns.Clear();
+                    MessageBox.Show("Se ha almacenado la orden n° " + Num_orden.Substring(0, 6));
+                    ReiniciarOrdenes();
+                }
+            else
+            {
+                MessageBox.Show("Selecciones el numero de mesa","Alerta");
+            }
+           
+               
 
             }
             catch (Exception ex)
@@ -282,7 +292,20 @@ namespace HouseSystemFood.Vista
             }
         }
 
+        public void ReiniciarOrdenes()
+        {
+            this.dtgOrdenes.Columns.Clear();
+            this.dtgOrdenes.Rows.Clear();
+            this.txtProductoSelecionado.Text="";
+            this.lbCont.Text = "0";
+            this.lbMontoT.Text = "0";
+            this.cmbMesa.SelectedIndex = -1;
+        }
 
-    }
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            ReiniciarOrdenes();
+        }
+    } 
 
 }

@@ -52,6 +52,12 @@
     <Compile Include="Acercade.designer.cs">
       <DependentUpon>Acercade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cobros_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cobros_View.Designer.cs">
+      <DependentUpon>Cobros_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ordenes_View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Acercade.resx">
       <DependentUpon>Acercade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cobros_View.resx">
+      <DependentUpon>Cobros_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes_View.resx">
       <DependentUpon>Ordenes_View.cs</DependentUpon>

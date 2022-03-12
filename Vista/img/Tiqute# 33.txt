@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        33
+Metodo de pago   Efectivo Dolar
+Subtotal         1200
+Descuento        0
+Transporte       0
+IVA              156
+Total            1200
+
+:::::::: Gracias por su compra !!:::::::::

@@ -1,0 +1,10 @@
+::::::::::RESTAURANTE DEL CARIBE:::::::::::
+Tiquete #        39
+Metodo de pago   Mixto
+Subtotal         2500
+Descuento        0
+Transporte       2000
+IVA              325
+Total            0
+
+:::::::: Gracias por su compra !!:::::::::

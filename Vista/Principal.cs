@@ -28,6 +28,7 @@ namespace HouseSystemFood.Vista
         private Permisos permisos;
         private PermisosHelper permisosH;
         private Ordenes_View Ordenes_View;
+        private Cobros_View Cobros_View;
         private DataTable datos;
 
 
@@ -71,6 +72,10 @@ namespace HouseSystemFood.Vista
                         if (this.OrdenesItem.Text.Equals(nombre) && estado.Equals(0))
                         {
                             this.OrdenesItem.Visible = false;
+                        }
+                        if (this.CobrarItem.Text.Equals(nombre) && estado.Equals(0))
+                        {
+                            this.CobrarItem.Visible = false;
                         }
                         if (this.CierresItem.Text.Equals(nombre) && estado.Equals(0))
                         {
@@ -220,11 +225,18 @@ namespace HouseSystemFood.Vista
 
         }
 
-        private void OrdenesItem_Click(object sender, EventArgs e)
+        private void OrdenarItem_Click(object sender, EventArgs e)
         {
             this.Ordenes_View = new Ordenes_View();
             this.Ordenes_View.MdiParent = this;
             this.Ordenes_View.Show();
+        }
+
+        private void CobrarItem_Click(object sender, EventArgs e)
+        {
+            this.Cobros_View = new Cobros_View();
+            this.Cobros_View.MdiParent =this;
+            this.Cobros_View.Show();
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)
