@@ -167,6 +167,38 @@ namespace HouseSystemFood.Controlador
 
             return tblDatos;
         }
+
+        public DataTable ListarPermisos(string nombre)
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = obj.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Nombre";
+                parParameter[1].SqlDbType = SqlDbType.VarChar;
+                parParameter[1].SqlValue = nombre;
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPPermisos");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
     }
 
 }

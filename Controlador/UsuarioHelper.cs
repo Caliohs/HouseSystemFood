@@ -38,18 +38,6 @@ namespace HouseSystemFood.Controlador
                 parParameter[0].Size = 30;
                 parParameter[0].SqlValue = obj.User;
 
-                //parParameter[1] = new SqlParameter();
-                //parParameter[1].ParameterName = "@Nombre";
-                //parParameter[1].SqlDbType = SqlDbType.VarChar;
-                //parParameter[1].Size = 30;
-                //parParameter[1].SqlValue = obj.Nombre;
-
-                //parParameter[2] = new SqlParameter();
-                //parParameter[2].ParameterName = "@Puesto";
-                //parParameter[2].SqlDbType = SqlDbType.VarChar;
-                //parParameter[2].Size = 30;
-                //parParameter[2].SqlValue = obj.Puesto;
-
                 parParameter[1] = new SqlParameter();
                 parParameter[1].ParameterName = "@Contrasena";
                 parParameter[1].SqlDbType = SqlDbType.VarChar;
@@ -65,11 +53,6 @@ namespace HouseSystemFood.Controlador
                 parParameter[2].ParameterName = "@Opc";
                 parParameter[2].SqlDbType = SqlDbType.Int;
                 parParameter[2].SqlValue = obj.Opc;
-
-                //parParameter[6] = new SqlParameter();
-                //parParameter[6].ParameterName = "@Id";
-                //parParameter[6].SqlDbType = SqlDbType.Int;
-                //parParameter[6].SqlValue = obj.Id;
 
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
 
@@ -208,6 +191,7 @@ namespace HouseSystemFood.Controlador
                 cnGeneral = new Datos();
 
                 SqlParameter[] parParameter = new SqlParameter[7];
+
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@Usuario";
                 parParameter[0].SqlDbType = SqlDbType.VarChar;

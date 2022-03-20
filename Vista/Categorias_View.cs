@@ -18,11 +18,19 @@ namespace HouseSystemFood.Vista
         private DataTable datos;
         private Categorias categorias;
         private CategoriasHelper categoriasH;
-       
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
+
+        public int UserId;
 
         public Categorias_View()
         {
             InitializeComponent();
+        }
+        public Categorias_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
         }
 
         private void Categorias_View_Load(object sender, EventArgs e)
@@ -68,7 +76,7 @@ namespace HouseSystemFood.Vista
                         categorias.Opc = 1;
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Guardar();
-
+                    RegistarEnBitacora("INSERT");
                         MessageBox.Show("Se ha almacenado una categoria");
                     }
                     else
@@ -81,7 +89,7 @@ namespace HouseSystemFood.Vista
                         categorias.Id = int.Parse(fila["IdCategoria"].ToString());
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Actualizar();
-
+                    RegistarEnBitacora("UPDATE");
                         MessageBox.Show("Se ha actualizó la categoria");
 
                         this.btnAceptar.Text = "Aceptar";
@@ -169,7 +177,7 @@ namespace HouseSystemFood.Vista
                         categorias.Id = int.Parse(fila["IdCategoria"].ToString());
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Eliminar();
-
+                        RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
                     }
@@ -195,7 +203,26 @@ namespace HouseSystemFood.Vista
             this.Close();
         }
 
-        
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "CATEGORIAS";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
     }
 
 }

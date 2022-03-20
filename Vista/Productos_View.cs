@@ -20,10 +20,19 @@ namespace HouseSystemFood.Vista
         private ProductosHelper productosH;
         private Categorias categorias;
         private CategoriasHelper categoriasH;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
+
+        public int UserId;
 
         public Productos_View()
         {
             InitializeComponent();
+        }
+        public Productos_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
         }
 
         private void Productos_View_Load(object sender, EventArgs e)
@@ -80,7 +89,7 @@ namespace HouseSystemFood.Vista
                         productos.Opc = 1;
                         productosH = new ProductosHelper(productos);
                         productosH.Guardar();
-
+                         RegistarEnBitacora("INSERT");
                         MessageBox.Show("Se ha almacenado un nuevo Producto");
                     }
                     else
@@ -93,7 +102,7 @@ namespace HouseSystemFood.Vista
                         productos.Id = int.Parse(fila["IdProducto"].ToString());
                         productosH = new ProductosHelper(productos);
                         productosH.Actualizar();
-
+                        RegistarEnBitacora("UPDATE");
                         MessageBox.Show("Se actualizó el Producto");
 
                         this.btnAceptar.Text = "Aceptar";
@@ -187,7 +196,7 @@ namespace HouseSystemFood.Vista
                         productos.Id = int.Parse(fila["IdProducto"].ToString());
                         productosH = new ProductosHelper(productos);
                         productosH.Eliminar();
-
+                        RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
                     }
@@ -239,6 +248,27 @@ namespace HouseSystemFood.Vista
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+        //registro el evento
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "PRODUCTOS";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

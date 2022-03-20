@@ -256,6 +256,7 @@
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Bitacoras_View";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bitacoras_View";
             this.Load += new System.EventHandler(this.Bitacoras_View_Load);
             this.groupBox.ResumeLayout(false);

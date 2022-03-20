@@ -37,6 +37,7 @@ namespace HouseSystemFood.Vista
             this.SeguridadItem = new System.Windows.Forms.ToolStripMenuItem();
             this.RolesItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PermisosItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BitacorasItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OrdenesItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OrdenarItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +51,6 @@ namespace HouseSystemFood.Vista
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHide = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
@@ -78,7 +78,6 @@ namespace HouseSystemFood.Vista
             this.menuStrip1.Size = new System.Drawing.Size(1350, 60);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // MantenimientoItem
             // 
@@ -90,12 +89,14 @@ namespace HouseSystemFood.Vista
             this.MantenimientoItem.Name = "MantenimientoItem";
             this.MantenimientoItem.Size = new System.Drawing.Size(128, 25);
             this.MantenimientoItem.Text = "Mantenimiento";
+            this.MantenimientoItem.Visible = false;
             // 
             // CategoriasItem
             // 
             this.CategoriasItem.Name = "CategoriasItem";
             this.CategoriasItem.Size = new System.Drawing.Size(154, 26);
             this.CategoriasItem.Text = "Categorias";
+            this.CategoriasItem.Visible = false;
             this.CategoriasItem.Click += new System.EventHandler(this.CategoriasItem_Click);
             // 
             // ProductosItem
@@ -103,6 +104,7 @@ namespace HouseSystemFood.Vista
             this.ProductosItem.Name = "ProductosItem";
             this.ProductosItem.Size = new System.Drawing.Size(154, 26);
             this.ProductosItem.Text = "Productos";
+            this.ProductosItem.Visible = false;
             this.ProductosItem.Click += new System.EventHandler(this.ProductosItem_Click);
             // 
             // UsuariosItem
@@ -110,6 +112,7 @@ namespace HouseSystemFood.Vista
             this.UsuariosItem.Name = "UsuariosItem";
             this.UsuariosItem.Size = new System.Drawing.Size(154, 26);
             this.UsuariosItem.Text = "Usuarios";
+            this.UsuariosItem.Visible = false;
             this.UsuariosItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
             // 
             // SeguridadItem
@@ -117,10 +120,12 @@ namespace HouseSystemFood.Vista
             this.SeguridadItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RolesItem,
             this.PermisosItem,
+            this.MenuItem,
             this.BitacorasItem});
             this.SeguridadItem.Name = "SeguridadItem";
-            this.SeguridadItem.Size = new System.Drawing.Size(180, 26);
+            this.SeguridadItem.Size = new System.Drawing.Size(154, 26);
             this.SeguridadItem.Text = "Seguridad";
+            this.SeguridadItem.Visible = false;
             // 
             // RolesItem
             // 
@@ -133,8 +138,15 @@ namespace HouseSystemFood.Vista
             // 
             this.PermisosItem.Name = "PermisosItem";
             this.PermisosItem.Size = new System.Drawing.Size(201, 26);
-            this.PermisosItem.Text = "Items de menu";
-            this.PermisosItem.Click += new System.EventHandler(this.PermisostoolStripMenuItem1_Click);
+            this.PermisosItem.Text = "Permisos";
+            this.PermisosItem.Click += new System.EventHandler(this.PermisosItem_Click);
+            // 
+            // MenuItem
+            // 
+            this.MenuItem.Name = "MenuItem";
+            this.MenuItem.Size = new System.Drawing.Size(201, 26);
+            this.MenuItem.Text = "Items de menu";
+            this.MenuItem.Click += new System.EventHandler(this.MenuItem_Click);
             // 
             // BitacorasItem
             // 
@@ -151,12 +163,14 @@ namespace HouseSystemFood.Vista
             this.OrdenesItem.Name = "OrdenesItem";
             this.OrdenesItem.Size = new System.Drawing.Size(81, 25);
             this.OrdenesItem.Text = "Ordenes";
+            this.OrdenesItem.Visible = false;
             // 
             // OrdenarItem
             // 
             this.OrdenarItem.Name = "OrdenarItem";
             this.OrdenarItem.Size = new System.Drawing.Size(138, 26);
             this.OrdenarItem.Text = "Ordenar";
+            this.OrdenarItem.Visible = false;
             this.OrdenarItem.Click += new System.EventHandler(this.OrdenarItem_Click);
             // 
             // CobrarItem
@@ -164,6 +178,7 @@ namespace HouseSystemFood.Vista
             this.CobrarItem.Name = "CobrarItem";
             this.CobrarItem.Size = new System.Drawing.Size(138, 26);
             this.CobrarItem.Text = "Cobrar";
+            this.CobrarItem.Visible = false;
             this.CobrarItem.Click += new System.EventHandler(this.CobrarItem_Click);
             // 
             // CierresItem
@@ -171,24 +186,28 @@ namespace HouseSystemFood.Vista
             this.CierresItem.Name = "CierresItem";
             this.CierresItem.Size = new System.Drawing.Size(71, 25);
             this.CierresItem.Text = "Cierres";
+            this.CierresItem.Visible = false;
             // 
             // GastosItem
             // 
             this.GastosItem.Name = "GastosItem";
             this.GastosItem.Size = new System.Drawing.Size(69, 25);
             this.GastosItem.Text = "Gastos";
+            this.GastosItem.Visible = false;
             // 
             // ReportesItem
             // 
             this.ReportesItem.Name = "ReportesItem";
             this.ReportesItem.Size = new System.Drawing.Size(84, 25);
             this.ReportesItem.Text = "Reportes";
+            this.ReportesItem.Visible = false;
             // 
             // acercaDeItem
             // 
             this.acercaDeItem.Name = "acercaDeItem";
-            this.acercaDeItem.Size = new System.Drawing.Size(91, 25);
-            this.acercaDeItem.Text = "AcercaDe ";
+            this.acercaDeItem.Size = new System.Drawing.Size(87, 25);
+            this.acercaDeItem.Text = "AcercaDe";
+            this.acercaDeItem.Visible = false;
             this.acercaDeItem.Click += new System.EventHandler(this.acercaDeToolStripMenuItem_Click);
             // 
             // AyudaItem
@@ -196,6 +215,7 @@ namespace HouseSystemFood.Vista
             this.AyudaItem.Name = "AyudaItem";
             this.AyudaItem.Size = new System.Drawing.Size(73, 25);
             this.AyudaItem.Text = "Ayuda?";
+            this.AyudaItem.Visible = false;
             // 
             // CerrarSesionItem
             // 
@@ -225,7 +245,6 @@ namespace HouseSystemFood.Vista
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
-            this.panel1.Controls.Add(this.btnHide);
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -233,19 +252,6 @@ namespace HouseSystemFood.Vista
             this.panel1.Size = new System.Drawing.Size(1350, 30);
             this.panel1.TabIndex = 4;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
-            // 
-            // btnHide
-            // 
-            this.btnHide.BackColor = System.Drawing.Color.Transparent;
-            this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHide.ForeColor = System.Drawing.Color.White;
-            this.btnHide.Location = new System.Drawing.Point(1227, 3);
-            this.btnHide.Name = "btnHide";
-            this.btnHide.Size = new System.Drawing.Size(57, 24);
-            this.btnHide.TabIndex = 7;
-            this.btnHide.Text = "___";
-            this.btnHide.UseVisualStyleBackColor = false;
-            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
             // lbTitle
             // 
@@ -314,7 +320,7 @@ namespace HouseSystemFood.Vista
         private System.Windows.Forms.ToolStripMenuItem CerrarSesionItem;
         private System.Windows.Forms.ToolStripMenuItem SeguridadItem;
         private System.Windows.Forms.ToolStripMenuItem RolesItem;
-        private System.Windows.Forms.ToolStripMenuItem PermisosItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuItem;
         private System.Windows.Forms.ToolStripMenuItem BitacorasItem;
         private System.Windows.Forms.ToolStripMenuItem UsuariosItem;
         private System.Windows.Forms.ToolStripMenuItem GastosItem;
@@ -324,6 +330,6 @@ namespace HouseSystemFood.Vista
         private System.Windows.Forms.ToolStripMenuItem AyudaItem;
         private System.Windows.Forms.ToolStripMenuItem OrdenarItem;
         private System.Windows.Forms.ToolStripMenuItem CobrarItem;
-        private System.Windows.Forms.Button btnHide;
+        private System.Windows.Forms.ToolStripMenuItem PermisosItem;
     }
 }

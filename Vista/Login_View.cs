@@ -102,7 +102,7 @@ namespace HouseSystemFood.Vista
                 bitacoras.Opc = 2;
                 bitacoras.IdUser = user.Id;
                 bitacoras.Accion = "LOGIN";
-                bitacoras.Fecha = DateTime.Today;
+                bitacoras.Fecha = DateTime.Now;
                 bitacorasH = new BitacorasHelper(bitacoras);
                 bitacorasH.InsertarEnBitacora();
             }

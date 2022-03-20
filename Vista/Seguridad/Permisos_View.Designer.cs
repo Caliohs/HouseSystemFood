@@ -39,6 +39,8 @@
             this.dtgPermisos = new System.Windows.Forms.DataGridView();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.lbBuscar = new System.Windows.Forms.Label();
+            this.cmbRoles = new System.Windows.Forms.ComboBox();
+            this.chkLock = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgPermisos)).BeginInit();
             this.SuspendLayout();
@@ -58,11 +60,12 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(554, 3);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(536, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(28, 24);
+            this.button2.Size = new System.Drawing.Size(46, 24);
             this.button2.TabIndex = 7;
-            this.button2.Text = "x";
+            this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -77,7 +80,6 @@
             this.lbtitle.Size = new System.Drawing.Size(148, 20);
             this.lbtitle.TabIndex = 6;
             this.lbtitle.Text = "Gestionar Permisos";
-            this.lbtitle.Click += new System.EventHandler(this.lbtitle_Click);
             // 
             // button1
             // 
@@ -160,7 +162,6 @@
             this.dtgPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgPermisos.Size = new System.Drawing.Size(528, 226);
             this.dtgPermisos.TabIndex = 69;
-            this.dtgPermisos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgPermisos_CellContentClick);
             // 
             // txtBuscar
             // 
@@ -182,12 +183,36 @@
             this.lbBuscar.TabIndex = 82;
             this.lbBuscar.Text = "Buscar";
             // 
+            // cmbRoles
+            // 
+            this.cmbRoles.Enabled = false;
+            this.cmbRoles.FormattingEnabled = true;
+            this.cmbRoles.Location = new System.Drawing.Point(43, 45);
+            this.cmbRoles.Name = "cmbRoles";
+            this.cmbRoles.Size = new System.Drawing.Size(121, 21);
+            this.cmbRoles.TabIndex = 83;
+            this.cmbRoles.SelectedIndexChanged += new System.EventHandler(this.cmbRoles_SelectedIndexChanged);
+            // 
+            // chkLock
+            // 
+            this.chkLock.AutoSize = true;
+            this.chkLock.Checked = true;
+            this.chkLock.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkLock.Location = new System.Drawing.Point(170, 49);
+            this.chkLock.Name = "chkLock";
+            this.chkLock.Size = new System.Drawing.Size(15, 14);
+            this.chkLock.TabIndex = 84;
+            this.chkLock.UseVisualStyleBackColor = true;
+            this.chkLock.CheckedChanged += new System.EventHandler(this.chkLock_CheckedChanged);
+            // 
             // Permisos_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(585, 413);
+            this.Controls.Add(this.chkLock);
+            this.Controls.Add(this.cmbRoles);
             this.Controls.Add(this.lbBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.dtgPermisos);
@@ -199,7 +224,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Permisos_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PermisosCmb_View";
+            this.Text = "Permisos";
             this.Load += new System.EventHandler(this.PermisosCmb_View_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -222,5 +247,7 @@
         private System.Windows.Forms.DataGridView dtgPermisos;
         private System.Windows.Forms.TextBox txtBuscar;
         private System.Windows.Forms.Label lbBuscar;
+        private System.Windows.Forms.ComboBox cmbRoles;
+        private System.Windows.Forms.CheckBox chkLock;
     }
 }

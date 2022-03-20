@@ -17,19 +17,28 @@ namespace Vista.Seguridad
         private MenusHelper menuH;
         private Permisos permisos;
         private PermisosHelper permisosH;
+        private Roles roles;
+        private RolesHelper rolesH;
         public int IdRol;
+        public int UserId;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
 
         public Permisos_View()
+        
         {
             InitializeComponent();
         }
-
+        public Permisos_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
+        }
         public Permisos_View(Roles obj)
         {
             InitializeComponent();
             this.lbRol.Text =  obj.Nombre;
             IdRol = obj.Id;
-            //validarPerfil(obj.Perfil); se usa para validar los permisos
         }
 
         private void lbtitle_Click(object sender, EventArgs e)
@@ -39,38 +48,40 @@ namespace Vista.Seguridad
 
         private void PermisosCmb_View_Load(object sender, EventArgs e)
         {
-           
-           // cargarCmbPermisos();
+
             cargarDatosDtg();
             
         }
-        //public void cargarCmbPermisos()
-        //{
-        //    try
-        //    {
-        //        menu = new Menus();
-        //        menu.Opc = 2;
-        //        menuH = new MenusHelper(menu);
-        //        datos = menuH.Listar();
+        public void cargarCmbRoles()
+        {
+            try
+            {
+                roles = new Roles();
+                roles.Opc = 2;
+                rolesH = new RolesHelper(roles);
+                datos = rolesH.Listar();
 
-        //        string[] dt = new string[datos.Rows.Count];
-        //        for (int i = 0; i < datos.Rows.Count; i++)
-        //        {
-        //            dt[i] = datos.Rows[i]["Item_Menu"].ToString();
-        //        }
-        //        cmbPermiso.DataSource = dt;
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show(ex.Message);
-        //    }
-        //}
+                string[] dt = new string[datos.Rows.Count];
+
+                for (int i = 0; i < datos.Rows.Count; i++)
+                {
+                    dt[i] = datos.Rows[i]["Nombre_del_rol"].ToString();
+
+                }
+                this.cmbRoles.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
+        //cuando se ingrea desde Roles
         public void cargarDatosDtg()
         {
             try
@@ -91,6 +102,30 @@ namespace Vista.Seguridad
                 MessageBox.Show(ex.Message);
             }
         }
+        
+        //cuando se ingrea desde el menu principal
+        public void cargarDatosDtgPermisos()
+        {
+            try
+            {
+
+                permisos = new Permisos();
+                permisos.Opc = 5;
+                permisosH = new PermisosHelper(permisos);
+                datos = permisosH.ListarPermisos(this.cmbRoles.Text);
+
+                if (datos.Rows.Count > 0)
+                {
+                    dtgPermisos.DataSource = datos;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //cambia el estado activo o Inactivo
         public void GuardarPermisos()
         {
             try
@@ -123,7 +158,7 @@ namespace Vista.Seguridad
                              permisosH = new PermisosHelper(permisos);
                              permisosH.Guardar();
                          }
-
+                         RegistarEnBitacora("UPDATE");
                         MessageBox.Show("Se han actualizado los permisos");
                         cargarDatosDtg();                                       
             }
@@ -138,11 +173,6 @@ namespace Vista.Seguridad
         {
             GuardarPermisos();
             
-        }
-
-        private void dtgPermisos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -168,6 +198,44 @@ namespace Vista.Seguridad
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "PERMISOS";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
+        //carga los permisos del rol seleccionado
+        private void cmbRoles_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.lbRol.Text = this.cmbRoles.Text;
+            cargarDatosDtgPermisos();
+        }
+
+        //desbloquea el combo para seleccionar un rol
+        private void chkLock_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.chkLock.Checked.Equals(false))
+            {
+                this.cmbRoles.Enabled = true;
+                cargarCmbRoles();
             }
         }
     }

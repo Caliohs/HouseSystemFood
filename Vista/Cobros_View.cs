@@ -20,11 +20,19 @@ namespace HouseSystemFood.Vista
         private OrdenesHelper ordenesH;
         private Cobros cobros;
         private CobrosHelper cobrosH;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
+        public int UserId;
 
 
         public Cobros_View()
         {
             InitializeComponent();
+        }
+        public Cobros_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
         }
 
         private void Cobros_View_Load(object sender, EventArgs e)
@@ -135,11 +143,12 @@ namespace HouseSystemFood.Vista
                     cobros.Total = int.Parse(this.lbTotal.Text);
                     cobros.MetodoPago = radioselect;
                     cobros.FechaVenta = DateTime.Today;
-                    cobros.UsuarioId = 2;
+                    cobros.UsuarioId = UserId;
                     cobros.Opc = 1;
                     cobrosH = new CobrosHelper(cobros);
                     cobrosH.Guardar();
-
+ 
+                    RegistarEnBitacora("INSERT");
                     MessageBox.Show("Pago registrado exitosamente");
                     string cambio = ((double.Parse(this.mskMonto.Text)) - (double.Parse(this.lbApagar.Text))).ToString();
                     this.lbCambio.Text = cambio;
@@ -177,7 +186,7 @@ namespace HouseSystemFood.Vista
             //            productos.Id = int.Parse(fila["IdProducto"].ToString());
             //            productosH = new ProductosHelper(productos);
             //            productosH.Eliminar();
-
+            //RegistarEnBitacora(string accion);
             //            MessageBox.Show("Se ha eliminado el registro");
             //            cargarDatosDtg();
             //        }
@@ -415,7 +424,7 @@ namespace HouseSystemFood.Vista
                     cobros.Id = int.Parse(this.mskDolar.Text);
                     cobrosH = new CobrosHelper(cobros);
                     cobrosH.ActualizaTipoCambio();
-
+                    RegistarEnBitacora("INSERT");
                  MessageBox.Show("Se actualizó el tipo de cambio a " + int.Parse(this.mskDolar.Text));
                     CargarTipoCambio();
                 this.mskDolar.Enabled = false;
@@ -452,6 +461,27 @@ namespace HouseSystemFood.Vista
         {
             this.dtgOrdenesPorCobrar.DataSource = null;
             cargarDatosDtgOrdenes();
+        }
+
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "VENTAS";
+                bitacoras.Fecha = DateTime.Now;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 

@@ -16,10 +16,20 @@ namespace Vista
         private DataTable datos;
         private Menus menu;
         private MenusHelper menuH;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
+
+
+        public int UserId;
 
         public Menus_View()
         {
             InitializeComponent();
+        }
+        public Menus_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
         }
 
         private void Menus_View_Load(object sender, EventArgs e)
@@ -34,7 +44,7 @@ namespace Vista
         }
         public void Guardar_Menu()
         {
-            //guarda un nuevo usuario
+            //guarda un nuevo menu
             try
             {
                 menu = new Menus();
@@ -46,8 +56,8 @@ namespace Vista
                     menu.Estado = int.Parse(this.cmbEstado.SelectedIndex.ToString());
                     menuH = new MenusHelper(menu);
                     menuH.Guardar();
-
-                    MessageBox.Show("Se ha reigstrado un nuevo menu");
+                    RegistarEnBitacora("INSERT");
+                    MessageBox.Show("Se ha reigstrado un nuevo item de menu");
                 }
                 else
                 {
@@ -62,8 +72,8 @@ namespace Vista
                     menu.Id = int.Parse(fila["MenuId"].ToString());
                     menuH = new MenusHelper(menu);
                     menuH.Actualizar();
-
-                    MessageBox.Show("Se ha actualizo el menu");
+                    RegistarEnBitacora("UPDATE");
+                    MessageBox.Show("Se ha actualizado el item menu");
                    
                     this.btnAceptar.Text = "Aceptar";
                 }
@@ -77,6 +87,7 @@ namespace Vista
                 MessageBox.Show(ex.Message);
             }
         }
+
         public void cargarDatosDtg()
         {
             try
@@ -173,7 +184,7 @@ namespace Vista
                         menu.Id = int.Parse(fila["MenuId"].ToString());
                         menuH = new MenusHelper(menu);
                         menuH.Eliminar();
-
+                        RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
                     }
@@ -196,6 +207,28 @@ namespace Vista
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        //registro el evento
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "MENUS";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

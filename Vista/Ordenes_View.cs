@@ -24,10 +24,19 @@ namespace HouseSystemFood.Vista
         private OrdenesHelper ordenesH; 
         private Cobros_View cobros_View;
         private Principal principal;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
+
+        public int UserId;
 
         public Ordenes_View()
         {
             InitializeComponent();
+        }
+        public Ordenes_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
         }
 
         private void Ordenes_View_Load(object sender, EventArgs e)
@@ -71,8 +80,8 @@ namespace HouseSystemFood.Vista
                     //genero un numero de orden aleatorio con el num_mesa + random 
                     string Num_orden = "0";
                     Random rnd = new Random();
-                    Num_orden = this.cmbMesa.Text + (rnd.Next());
-
+                    Num_orden = this.cmbMesa.Text + (rnd.Next().ToString().Substring(0,4));
+                    
                     int n_indices = dtgOrdenes.RowCount;
                     for (int i = 0; i < n_indices; i++)
                     {
@@ -81,7 +90,7 @@ namespace HouseSystemFood.Vista
                         {
                             ordenes = new Ordenes();
 
-                            ordenes.Num_Orden = int.Parse(Num_orden.Substring(0, 6));
+                            ordenes.Num_Orden = int.Parse(Num_orden);
                             ordenes.IdProducto = int.Parse(dtgOrdenes.Rows[i].Cells[0].Value.ToString());
                             ordenes.Cantidad = int.Parse(dtgOrdenes.Rows[i].Cells[1].Value.ToString());
                             ordenes.Total = int.Parse(dtgOrdenes.Rows[i].Cells[4].Value.ToString());
@@ -91,9 +100,10 @@ namespace HouseSystemFood.Vista
                         ordenes.Opc = 1;
                         ordenesH = new OrdenesHelper(ordenes);
                         ordenesH.Guardar();
+                        
                     }
-
-                    MessageBox.Show("Se ha almacenado la orden n° " + Num_orden.Substring(0, 6));
+                    RegistarEnBitacora("INSERT");
+                    MessageBox.Show("Se ha almacenado la orden n° " + Num_orden);
                     ReiniciarOrdenes();
                 }
             else
@@ -315,6 +325,27 @@ namespace HouseSystemFood.Vista
                 this.txtProductoSelecionado.Text = "";
                 precio = 0;
             }
+        }
+
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "ORDENES";
+                bitacoras.Fecha = DateTime.Now;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     } 
 

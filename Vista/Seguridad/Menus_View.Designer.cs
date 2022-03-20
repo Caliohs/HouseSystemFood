@@ -246,7 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Menus_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Permisos_View";
+            this.Text = "Menu";
             this.Load += new System.EventHandler(this.Menus_View_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

@@ -19,10 +19,19 @@ namespace Vista.Seguridad
         private DataTable datos;
         private Roles roles;
         private RolesHelper rolesH;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
+
+        public int UserId;
 
         public Roles_View()
         {
             InitializeComponent();
+        }
+        public Roles_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -44,7 +53,7 @@ namespace Vista.Seguridad
                 roles.Estado = int.Parse(this.cmbEstado.SelectedIndex.ToString());
                 rolesH = new RolesHelper(roles);
                 rolesH.Guardar();
-
+                    RegistarEnBitacora("INSERT");
                 MessageBox.Show("Se ha registrado un nuevo Rol o puesto");
                
                 }
@@ -61,7 +70,7 @@ namespace Vista.Seguridad
                     roles.Id = int.Parse(fila["RolId"].ToString());
                     rolesH = new RolesHelper(roles);
                     rolesH.Actualizar();
-
+                    RegistarEnBitacora("UPDATE");
                     MessageBox.Show("Se ha actualizó el Rol");
 
                     this.btnAceptar.Text = "Aceptar";
@@ -205,7 +214,7 @@ namespace Vista.Seguridad
                         roles.Id = int.Parse(fila["RolId"].ToString());
                         rolesH = new RolesHelper(roles);
                         rolesH.Eliminar();
-
+                        RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
                     }
@@ -217,6 +226,27 @@ namespace Vista.Seguridad
 
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "ROLES";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }
