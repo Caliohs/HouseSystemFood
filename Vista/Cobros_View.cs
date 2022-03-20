@@ -30,22 +30,27 @@ namespace HouseSystemFood.Vista
         private void Cobros_View_Load(object sender, EventArgs e)
         {
             cargarDatosDtgOrdenes();
+            CargarTipoCambio();
         }
 
         public void cargarDatosDtgOrdenes()
         {
             try
             {
+                
                 ordenes = new Ordenes();
                 ordenes.Opc = 2;
                 ordenesH = new OrdenesHelper(ordenes);
-                datos = ordenesH.Listar();              
-                if (datos.Rows.Count > 0)
+                datos = ordenesH.Listar();
+                if (datos.Rows.Count.Equals(0))
+                {
+                    MessageBox.Show("No hay Ordenes por cobrar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
                 {
                     dtgOrdenesPorCobrar.DataSource = datos;
-                }
-                this.dtgOrdenesPorCobrar.Columns[2].Visible = false;
-              
+                    this.dtgOrdenesPorCobrar.Columns[2].Visible = false;
+                }            
             }
             catch (Exception ex)
             {
@@ -62,10 +67,16 @@ namespace HouseSystemFood.Vista
                 ordenes.Num_Mesa = int.Parse(this.cmbMesa.Text);
                 ordenesH = new OrdenesHelper(ordenes);
                 datos = ordenesH.Buscar();
-                if (datos.Rows.Count > 0)
+                if (datos.Rows.Count.Equals(0))
+                {
+                    MessageBox.Show("No hay Ordenes para esta mesa", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
                 {
                     dtgOrdenesPorCobrar.DataSource = datos;
+                    this.dtgOrdenesPorCobrar.Columns[2].Visible = false;
                 }
+               
             }
             catch (Exception ex)
             {
@@ -82,28 +93,59 @@ namespace HouseSystemFood.Vista
         {
             try
             {
+                double n1 = 0;
+                double n2 = 0;
                 string radioselect = String.Empty;
                 foreach (RadioButton radio in gbox3.Controls)
                 {
                     if (radio.Checked)
                         radioselect = radio.Text;
                 }
-                //guarda nuevo cobro/venta/pago              
-                cobros = new Cobros();
+                if (!this.mskMonto.Text.Equals("")) // para darleun valor 0 si esta en blanco
+                {
+                    n1 = double.Parse(this.mskMonto.Text);
+                }              
+                n2 = double.Parse(this.lbApagar.Text);
+                //restrcciones y validaaciones
+                if (this.lbTotal.Text.Equals("0"))
+                {
+                    MessageBox.Show("Información incompleta!, revise el TOTAL","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (this.mskMonto.Text.Equals(""))
+                {
+                    MessageBox.Show("Información incompleta!, revise PAGAR CON", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (radioselect.Equals(""))
+                {
+                    MessageBox.Show("Información incompleta!, revise el Metodo de pago", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }                
+                else if (n1 < n2)
+                {
+                    MessageBox.Show("El monto ingresado es menor al total a pagar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else  //haga el proceso
+                {
+                    //guarda nuevo cobro/venta/pago              
+                    cobros = new Cobros();
 
-                cobros.Num_Orden = int.Parse(this.lbNorden.Text);
-                cobros.Subtotal= int.Parse(this.lbSubtotal.Text);
-                cobros.Descuento = int.Parse(this.lbDescuento.Text);
-                cobros.Iva = float.Parse(this.lbIva.Text);
-                cobros.Total = int.Parse(this.lbTotal.Text);
-                cobros.MetodoPago = radioselect;
-                cobros.FechaVenta = DateTime.Today;
-                cobros.UsuarioId = 2;
-                cobros.Opc = 1;
-                cobrosH = new CobrosHelper(cobros);
-                cobrosH.Guardar();
-                    
-                MessageBox.Show("Pago registrado exitosamente exitosamente");                 
+                    cobros.Num_Orden = int.Parse(this.lbNorden.Text);
+                    cobros.Subtotal = int.Parse(this.lbSubtotal.Text);
+                    cobros.Descuento = int.Parse(this.lbDescuento.Text);
+                    cobros.Iva = float.Parse(this.lbIva.Text);
+                    cobros.Total = int.Parse(this.lbTotal.Text);
+                    cobros.MetodoPago = radioselect;
+                    cobros.FechaVenta = DateTime.Today;
+                    cobros.UsuarioId = 2;
+                    cobros.Opc = 1;
+                    cobrosH = new CobrosHelper(cobros);
+                    cobrosH.Guardar();
+
+                    MessageBox.Show("Pago registrado exitosamente");
+                    string cambio = ((double.Parse(this.mskMonto.Text)) - (double.Parse(this.lbApagar.Text))).ToString();
+                    this.lbCambio.Text = cambio;
+                    ReiniciarCobros();
+                }
+                
             }
             catch (Exception ex)
             {
@@ -160,64 +202,39 @@ namespace HouseSystemFood.Vista
             this.Close();
         }
 
-      
-
-        private  int idP =0;
-        private int precio = 0;
-        private int cantidad = 0;
-        private int totalXproducto = 0;
-
-        public void AgregarAOrden()
+        //limpia los valores 
+        public void ReiniciarCobros()
         {
-            //try
-            //{
-            //    cantidad = int.Parse(this.lbCont.Text);
-            //    totalXproducto = precio * cantidad;
-            //  //averiguo si hay disponibles
-            //    int stock = int.Parse(dtgOrdenesPorCobrar.Rows[dtgOrdenesPorCobrar.CurrentRow.Index].Cells[4].Value.ToString());
-            //    if (cantidad != 0 && stock >= cantidad)
-            //    {
-            //        dtgOrdenDetalle.Rows.Add(idP,cantidad, this.txtMonto.Text, precio, totalXproducto);
-
-            //        int total = int.Parse(this.lbMontoT.Text);
-            //        this.lbMontoT.Text = (total + totalXproducto).ToString();
-            //    }
-            //    else
-            //    {
-            //       MessageBox.Show("Verifique la cantidad seleccionada o el Stock del producto", "Alerta");
-            //    }
-             
-            //}
-            //catch
-            //{
-            //    MessageBox.Show("Error al agregar a Orden", "Alerta");
-            //}
-            //this.lbCont.Text = "0";
-            //idP = 0;
-            //precio = 0;
-            //cantidad = 0;
-            //totalXproducto = 0;
-            //this.txtMonto.Clear();
-        }
-
-        private void btnIncluir_Click(object sender, EventArgs e)
-        {
-            AgregarAOrden();
-        }
-
-        public void ReiniciarOrdenes()
-        {
-            //this.dtgOrdenDetalle.Columns.Clear();
-            //this.dtgOrdenDetalle.Rows.Clear();
-            //this.txtMonto.Text="";
-            //this.lbCont.Text = "0";
-            //this.lbMontoT.Text = "0";
-            //this.cmbMesa.SelectedIndex = -1;
-        }
+            try
+            {
+            this.dtgOrdenesPorCobrar.DataSource = null;
+            cargarDatosDtgOrdenes();
+            this.dtgOrdenDetalle.DataSource = null;
+            this.lbSubtotal.Text = "0";
+            this.lbIva.Text = "0";
+            this.lbDescuento.Text = "0";
+            this.lbTotal.Text = "0";
+            this.lbNorden.Text = "0";
+            this.lbApagar.Text = "0";
+                foreach (RadioButton radio in gbox3.Controls)
+                {
+                    radio.Checked = false;                       
+                }
+            this.mskMonto.Text = "";
+            this.mskMonto.Enabled=true;
+            this.btnAceptar.Text = "Pagar";           
+            this.cmbDescuento.SelectedIndex = 0;
+            this.lbC.Text = "Cambio ₡ ";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+}
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            ReiniciarOrdenes();
+            ReiniciarCobros();
         }
 
         private void dtgOrdenesPorCobrar_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -237,6 +254,7 @@ namespace HouseSystemFood.Vista
                     calcular();
                 }
                 this.lbNorden.Text = nOrden.ToString();
+                this.lbCambio.Text = "0";
             }
             catch (Exception ex)
             {
@@ -244,6 +262,7 @@ namespace HouseSystemFood.Vista
             }
         }
        
+        //calcula montos de la orden
         public void calcular()
         {
             try {
@@ -272,11 +291,7 @@ namespace HouseSystemFood.Vista
             }
         }
 
-        private void txtBuscar_TextChanged(object sender, EventArgs e)
-        {
-            cargarDatosDtgOrdenesFiltro();
-        }
-
+       
         private void cmbDescuento_SelectedIndexChanged(object sender, EventArgs e)
         {
             calcular();
@@ -314,48 +329,129 @@ namespace HouseSystemFood.Vista
         {
 
         }
-
+        //gestiono las acciones de los radio BUtton
         private void rdbColon_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             this.lbPag.Text = "A pagar ₡";
             this.lbApagar.Text =this.lbTotal.Text;
-            this.btnAceptar.Text = "Pagar " + "₡" + this.lbApagar.Text;
-            this.mskMonto.Text = "0";
+            this.btnAceptar.Text = "Pagar ₡" + this.lbApagar.Text;
+            this.mskMonto.Text = "";
+            this.mskMonto.Enabled=true;
+            }
+            catch
+            {
+                MessageBox.Show("No se puede calcular un monto a pagar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void rdbDolar_CheckedChanged(object sender, EventArgs e)
         {
-            this.lbPag.Text = "A pagar $";
-            this.lbApagar.Text = (int.Parse(this.lbTotal.Text) / int.Parse(this.mskDolar.Text)).ToString();
-            this.btnAceptar.Text = "Pagar $" + this.lbApagar.Text;
-            this.mskMonto.Text = "0";
+            try
+            {
+                this.lbPag.Text = "A pagar $";
+                this.lbApagar.Text = (double.Parse(this.lbTotal.Text) / double.Parse(this.mskDolar.Text)).ToString().Substring(0, 4);
+                this.btnAceptar.Text = "Pagar $" + this.lbApagar.Text;
+                this.mskMonto.Text = "";
+                this.mskMonto.Enabled = true;
+                this.lbC.Text = "Cambio $";
+            }
+            catch
+            {
+                MessageBox.Show("No se puede calcular un monto a pagar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void rdbSinpe_CheckedChanged(object sender, EventArgs e)
         {
+            try { 
             this.lbPag.Text = "A pagar ₡";
             this.lbApagar.Text = this.lbTotal.Text;
             this.mskMonto.Enabled = false;
             this.btnAceptar.Text = "Pagar ₡" + this.lbApagar.Text;
-            this.mskMonto.Text = "0";
+            this.mskMonto.Text = this.lbApagar.Text;
+            }
+            catch
+            {
+                MessageBox.Show("No se puede calcular un monto a pagar", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
+        //inserta en txt del boton a pagar, el monto
         private void mskMonto_TextChanged(object sender, EventArgs e)
         {
+            try {
             if (this.rdbDolar.Checked == true)
             {
-                this.btnAceptar.Text = "Pagar $" + this.lbTotal.Text;
+                this.btnAceptar.Text = "Pagar $" + this.lbApagar.Text;
             }
             else
             {
-                this.btnAceptar.Text = "Pagar ₡" + this.lbTotal.Text;
+                this.btnAceptar.Text = "Pagar ₡" + this.lbApagar.Text;
             }
-           
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void lbDescuento_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //gestiono el tipo de cambio a nivel de base de datos
+        private void chkEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                if (this.chkEnable.Checked.Equals(true))
+                  {
+                    cobros = new Cobros();
+            
+                     cobros.Opc = 3;
+                    cobros.Id = int.Parse(this.mskDolar.Text);
+                    cobrosH = new CobrosHelper(cobros);
+                    cobrosH.ActualizaTipoCambio();
+
+                 MessageBox.Show("Se actualizó el tipo de cambio a " + int.Parse(this.mskDolar.Text));
+                    CargarTipoCambio();
+                this.mskDolar.Enabled = false;
+                 }
+                 else
+                 {
+                this.mskDolar.Enabled = true;
+                 }
+              }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void CargarTipoCambio()
+        {
+            try {
+                cobros = new Cobros();
+
+                cobros.Opc = 2;
+                cobrosH = new CobrosHelper(cobros);
+               datos= cobrosH.CargarTipoCambio();
+               this.mskDolar.Text = datos.Rows[0][0].ToString();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            this.dtgOrdenesPorCobrar.DataSource = null;
+            cargarDatosDtgOrdenes();
         }
     }
 

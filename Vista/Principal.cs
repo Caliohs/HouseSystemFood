@@ -21,8 +21,9 @@ namespace HouseSystemFood.Vista
     {
         public int xClick = 0, yClick = 0;
         private Usuario_View usuario_view;
-        private Menus_View menus_View;
+        private Gastos_View menus_View;
         private Roles_View roles_View;
+        private Bitacoras_View bitacoras_View;
         private Productos_View productos_View;
         private Categorias_View categorias_View;
         private Permisos permisos;
@@ -30,7 +31,9 @@ namespace HouseSystemFood.Vista
         private Ordenes_View Ordenes_View;
         private Cobros_View Cobros_View;
         private DataTable datos;
-
+        private Acercade acercade;
+        private Usuario user;
+        public int IdUser;
 
         //private Acercade acerca;
 
@@ -44,6 +47,7 @@ namespace HouseSystemFood.Vista
             InitializeComponent();
             this.statusUsuario.Text = "Bienvenid@ " + obj.Nombre;
             validarPerfil(obj.RolId);
+            IdUser = obj.Id;
         }
 
         private void validarPerfil(int RolId)
@@ -124,67 +128,25 @@ namespace HouseSystemFood.Vista
             }
         }
 
-        private void reIngresarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void gestionarHotelesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //this.addHoteles = new GestionarHoteles();
-            //this.addHoteles.MdiParent = this;
-            //this.addHoteles.Show();
-        }
-
-        private void gestionarReservasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //this.addReservas = new GestionarReservas();
-            //this.addReservas.MdiParent = this;
-            //this.addReservas.Show();
-        }
-
-        private void gestionarClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-            //this.addClientes = new GestionarClientes();
-            //this.addClientes.MdiParent = this;
-            //this.addClientes.Show();
-        }
-
-
-
         private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //this.acerca = new Acercade();
-            //this.acerca.MdiParent = this;
-            //this.acerca.Show();
-        }
-
-        private void Principal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void archivosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
+            this.acercade = new Acercade();
+            this.acercade.MdiParent = this;
+            this.acercade.Show();
         }
 
         private void UsuariosUsuatoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.usuario_view = new Usuario_View();
+            user = new Usuario();
+            user.Id = IdUser;
+            this.usuario_view = new Usuario_View(user);
             this.usuario_view.MdiParent = this;
             this.usuario_view.Show();
         }
 
         private void PermisostoolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.menus_View = new Menus_View();
+            this.menus_View = new Gastos_View();
             this.menus_View.MdiParent = this;
             this.menus_View.Show();
         }
@@ -237,6 +199,23 @@ namespace HouseSystemFood.Vista
             this.Cobros_View = new Cobros_View();
             this.Cobros_View.MdiParent =this;
             this.Cobros_View.Show();
+        }
+
+        private void btnHide_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BitacorasItem_Click(object sender, EventArgs e)
+        {
+            this.bitacoras_View = new Bitacoras_View();
+            this.bitacoras_View.MdiParent = this;
+            this.bitacoras_View.Show();
         }
 
         private void panel1_MouseMove(object sender, MouseEventArgs e)

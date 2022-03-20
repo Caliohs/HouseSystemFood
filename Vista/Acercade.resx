@@ -576,4 +576,19 @@
         QAAB/veg5P8Bxtj7j2gsYMMAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="textBox1.Text" xml:space="preserve">
+    <value>Nombre del sistema: House System Food
+
+Sistema de inventario y gestion de ventas orientado a restaurantes
+
+Desarrollador: Carlos Quiros Diaz
+
+Lenguaje: C#
+
+Modelo: MVC
+
+Año: 2022
+
+Version: 1.0</value>
+  </data>
 </root>

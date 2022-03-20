@@ -48,7 +48,8 @@ namespace HouseSystemFood.Vista
                 {
                     dtgProductos.DataSource = datos;
                 }
-            }
+                this.dtgProductos.Columns[0].Visible = false;
+            }          
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
@@ -109,41 +110,31 @@ namespace HouseSystemFood.Vista
             }
         }
 
+        // elimina un item y recalcula el total
         private void toolStripEliminar_Click(object sender, EventArgs e)
         {
             try
             {
+                //ellimna la linea
+                this.dtgOrdenes.Rows.Remove(dtgOrdenes.CurrentRow);
 
-                datos = (DataTable)dtgProductos.DataSource;
-                if (datos == null)
+                //recalcula
+                int subt = 0;
+                int n_indices = dtgOrdenes.RowCount;
+                for (int i = 0; i < n_indices; i++)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
 
-                }
-                else
-                {
-                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo);
-                    if (result.Equals(DialogResult.Yes))
+                    if (dtgOrdenes.CurrentRow != null)
                     {
-                        int indice = dtgProductos.CurrentRow.Index;
-                        DataRow fila = datos.Rows[indice];
-
-                        productos = new Productos();
-                        productos.Opc = 5;
-                        productos.Id = int.Parse(fila["IdProducto"].ToString());
-                        productosH = new ProductosHelper(productos);
-                        productosH.Eliminar();
-
-                        MessageBox.Show("Se ha eliminado el registro");
-                        cargarDatosDtg();
+                        ordenes = new Ordenes();
+                        subt = subt + int.Parse(dtgOrdenes.Rows[i].Cells[4].Value.ToString());
                     }
 
-
-                }
+                }               
+                this.lbMontoT.Text = subt.ToString();
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
@@ -300,11 +291,30 @@ namespace HouseSystemFood.Vista
             this.lbCont.Text = "0";
             this.lbMontoT.Text = "0";
             this.cmbMesa.SelectedIndex = -1;
+            CrearDataGridOrdenes();
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             ReiniciarOrdenes();
+        }
+
+        private void dtgProductos_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //capturo id producto
+                idP = int.Parse(this.dtgProductos.CurrentRow.Cells[0].Value.ToString());
+                //capturo  producto
+                this.txtProductoSelecionado.Text = dtgProductos.CurrentRow.Cells[1].Value.ToString();
+                //capturo id precio
+                precio = int.Parse(this.dtgProductos.CurrentRow.Cells[3].Value.ToString());
+            }
+            catch
+            {
+                this.txtProductoSelecionado.Text = "";
+                precio = 0;
+            }
         }
     } 
 

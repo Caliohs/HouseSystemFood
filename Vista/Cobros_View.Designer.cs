@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cobros_View));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -42,6 +43,23 @@
             this.toolStripEliminar = new System.Windows.Forms.ToolStripMenuItem();
             this.lbPagaC = new System.Windows.Forms.Label();
             this.gbox = new System.Windows.Forms.GroupBox();
+            this.btnRecargar = new System.Windows.Forms.Button();
+            this.gBox2 = new System.Windows.Forms.GroupBox();
+            this.lbtar = new System.Windows.Forms.Label();
+            this.lbPag = new System.Windows.Forms.Label();
+            this.lbApagar = new System.Windows.Forms.Label();
+            this.chkEnable = new System.Windows.Forms.CheckBox();
+            this.gbox3 = new System.Windows.Forms.GroupBox();
+            this.rdbDolar = new System.Windows.Forms.RadioButton();
+            this.rdbSinpe = new System.Windows.Forms.RadioButton();
+            this.rdbColon = new System.Windows.Forms.RadioButton();
+            this.lbtipo = new System.Windows.Forms.Label();
+            this.mskDolar = new System.Windows.Forms.MaskedTextBox();
+            this.mskMonto = new System.Windows.Forms.MaskedTextBox();
+            this.lbn = new System.Windows.Forms.Label();
+            this.lbNorden = new System.Windows.Forms.Label();
+            this.lbC = new System.Windows.Forms.Label();
+            this.lbCambio = new System.Windows.Forms.Label();
             this.gboxT = new System.Windows.Forms.GroupBox();
             this.lbIv = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
@@ -57,41 +75,27 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cmbMesa = new System.Windows.Forms.ComboBox();
             this.lbProducto = new System.Windows.Forms.Label();
-            this.lbTot = new System.Windows.Forms.Label();
-            this.lbCambio = new System.Windows.Forms.Label();
-            this.gBox2 = new System.Windows.Forms.GroupBox();
             this.dtgOrdenDetalle = new System.Windows.Forms.DataGridView();
-            this.lbn = new System.Windows.Forms.Label();
-            this.lbNorden = new System.Windows.Forms.Label();
-            this.mskMonto = new System.Windows.Forms.MaskedTextBox();
-            this.mskDolar = new System.Windows.Forms.MaskedTextBox();
-            this.lbtipo = new System.Windows.Forms.Label();
-            this.rdbColon = new System.Windows.Forms.RadioButton();
-            this.rdbDolar = new System.Windows.Forms.RadioButton();
-            this.rdbSinpe = new System.Windows.Forms.RadioButton();
-            this.gbox3 = new System.Windows.Forms.GroupBox();
-            this.chkEnable = new System.Windows.Forms.CheckBox();
-            this.lbPag = new System.Windows.Forms.Label();
-            this.lbApagar = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenesPorCobrar)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
             this.gbox.SuspendLayout();
-            this.gboxT.SuspendLayout();
             this.gBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenDetalle)).BeginInit();
             this.gbox3.SuspendLayout();
+            this.gboxT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Location = new System.Drawing.Point(1070, 2);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(1092, 3);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 24);
+            this.btnCerrar.Size = new System.Drawing.Size(56, 23);
             this.btnCerrar.TabIndex = 10;
-            this.btnCerrar.Text = "x";
+            this.btnCerrar.Text = "X";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -112,9 +116,10 @@
             this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.lbTitulo);
+            this.panel2.ForeColor = System.Drawing.Color.Transparent;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1101, 30);
+            this.panel2.Size = new System.Drawing.Size(1151, 30);
             this.panel2.TabIndex = 41;
             // 
             // btnCancelar
@@ -155,17 +160,17 @@
             this.dtgOrdenesPorCobrar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgOrdenesPorCobrar.BackgroundColor = System.Drawing.Color.White;
             this.dtgOrdenesPorCobrar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgOrdenesPorCobrar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgOrdenesPorCobrar.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dtgOrdenesPorCobrar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgOrdenesPorCobrar.ContextMenuStrip = this.contextMenuStrip1;
-            this.dtgOrdenesPorCobrar.Location = new System.Drawing.Point(23, 46);
+            this.dtgOrdenesPorCobrar.Location = new System.Drawing.Point(23, 57);
             this.dtgOrdenesPorCobrar.Name = "dtgOrdenesPorCobrar";
             this.dtgOrdenesPorCobrar.ReadOnly = true;
             this.dtgOrdenesPorCobrar.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
@@ -205,6 +210,8 @@
             // gbox
             // 
             this.gbox.BackColor = System.Drawing.SystemColors.Control;
+            this.gbox.Controls.Add(this.btnRecargar);
+            this.gbox.Controls.Add(this.gBox2);
             this.gbox.Controls.Add(this.gboxT);
             this.gbox.Controls.Add(this.label4);
             this.gbox.Controls.Add(this.cmbDescuento);
@@ -212,15 +219,222 @@
             this.gbox.Controls.Add(this.label1);
             this.gbox.Controls.Add(this.cmbMesa);
             this.gbox.Controls.Add(this.lbProducto);
-            this.gbox.Controls.Add(this.gBox2);
             this.gbox.Controls.Add(this.dtgOrdenDetalle);
             this.gbox.Controls.Add(this.dtgOrdenesPorCobrar);
+            this.gbox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbox.Location = new System.Drawing.Point(12, 36);
             this.gbox.Name = "gbox";
-            this.gbox.Size = new System.Drawing.Size(1076, 582);
+            this.gbox.Size = new System.Drawing.Size(1126, 574);
             this.gbox.TabIndex = 84;
             this.gbox.TabStop = false;
             this.gbox.Text = "Gestion de Ordenes realizadas";
+            // 
+            // btnRecargar
+            // 
+            this.btnRecargar.BackColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRecargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRecargar.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRecargar.Image = ((System.Drawing.Image)(resources.GetObject("btnRecargar.Image")));
+            this.btnRecargar.Location = new System.Drawing.Point(350, 26);
+            this.btnRecargar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRecargar.Name = "btnRecargar";
+            this.btnRecargar.Size = new System.Drawing.Size(39, 30);
+            this.btnRecargar.TabIndex = 108;
+            this.btnRecargar.UseVisualStyleBackColor = false;
+            this.btnRecargar.Click += new System.EventHandler(this.btnRecargar_Click);
+            // 
+            // gBox2
+            // 
+            this.gBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gBox2.Controls.Add(this.lbtar);
+            this.gBox2.Controls.Add(this.lbPag);
+            this.gBox2.Controls.Add(this.lbApagar);
+            this.gBox2.Controls.Add(this.chkEnable);
+            this.gBox2.Controls.Add(this.gbox3);
+            this.gBox2.Controls.Add(this.lbtipo);
+            this.gBox2.Controls.Add(this.mskDolar);
+            this.gBox2.Controls.Add(this.mskMonto);
+            this.gBox2.Controls.Add(this.lbn);
+            this.gBox2.Controls.Add(this.lbNorden);
+            this.gBox2.Controls.Add(this.lbPagaC);
+            this.gBox2.Controls.Add(this.lbC);
+            this.gBox2.Controls.Add(this.lbCambio);
+            this.gBox2.Controls.Add(this.btnCancelar);
+            this.gBox2.Controls.Add(this.btnAceptar);
+            this.gBox2.Location = new System.Drawing.Point(522, 71);
+            this.gBox2.Name = "gBox2";
+            this.gBox2.Size = new System.Drawing.Size(489, 435);
+            this.gBox2.TabIndex = 91;
+            this.gBox2.TabStop = false;
+            this.gBox2.Text = "Pagar";
+            this.gBox2.Enter += new System.EventHandler(this.gBox2_Enter);
+            // 
+            // lbtar
+            // 
+            this.lbtar.AutoSize = true;
+            this.lbtar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtar.Location = new System.Drawing.Point(285, 114);
+            this.lbtar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbtar.Name = "lbtar";
+            this.lbtar.Size = new System.Drawing.Size(51, 15);
+            this.lbtar.TabIndex = 112;
+            this.lbtar.Text = "/ Tarjeta";
+            // 
+            // lbPag
+            // 
+            this.lbPag.AutoSize = true;
+            this.lbPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPag.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbPag.Location = new System.Drawing.Point(17, 155);
+            this.lbPag.Name = "lbPag";
+            this.lbPag.Size = new System.Drawing.Size(87, 18);
+            this.lbPag.TabIndex = 107;
+            this.lbPag.Text = "A pagar ₡:";
+            // 
+            // lbApagar
+            // 
+            this.lbApagar.AutoSize = true;
+            this.lbApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApagar.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbApagar.Location = new System.Drawing.Point(106, 155);
+            this.lbApagar.Name = "lbApagar";
+            this.lbApagar.Size = new System.Drawing.Size(17, 18);
+            this.lbApagar.TabIndex = 106;
+            this.lbApagar.Text = "0";
+            // 
+            // chkEnable
+            // 
+            this.chkEnable.AutoSize = true;
+            this.chkEnable.Checked = true;
+            this.chkEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkEnable.Location = new System.Drawing.Point(436, 37);
+            this.chkEnable.Name = "chkEnable";
+            this.chkEnable.Size = new System.Drawing.Size(15, 14);
+            this.chkEnable.TabIndex = 105;
+            this.chkEnable.UseVisualStyleBackColor = true;
+            this.chkEnable.CheckedChanged += new System.EventHandler(this.chkEnable_CheckedChanged);
+            // 
+            // gbox3
+            // 
+            this.gbox3.Controls.Add(this.rdbDolar);
+            this.gbox3.Controls.Add(this.rdbSinpe);
+            this.gbox3.Controls.Add(this.rdbColon);
+            this.gbox3.Location = new System.Drawing.Point(16, 66);
+            this.gbox3.Name = "gbox3";
+            this.gbox3.Size = new System.Drawing.Size(265, 76);
+            this.gbox3.TabIndex = 104;
+            this.gbox3.TabStop = false;
+            this.gbox3.Text = "Tipo de pago";
+            // 
+            // rdbDolar
+            // 
+            this.rdbDolar.AutoSize = true;
+            this.rdbDolar.Location = new System.Drawing.Point(95, 46);
+            this.rdbDolar.Name = "rdbDolar";
+            this.rdbDolar.Size = new System.Drawing.Size(68, 19);
+            this.rdbDolar.TabIndex = 102;
+            this.rdbDolar.Text = "Dolares";
+            this.rdbDolar.UseVisualStyleBackColor = true;
+            this.rdbDolar.CheckedChanged += new System.EventHandler(this.rdbDolar_CheckedChanged);
+            // 
+            // rdbSinpe
+            // 
+            this.rdbSinpe.AutoSize = true;
+            this.rdbSinpe.Location = new System.Drawing.Point(178, 46);
+            this.rdbSinpe.Name = "rdbSinpe";
+            this.rdbSinpe.Size = new System.Drawing.Size(86, 19);
+            this.rdbSinpe.TabIndex = 103;
+            this.rdbSinpe.Text = "SinpeMovil";
+            this.rdbSinpe.UseVisualStyleBackColor = true;
+            this.rdbSinpe.CheckedChanged += new System.EventHandler(this.rdbSinpe_CheckedChanged);
+            // 
+            // rdbColon
+            // 
+            this.rdbColon.AutoSize = true;
+            this.rdbColon.Location = new System.Drawing.Point(15, 46);
+            this.rdbColon.Name = "rdbColon";
+            this.rdbColon.Size = new System.Drawing.Size(70, 19);
+            this.rdbColon.TabIndex = 101;
+            this.rdbColon.Text = "Colones";
+            this.rdbColon.UseVisualStyleBackColor = true;
+            this.rdbColon.CheckedChanged += new System.EventHandler(this.rdbColon_CheckedChanged);
+            // 
+            // lbtipo
+            // 
+            this.lbtipo.AutoSize = true;
+            this.lbtipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbtipo.Location = new System.Drawing.Point(326, 15);
+            this.lbtipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbtipo.Name = "lbtipo";
+            this.lbtipo.Size = new System.Drawing.Size(102, 15);
+            this.lbtipo.TabIndex = 99;
+            this.lbtipo.Text = "Tipo de cambio $";
+            // 
+            // mskDolar
+            // 
+            this.mskDolar.Enabled = false;
+            this.mskDolar.Location = new System.Drawing.Point(329, 33);
+            this.mskDolar.Mask = "999999999";
+            this.mskDolar.Name = "mskDolar";
+            this.mskDolar.Size = new System.Drawing.Size(100, 21);
+            this.mskDolar.TabIndex = 98;
+            this.mskDolar.ValidatingType = typeof(int);
+            // 
+            // mskMonto
+            // 
+            this.mskMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskMonto.Location = new System.Drawing.Point(20, 205);
+            this.mskMonto.Mask = "999999999";
+            this.mskMonto.Name = "mskMonto";
+            this.mskMonto.Size = new System.Drawing.Size(103, 24);
+            this.mskMonto.TabIndex = 97;
+            this.mskMonto.ValidatingType = typeof(int);
+            this.mskMonto.TextChanged += new System.EventHandler(this.mskMonto_TextChanged);
+            // 
+            // lbn
+            // 
+            this.lbn.AutoSize = true;
+            this.lbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbn.ForeColor = System.Drawing.Color.Red;
+            this.lbn.Location = new System.Drawing.Point(26, 31);
+            this.lbn.Name = "lbn";
+            this.lbn.Size = new System.Drawing.Size(108, 25);
+            this.lbn.TabIndex = 96;
+            this.lbn.Text = "N° Orden";
+            // 
+            // lbNorden
+            // 
+            this.lbNorden.AutoSize = true;
+            this.lbNorden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNorden.ForeColor = System.Drawing.Color.Red;
+            this.lbNorden.Location = new System.Drawing.Point(140, 31);
+            this.lbNorden.Name = "lbNorden";
+            this.lbNorden.Size = new System.Drawing.Size(25, 25);
+            this.lbNorden.TabIndex = 95;
+            this.lbNorden.Text = "0";
+            // 
+            // lbC
+            // 
+            this.lbC.AutoSize = true;
+            this.lbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbC.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbC.Location = new System.Drawing.Point(16, 363);
+            this.lbC.Name = "lbC";
+            this.lbC.Size = new System.Drawing.Size(88, 18);
+            this.lbC.TabIndex = 94;
+            this.lbC.Text = "Cambio ₡:";
+            // 
+            // lbCambio
+            // 
+            this.lbCambio.AutoSize = true;
+            this.lbCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCambio.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbCambio.Location = new System.Drawing.Point(110, 363);
+            this.lbCambio.Name = "lbCambio";
+            this.lbCambio.Size = new System.Drawing.Size(17, 18);
+            this.lbCambio.TabIndex = 91;
+            this.lbCambio.Text = "0";
             // 
             // gboxT
             // 
@@ -235,7 +449,7 @@
             this.gboxT.Controls.Add(this.lbst);
             this.gboxT.Location = new System.Drawing.Point(129, 461);
             this.gboxT.Name = "gboxT";
-            this.gboxT.Size = new System.Drawing.Size(260, 115);
+            this.gboxT.Size = new System.Drawing.Size(260, 104);
             this.gboxT.TabIndex = 111;
             this.gboxT.TabStop = false;
             this.gboxT.Text = "Detalles";
@@ -256,7 +470,7 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.Red;
-            this.lbTotal.Location = new System.Drawing.Point(149, 92);
+            this.lbTotal.Location = new System.Drawing.Point(149, 78);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(19, 20);
             this.lbTotal.TabIndex = 101;
@@ -278,7 +492,7 @@
             this.lbt.AutoSize = true;
             this.lbt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbt.ForeColor = System.Drawing.Color.Red;
-            this.lbt.Location = new System.Drawing.Point(61, 92);
+            this.lbt.Location = new System.Drawing.Point(61, 78);
             this.lbt.Name = "lbt";
             this.lbt.Size = new System.Drawing.Size(82, 20);
             this.lbt.TabIndex = 102;
@@ -362,7 +576,7 @@
             // 
             this.lbBuscar.AutoSize = true;
             this.lbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuscar.Location = new System.Drawing.Point(184, 28);
+            this.lbBuscar.Location = new System.Drawing.Point(246, 10);
             this.lbBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(100, 15);
@@ -373,7 +587,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 197);
+            this.label1.Location = new System.Drawing.Point(20, 208);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 15);
@@ -401,7 +615,7 @@
             "13",
             "14",
             "15"});
-            this.cmbMesa.Location = new System.Drawing.Point(289, 17);
+            this.cmbMesa.Location = new System.Drawing.Point(249, 28);
             this.cmbMesa.Name = "cmbMesa";
             this.cmbMesa.Size = new System.Drawing.Size(100, 26);
             this.cmbMesa.TabIndex = 96;
@@ -411,64 +625,16 @@
             // 
             this.lbProducto.AutoSize = true;
             this.lbProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbProducto.Location = new System.Drawing.Point(20, 28);
+            this.lbProducto.Location = new System.Drawing.Point(20, 39);
             this.lbProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbProducto.Name = "lbProducto";
             this.lbProducto.Size = new System.Drawing.Size(113, 15);
             this.lbProducto.TabIndex = 95;
             this.lbProducto.Text = "Ordenes por cobrar";
             // 
-            // lbTot
-            // 
-            this.lbTot.AutoSize = true;
-            this.lbTot.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTot.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbTot.Location = new System.Drawing.Point(16, 363);
-            this.lbTot.Name = "lbTot";
-            this.lbTot.Size = new System.Drawing.Size(88, 18);
-            this.lbTot.TabIndex = 94;
-            this.lbTot.Text = "Cambio ₡:";
-            // 
-            // lbCambio
-            // 
-            this.lbCambio.AutoSize = true;
-            this.lbCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCambio.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbCambio.Location = new System.Drawing.Point(110, 363);
-            this.lbCambio.Name = "lbCambio";
-            this.lbCambio.Size = new System.Drawing.Size(17, 18);
-            this.lbCambio.TabIndex = 91;
-            this.lbCambio.Text = "0";
-            // 
-            // gBox2
-            // 
-            this.gBox2.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.gBox2.Controls.Add(this.lbPag);
-            this.gBox2.Controls.Add(this.lbApagar);
-            this.gBox2.Controls.Add(this.chkEnable);
-            this.gBox2.Controls.Add(this.gbox3);
-            this.gBox2.Controls.Add(this.lbtipo);
-            this.gBox2.Controls.Add(this.mskDolar);
-            this.gBox2.Controls.Add(this.mskMonto);
-            this.gBox2.Controls.Add(this.lbn);
-            this.gBox2.Controls.Add(this.lbNorden);
-            this.gBox2.Controls.Add(this.lbPagaC);
-            this.gBox2.Controls.Add(this.lbTot);
-            this.gBox2.Controls.Add(this.lbCambio);
-            this.gBox2.Controls.Add(this.btnCancelar);
-            this.gBox2.Controls.Add(this.btnAceptar);
-            this.gBox2.Location = new System.Drawing.Point(490, 71);
-            this.gBox2.Name = "gBox2";
-            this.gBox2.Size = new System.Drawing.Size(489, 435);
-            this.gBox2.TabIndex = 91;
-            this.gBox2.TabStop = false;
-            this.gBox2.Text = "Pagar";
-            this.gBox2.Enter += new System.EventHandler(this.gBox2_Enter);
-            // 
             // dtgOrdenDetalle
             // 
             this.dtgOrdenDetalle.AllowUserToAddRows = false;
-            this.dtgOrdenDetalle.AllowUserToDeleteRows = false;
             this.dtgOrdenDetalle.AllowUserToResizeColumns = false;
             this.dtgOrdenDetalle.AllowUserToResizeRows = false;
             this.dtgOrdenDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -476,177 +642,47 @@
             this.dtgOrdenDetalle.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgOrdenDetalle.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dtgOrdenDetalle.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgOrdenDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.SeaGreen;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgOrdenDetalle.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dtgOrdenDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgOrdenDetalle.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgOrdenDetalle.DefaultCellStyle = dataGridViewCellStyle13;
             this.dtgOrdenDetalle.Enabled = false;
-            this.dtgOrdenDetalle.Location = new System.Drawing.Point(23, 215);
+            this.dtgOrdenDetalle.Location = new System.Drawing.Point(23, 226);
             this.dtgOrdenDetalle.Name = "dtgOrdenDetalle";
             this.dtgOrdenDetalle.ReadOnly = true;
             this.dtgOrdenDetalle.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtgOrdenDetalle.RowHeadersVisible = false;
             this.dtgOrdenDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgOrdenDetalle.ShowCellToolTips = false;
-            this.dtgOrdenDetalle.Size = new System.Drawing.Size(366, 237);
+            this.dtgOrdenDetalle.Size = new System.Drawing.Size(366, 226);
             this.dtgOrdenDetalle.TabIndex = 86;
-            // 
-            // lbn
-            // 
-            this.lbn.AutoSize = true;
-            this.lbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbn.ForeColor = System.Drawing.Color.Red;
-            this.lbn.Location = new System.Drawing.Point(26, 31);
-            this.lbn.Name = "lbn";
-            this.lbn.Size = new System.Drawing.Size(108, 25);
-            this.lbn.TabIndex = 96;
-            this.lbn.Text = "N° Orden";
-            // 
-            // lbNorden
-            // 
-            this.lbNorden.AutoSize = true;
-            this.lbNorden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNorden.ForeColor = System.Drawing.Color.Red;
-            this.lbNorden.Location = new System.Drawing.Point(140, 31);
-            this.lbNorden.Name = "lbNorden";
-            this.lbNorden.Size = new System.Drawing.Size(25, 25);
-            this.lbNorden.TabIndex = 95;
-            this.lbNorden.Text = "0";
-            // 
-            // mskMonto
-            // 
-            this.mskMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskMonto.Location = new System.Drawing.Point(20, 205);
-            this.mskMonto.Mask = "999999999";
-            this.mskMonto.Name = "mskMonto";
-            this.mskMonto.Size = new System.Drawing.Size(103, 24);
-            this.mskMonto.TabIndex = 97;
-            this.mskMonto.ValidatingType = typeof(int);
-            this.mskMonto.TextChanged += new System.EventHandler(this.mskMonto_TextChanged);
-            // 
-            // mskDolar
-            // 
-            this.mskDolar.Location = new System.Drawing.Point(329, 33);
-            this.mskDolar.Mask = "999999999";
-            this.mskDolar.Name = "mskDolar";
-            this.mskDolar.Size = new System.Drawing.Size(100, 21);
-            this.mskDolar.TabIndex = 98;
-            this.mskDolar.ValidatingType = typeof(int);
-            // 
-            // lbtipo
-            // 
-            this.lbtipo.AutoSize = true;
-            this.lbtipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtipo.Location = new System.Drawing.Point(326, 15);
-            this.lbtipo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lbtipo.Name = "lbtipo";
-            this.lbtipo.Size = new System.Drawing.Size(102, 15);
-            this.lbtipo.TabIndex = 99;
-            this.lbtipo.Text = "Tipo de cambio $";
-            // 
-            // rdbColon
-            // 
-            this.rdbColon.AutoSize = true;
-            this.rdbColon.Location = new System.Drawing.Point(15, 46);
-            this.rdbColon.Name = "rdbColon";
-            this.rdbColon.Size = new System.Drawing.Size(70, 19);
-            this.rdbColon.TabIndex = 101;
-            this.rdbColon.Text = "Colones";
-            this.rdbColon.UseVisualStyleBackColor = true;
-            this.rdbColon.CheckedChanged += new System.EventHandler(this.rdbColon_CheckedChanged);
-            // 
-            // rdbDolar
-            // 
-            this.rdbDolar.AutoSize = true;
-            this.rdbDolar.Location = new System.Drawing.Point(95, 46);
-            this.rdbDolar.Name = "rdbDolar";
-            this.rdbDolar.Size = new System.Drawing.Size(68, 19);
-            this.rdbDolar.TabIndex = 102;
-            this.rdbDolar.Text = "Dolares";
-            this.rdbDolar.UseVisualStyleBackColor = true;
-            this.rdbDolar.CheckedChanged += new System.EventHandler(this.rdbDolar_CheckedChanged);
-            // 
-            // rdbSinpe
-            // 
-            this.rdbSinpe.AutoSize = true;
-            this.rdbSinpe.Location = new System.Drawing.Point(178, 46);
-            this.rdbSinpe.Name = "rdbSinpe";
-            this.rdbSinpe.Size = new System.Drawing.Size(86, 19);
-            this.rdbSinpe.TabIndex = 103;
-            this.rdbSinpe.Text = "SinpeMovil";
-            this.rdbSinpe.UseVisualStyleBackColor = true;
-            this.rdbSinpe.CheckedChanged += new System.EventHandler(this.rdbSinpe_CheckedChanged);
-            // 
-            // gbox3
-            // 
-            this.gbox3.Controls.Add(this.rdbDolar);
-            this.gbox3.Controls.Add(this.rdbSinpe);
-            this.gbox3.Controls.Add(this.rdbColon);
-            this.gbox3.Location = new System.Drawing.Point(16, 66);
-            this.gbox3.Name = "gbox3";
-            this.gbox3.Size = new System.Drawing.Size(286, 76);
-            this.gbox3.TabIndex = 104;
-            this.gbox3.TabStop = false;
-            this.gbox3.Text = "Tipo de pago";
-            // 
-            // chkEnable
-            // 
-            this.chkEnable.AutoSize = true;
-            this.chkEnable.Checked = true;
-            this.chkEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkEnable.Location = new System.Drawing.Point(436, 37);
-            this.chkEnable.Name = "chkEnable";
-            this.chkEnable.Size = new System.Drawing.Size(15, 14);
-            this.chkEnable.TabIndex = 105;
-            this.chkEnable.UseVisualStyleBackColor = true;
-            // 
-            // lbPag
-            // 
-            this.lbPag.AutoSize = true;
-            this.lbPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPag.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbPag.Location = new System.Drawing.Point(17, 155);
-            this.lbPag.Name = "lbPag";
-            this.lbPag.Size = new System.Drawing.Size(87, 18);
-            this.lbPag.TabIndex = 107;
-            this.lbPag.Text = "A pagar ₡:";
-            // 
-            // lbApagar
-            // 
-            this.lbApagar.AutoSize = true;
-            this.lbApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApagar.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbApagar.Location = new System.Drawing.Point(106, 155);
-            this.lbApagar.Name = "lbApagar";
-            this.lbApagar.Size = new System.Drawing.Size(17, 18);
-            this.lbApagar.TabIndex = 106;
-            this.lbApagar.Text = "0";
             // 
             // Cobros_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1100, 630);
+            this.ClientSize = new System.Drawing.Size(1150, 618);
             this.Controls.Add(this.gbox);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Location = new System.Drawing.Point(90, 30);
             this.Name = "Cobros_View";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Cobros";
             this.Load += new System.EventHandler(this.Cobros_View_Load);
             this.panel2.ResumeLayout(false);
@@ -655,13 +691,13 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.gbox.ResumeLayout(false);
             this.gbox.PerformLayout();
-            this.gboxT.ResumeLayout(false);
-            this.gboxT.PerformLayout();
             this.gBox2.ResumeLayout(false);
             this.gBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenDetalle)).EndInit();
             this.gbox3.ResumeLayout(false);
             this.gbox3.PerformLayout();
+            this.gboxT.ResumeLayout(false);
+            this.gboxT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgOrdenDetalle)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -680,7 +716,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripEliminar;
         private System.Windows.Forms.ComboBox cmbMesa;
         private System.Windows.Forms.Label lbProducto;
-        private System.Windows.Forms.Label lbTot;
+        private System.Windows.Forms.Label lbC;
         private System.Windows.Forms.Label lbCambio;
         private System.Windows.Forms.GroupBox gBox2;
         private System.Windows.Forms.DataGridView dtgOrdenDetalle;
@@ -709,5 +745,7 @@
         private System.Windows.Forms.Label lbPag;
         private System.Windows.Forms.Label lbApagar;
         private System.Windows.Forms.CheckBox chkEnable;
+        private System.Windows.Forms.Button btnRecargar;
+        private System.Windows.Forms.Label lbtar;
     }
 }

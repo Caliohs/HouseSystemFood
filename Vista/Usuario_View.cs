@@ -20,11 +20,20 @@ namespace HouseSystemFood.Vista
         private UsuarioHelper usuarioH;
         private Roles roles;
         private RolesHelper rolesH;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
 
+        public int UserId;
         public Usuario_View()
         {
             InitializeComponent();
         }
+        public Usuario_View(Usuario obj)
+        {
+            InitializeComponent();
+            UserId = obj.Id;
+        }
+
 
         private void Usuario_View_Load(object sender, EventArgs e)
         {
@@ -65,14 +74,11 @@ namespace HouseSystemFood.Vista
                 //obtengo elrol Id
                 datos = rolesH.GetRolId(this.cmbRoles.Text);            
                 string[] dt = new string[datos.Rows.Count];           
-                dt[0] = datos.Rows[0]["RolId"].ToString();
-
-               
+                dt[0] = datos.Rows[0]["RolId"].ToString();         
 
                 if (this.txtContraeña.Text.Equals(this.txtConfirmar.Text))
                 {
-                    usuario = new Usuario();
-                   
+                    usuario = new Usuario();                
                     usuario.User = this.txtUsuario.Text;
                     usuario.Nombre = this.txtNombre.Text;
                     usuario.RolId = int.Parse(dt[0]);
@@ -84,7 +90,8 @@ namespace HouseSystemFood.Vista
                         usuario.Opc = 1;
                         usuarioH = new UsuarioHelper(usuario);
                         usuarioH.Guardar();
-
+                        //registro el evento
+                        RegistarEnBitacora("INSERT");
                         MessageBox.Show("Se ha almacenado un nuevo Usuario");
                     }
                     else
@@ -97,7 +104,8 @@ namespace HouseSystemFood.Vista
                         usuario.Id = int.Parse(fila["UsuariosId"].ToString());
                         usuarioH = new UsuarioHelper(usuario);
                         usuarioH.Actualizar();
-
+                        //registro el evento
+                        RegistarEnBitacora("UPDATE");
                         MessageBox.Show("Se ha actualizó el Usuario");
 
                         this.btnAceptar.Text = "Aceptar";
@@ -124,8 +132,7 @@ namespace HouseSystemFood.Vista
                 usuario.Opc = 3;
                 usuario.Nombre = this.txtBuscar.Text;
                 usuarioH = new UsuarioHelper(usuario);
-                datos = usuarioH.Buscar();
-
+                datos = usuarioH.Buscar();             
                 if (datos.Rows.Count > 0)
                 {
                     dtgUsuario.DataSource = datos;
@@ -194,7 +201,8 @@ namespace HouseSystemFood.Vista
                         usuario.Id = int.Parse(fila["UsuariosId"].ToString());
                         usuarioH = new UsuarioHelper(usuario);
                         usuarioH.Eliminar();
-
+                        //registro el evento
+                        RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
                     }
@@ -261,6 +269,28 @@ namespace HouseSystemFood.Vista
             }
 
             return strBuilder.ToString();
+        }
+
+        //registro el evento
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "USUARIOS";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+           
         }
     }
 

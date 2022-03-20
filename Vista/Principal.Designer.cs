@@ -39,6 +39,8 @@ namespace HouseSystemFood.Vista
             this.PermisosItem = new System.Windows.Forms.ToolStripMenuItem();
             this.BitacorasItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OrdenesItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OrdenarItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CobrarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CierresItem = new System.Windows.Forms.ToolStripMenuItem();
             this.GastosItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ReportesItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,10 +50,9 @@ namespace HouseSystemFood.Vista
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.statusUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnHide = new System.Windows.Forms.Button();
             this.lbTitle = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.OrdenarItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.CobrarItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -89,7 +90,6 @@ namespace HouseSystemFood.Vista
             this.MantenimientoItem.Name = "MantenimientoItem";
             this.MantenimientoItem.Size = new System.Drawing.Size(128, 25);
             this.MantenimientoItem.Text = "Mantenimiento";
-            this.MantenimientoItem.Click += new System.EventHandler(this.archivosToolStripMenuItem_Click);
             // 
             // CategoriasItem
             // 
@@ -119,7 +119,7 @@ namespace HouseSystemFood.Vista
             this.PermisosItem,
             this.BitacorasItem});
             this.SeguridadItem.Name = "SeguridadItem";
-            this.SeguridadItem.Size = new System.Drawing.Size(154, 26);
+            this.SeguridadItem.Size = new System.Drawing.Size(180, 26);
             this.SeguridadItem.Text = "Seguridad";
             // 
             // RolesItem
@@ -141,6 +141,7 @@ namespace HouseSystemFood.Vista
             this.BitacorasItem.Name = "BitacorasItem";
             this.BitacorasItem.Size = new System.Drawing.Size(201, 26);
             this.BitacorasItem.Text = "Bitacoras";
+            this.BitacorasItem.Click += new System.EventHandler(this.BitacorasItem_Click);
             // 
             // OrdenesItem
             // 
@@ -150,6 +151,20 @@ namespace HouseSystemFood.Vista
             this.OrdenesItem.Name = "OrdenesItem";
             this.OrdenesItem.Size = new System.Drawing.Size(81, 25);
             this.OrdenesItem.Text = "Ordenes";
+            // 
+            // OrdenarItem
+            // 
+            this.OrdenarItem.Name = "OrdenarItem";
+            this.OrdenarItem.Size = new System.Drawing.Size(138, 26);
+            this.OrdenarItem.Text = "Ordenar";
+            this.OrdenarItem.Click += new System.EventHandler(this.OrdenarItem_Click);
+            // 
+            // CobrarItem
+            // 
+            this.CobrarItem.Name = "CobrarItem";
+            this.CobrarItem.Size = new System.Drawing.Size(138, 26);
+            this.CobrarItem.Text = "Cobrar";
+            this.CobrarItem.Click += new System.EventHandler(this.CobrarItem_Click);
             // 
             // CierresItem
             // 
@@ -210,6 +225,7 @@ namespace HouseSystemFood.Vista
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.Controls.Add(this.btnHide);
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -217,6 +233,19 @@ namespace HouseSystemFood.Vista
             this.panel1.Size = new System.Drawing.Size(1350, 30);
             this.panel1.TabIndex = 4;
             this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            // 
+            // btnHide
+            // 
+            this.btnHide.BackColor = System.Drawing.Color.Transparent;
+            this.btnHide.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHide.ForeColor = System.Drawing.Color.White;
+            this.btnHide.Location = new System.Drawing.Point(1227, 3);
+            this.btnHide.Name = "btnHide";
+            this.btnHide.Size = new System.Drawing.Size(57, 24);
+            this.btnHide.TabIndex = 7;
+            this.btnHide.Text = "___";
+            this.btnHide.UseVisualStyleBackColor = false;
+            this.btnHide.Click += new System.EventHandler(this.btnHide_Click);
             // 
             // lbTitle
             // 
@@ -234,27 +263,14 @@ namespace HouseSystemFood.Vista
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Location = new System.Drawing.Point(1319, 3);
+            this.btnSalir.ForeColor = System.Drawing.Color.White;
+            this.btnSalir.Location = new System.Drawing.Point(1290, 3);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(28, 24);
+            this.btnSalir.Size = new System.Drawing.Size(57, 24);
             this.btnSalir.TabIndex = 5;
-            this.btnSalir.Text = "x";
+            this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // OrdenarItem
-            // 
-            this.OrdenarItem.Name = "OrdenarItem";
-            this.OrdenarItem.Size = new System.Drawing.Size(180, 26);
-            this.OrdenarItem.Text = "Ordenar";
-            this.OrdenarItem.Click += new System.EventHandler(this.OrdenarItem_Click);
-            // 
-            // CobrarItem
-            // 
-            this.CobrarItem.Name = "CobrarItem";
-            this.CobrarItem.Size = new System.Drawing.Size(180, 26);
-            this.CobrarItem.Text = "Cobrar";
-            this.CobrarItem.Click += new System.EventHandler(this.CobrarItem_Click);
             // 
             // Principal
             // 
@@ -308,5 +324,6 @@ namespace HouseSystemFood.Vista
         private System.Windows.Forms.ToolStripMenuItem AyudaItem;
         private System.Windows.Forms.ToolStripMenuItem OrdenarItem;
         private System.Windows.Forms.ToolStripMenuItem CobrarItem;
+        private System.Windows.Forms.Button btnHide;
     }
 }

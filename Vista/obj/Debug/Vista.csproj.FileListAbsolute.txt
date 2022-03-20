@@ -23,3 +23,7 @@ C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vist
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Categorias_View.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Ordenes_View.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\HouseSystemFood.Vista.Cobros_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Cierres_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Gastos_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Reportes_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Seguridad.Bitacoras_View.resources

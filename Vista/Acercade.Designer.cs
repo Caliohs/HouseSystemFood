@@ -44,9 +44,9 @@ namespace HouseSystemFood.Vista
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(58, 39);
+            this.pictureBox1.Location = new System.Drawing.Point(183, 39);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(247, 106);
+            this.pictureBox1.Size = new System.Drawing.Size(222, 106);
             this.pictureBox1.TabIndex = 63;
             this.pictureBox1.TabStop = false;
             // 
@@ -56,17 +56,16 @@ namespace HouseSystemFood.Vista
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(247, 159);
+            this.textBox1.Size = new System.Drawing.Size(347, 159);
             this.textBox1.TabIndex = 70;
-            this.textBox1.Text = "Proyecto final de Programacion 5\r\n\r\nIntegrante:\r\nDerek garibo\r\n\r\nProfesora: Adria" +
-    "na Rubio\r\n\r\nMateria: Programacion 5\r\n\r\nLenguaje: C#\r\n\r\n\r\n";
+            this.textBox1.Text = resources.GetString("textBox1.Text");
             // 
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnAceptar.Location = new System.Drawing.Point(125, 334);
+            this.btnAceptar.Location = new System.Drawing.Point(171, 332);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(98, 39);
@@ -77,7 +76,8 @@ namespace HouseSystemFood.Vista
             // btnSalir
             // 
             this.btnSalir.BackColor = System.Drawing.Color.Transparent;
-            this.btnSalir.Location = new System.Drawing.Point(334, 0);
+            this.btnSalir.ForeColor = System.Drawing.Color.Black;
+            this.btnSalir.Location = new System.Drawing.Point(424, 1);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(25, 26);
             this.btnSalir.TabIndex = 7;
@@ -93,7 +93,7 @@ namespace HouseSystemFood.Vista
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(359, 30);
+            this.panel2.Size = new System.Drawing.Size(452, 30);
             this.panel2.TabIndex = 72;
             // 
             // label3
@@ -102,7 +102,7 @@ namespace HouseSystemFood.Vista
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Transparent;
-            this.label3.Location = new System.Drawing.Point(148, 6);
+            this.label3.Location = new System.Drawing.Point(179, 7);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 20);
             this.label3.TabIndex = 6;
@@ -122,15 +122,15 @@ namespace HouseSystemFood.Vista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 400);
+            this.ClientSize = new System.Drawing.Size(450, 400);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(359, 400);
-            this.MinimumSize = new System.Drawing.Size(359, 400);
+            this.MaximumSize = new System.Drawing.Size(450, 400);
+            this.MinimumSize = new System.Drawing.Size(450, 400);
             this.Name = "Acercade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Acercade";

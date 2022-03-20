@@ -247,7 +247,7 @@
             this.Name = "Menus_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Permisos_View";
-            this.Load += new System.EventHandler(this.Permisos_View_Load);
+            this.Load += new System.EventHandler(this.Menus_View_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgMenus)).EndInit();

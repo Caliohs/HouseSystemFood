@@ -1,10 +1,0 @@
-::::::::::RESTAURANTE DEL CARIBE:::::::::::
-Tiquete #        35
-Metodo de pago   Efectivo Colon
-Subtotal         2400
-Descuento        0
-Transporte       0
-IVA              312
-Total            2400
-
-:::::::: Gracias por su compra !!:::::::::

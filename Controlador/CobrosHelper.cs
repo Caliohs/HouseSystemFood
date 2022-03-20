@@ -91,7 +91,7 @@ namespace HouseSystemFood.Controlador
             return tblDatos;
         }
 
-        public DataTable Listar()
+        public DataTable CargarTipoCambio()
         {
 
             tblDatos = new DataTable();
@@ -107,8 +107,8 @@ namespace HouseSystemFood.Controlador
                 parParameter[0].SqlDbType = SqlDbType.Int;
                 parParameter[0].SqlValue = obj.Opc;
 
-
-                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOrdenes");
+            
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPCobros");
 
             }
             catch (Exception ex)
@@ -119,36 +119,68 @@ namespace HouseSystemFood.Controlador
             return tblDatos;
         }
 
-       // public DataTable Buscar()
+        public DataTable ActualizaTipoCambio()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[2];
+
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@opc";
+                parParameter[0].SqlDbType = SqlDbType.Int;
+                parParameter[0].SqlValue = obj.Opc;
+
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Id";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = obj.Id;
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPCobros");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+        // public DataTable Buscar()
         //{
 
-            //tblDatos = new DataTable();
+        //tblDatos = new DataTable();
 
-            //try
-            //{
-            //    cnGeneral = new Datos();
+        //try
+        //{
+        //    cnGeneral = new Datos();
 
-            //    SqlParameter[] parParameter = new SqlParameter[2];
+        //    SqlParameter[] parParameter = new SqlParameter[2];
 
-            //    parParameter[0] = new SqlParameter();
-            //    parParameter[0].ParameterName = "@Opc";
-            //    parParameter[0].SqlDbType = SqlDbType.Int;
-            //    parParameter[0].SqlValue = obj.Opc;
+        //    parParameter[0] = new SqlParameter();
+        //    parParameter[0].ParameterName = "@Opc";
+        //    parParameter[0].SqlDbType = SqlDbType.Int;
+        //    parParameter[0].SqlValue = obj.Opc;
 
-            //    parParameter[1] = new SqlParameter();
-            //    parParameter[1].ParameterName = "@Num_Mesa";
-            //    parParameter[1].SqlDbType = SqlDbType.Int;
-            //    parParameter[1].SqlValue = obj.Num_Mesa;
+        //    parParameter[1] = new SqlParameter();
+        //    parParameter[1].ParameterName = "@Num_Mesa";
+        //    parParameter[1].SqlDbType = SqlDbType.Int;
+        //    parParameter[1].SqlValue = obj.Num_Mesa;
 
-            //    tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOrdenes");
+        //    tblDatos = cnGeneral.RetornaTabla(parParameter, "SPOrdenes");
 
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new Exception(ex.Message);
-            //}
+        //}
+        //catch (Exception ex)
+        //{
+        //    throw new Exception(ex.Message);
+        //}
 
-            //return tblDatos;
+        //return tblDatos;
         //}
 
         public DataTable ListarOrden()

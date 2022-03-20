@@ -1,10 +1,0 @@
-::::::::::RESTAURANTE DEL CARIBE:::::::::::
-Tiquete #        38
-Metodo de pago   Sinpe Movil
-Subtotal         2400
-Descuento        240
-Transporte       0
-IVA              280,8
-Total            2376
-
-:::::::: Gracias por su compra !!:::::::::

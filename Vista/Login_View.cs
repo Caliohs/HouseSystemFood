@@ -17,6 +17,8 @@ namespace HouseSystemFood.Vista
         private Usuario user;
         private UsuarioHelper userH;
         private DataTable datos;
+        private Bitacoras bitacoras;
+        private BitacorasHelper bitacorasH;
 
         public Login()
         {
@@ -47,16 +49,18 @@ namespace HouseSystemFood.Vista
                         DataRow fila = datos.Rows[0];
                         user.Nombre = fila["Nombre"].ToString();
                         user.RolId = int.Parse(fila["RolId"].ToString());
-
+                        user.Id = int.Parse(fila["UsuariosId"].ToString());
+                        MessageBox.Show("Bienvenid@ " + user.Nombre.ToString(), "¡Hola!",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //registro en bitacora
+                        RegistarEnBitacora();
                         Principal inicio = new Principal(user);
-                        //Principal inicio = new Principal();
                         inicio.Show();
                         this.Hide();
                     }
-                    else MessageBox.Show("Datos de inicio de sesion incorrectos");
+                    else MessageBox.Show("Datos de inicio de sesion incorrectos","Alerta",MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
-                else MessageBox.Show("Debe completar los campos");
+                else MessageBox.Show("Debe completar los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
             catch (Exception ex)
@@ -64,16 +68,6 @@ namespace HouseSystemFood.Vista
 
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void Login_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClave_TextChanged(object sender, EventArgs e)
-        {
-            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -97,6 +91,26 @@ namespace HouseSystemFood.Vista
             }
 
             return strBuilder.ToString();
+        }
+        //registro el evento
+        public void RegistarEnBitacora()
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 2;
+                bitacoras.IdUser = user.Id;
+                bitacoras.Accion = "LOGIN";
+                bitacoras.Fecha = DateTime.Today;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
     }

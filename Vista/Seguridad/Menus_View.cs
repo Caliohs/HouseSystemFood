@@ -22,7 +22,7 @@ namespace Vista
             InitializeComponent();
         }
 
-        private void Permisos_View_Load(object sender, EventArgs e)
+        private void Menus_View_Load(object sender, EventArgs e)
         {
             cargarDatosDtg();
         }

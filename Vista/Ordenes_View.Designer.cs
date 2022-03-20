@@ -47,7 +47,6 @@
             this.lbProducto = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
             this.lbMontoT = new System.Windows.Forms.Label();
-            this.gBox4 = new System.Windows.Forms.GroupBox();
             this.gBox3 = new System.Windows.Forms.GroupBox();
             this.lbCat = new System.Windows.Forms.Label();
             this.cmbCategorias = new System.Windows.Forms.ComboBox();
@@ -71,12 +70,13 @@
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.ForeColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.Location = new System.Drawing.Point(1121, 3);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(1097, 3);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(28, 24);
+            this.btnCerrar.Size = new System.Drawing.Size(52, 24);
             this.btnCerrar.TabIndex = 10;
-            this.btnCerrar.Text = "x";
+            this.btnCerrar.Tag = "";
+            this.btnCerrar.Text = "X";
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
@@ -97,6 +97,7 @@
             this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.lbTitulo);
+            this.panel2.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1152, 30);
@@ -155,26 +156,27 @@
             this.dtgProductos.Size = new System.Drawing.Size(575, 422);
             this.dtgProductos.TabIndex = 9;
             this.dtgProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellClick);
+            this.dtgProductos.SelectionChanged += new System.EventHandler(this.dtgProductos_SelectionChanged);
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripEliminar});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(108, 26);
             // 
             // toolStripEliminar
             // 
             this.toolStripEliminar.Name = "toolStripEliminar";
-            this.toolStripEliminar.Size = new System.Drawing.Size(117, 22);
-            this.toolStripEliminar.Text = "Eliminar";
+            this.toolStripEliminar.Size = new System.Drawing.Size(107, 22);
+            this.toolStripEliminar.Text = "Quitar";
             this.toolStripEliminar.Click += new System.EventHandler(this.toolStripEliminar_Click);
             // 
             // lbPrducto
             // 
             this.lbPrducto.AutoSize = true;
             this.lbPrducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrducto.Location = new System.Drawing.Point(13, 52);
+            this.lbPrducto.Location = new System.Drawing.Point(57, 47);
             this.lbPrducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrducto.Name = "lbPrducto";
             this.lbPrducto.Size = new System.Drawing.Size(134, 15);
@@ -184,11 +186,13 @@
             // txtProductoSelecionado
             // 
             this.txtProductoSelecionado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.txtProductoSelecionado.Enabled = false;
-            this.txtProductoSelecionado.Location = new System.Drawing.Point(16, 69);
+            this.txtProductoSelecionado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProductoSelecionado.ForeColor = System.Drawing.Color.Red;
+            this.txtProductoSelecionado.Location = new System.Drawing.Point(60, 67);
             this.txtProductoSelecionado.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductoSelecionado.Name = "txtProductoSelecionado";
-            this.txtProductoSelecionado.Size = new System.Drawing.Size(200, 21);
+            this.txtProductoSelecionado.ReadOnly = true;
+            this.txtProductoSelecionado.Size = new System.Drawing.Size(218, 26);
             this.txtProductoSelecionado.TabIndex = 9;
             // 
             // gbox
@@ -198,7 +202,6 @@
             this.gbox.Controls.Add(this.lbProducto);
             this.gbox.Controls.Add(this.lbTotal);
             this.gbox.Controls.Add(this.lbMontoT);
-            this.gbox.Controls.Add(this.gBox4);
             this.gbox.Controls.Add(this.gBox3);
             this.gbox.Controls.Add(this.gBox2);
             this.gbox.Controls.Add(this.dtgOrdenes);
@@ -282,22 +285,13 @@
             this.lbMontoT.TabIndex = 91;
             this.lbMontoT.Text = "0";
             // 
-            // gBox4
-            // 
-            this.gBox4.Location = new System.Drawing.Point(396, 20);
-            this.gBox4.Name = "gBox4";
-            this.gBox4.Size = new System.Drawing.Size(202, 105);
-            this.gBox4.TabIndex = 93;
-            this.gBox4.TabStop = false;
-            this.gBox4.Text = "Cobros";
-            // 
             // gBox3
             // 
             this.gBox3.Controls.Add(this.lbCat);
             this.gBox3.Controls.Add(this.cmbCategorias);
             this.gBox3.Location = new System.Drawing.Point(23, 20);
             this.gBox3.Name = "gBox3";
-            this.gBox3.Size = new System.Drawing.Size(295, 105);
+            this.gBox3.Size = new System.Drawing.Size(248, 105);
             this.gBox3.TabIndex = 92;
             this.gBox3.TabStop = false;
             this.gBox3.Text = "Seleccione la categoria";
@@ -332,9 +326,9 @@
             this.gBox2.Controls.Add(this.txtProductoSelecionado);
             this.gBox2.Controls.Add(this.btnMin);
             this.gBox2.Controls.Add(this.btnMax);
-            this.gBox2.Location = new System.Drawing.Point(616, 20);
+            this.gBox2.Location = new System.Drawing.Point(277, 20);
             this.gBox2.Name = "gBox2";
-            this.gBox2.Size = new System.Drawing.Size(489, 105);
+            this.gBox2.Size = new System.Drawing.Size(828, 105);
             this.gBox2.TabIndex = 91;
             this.gBox2.TabStop = false;
             this.gBox2.Text = "Agregar producto";
@@ -345,10 +339,10 @@
             this.btnIncluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIncluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIncluir.ForeColor = System.Drawing.Color.White;
-            this.btnIncluir.Location = new System.Drawing.Point(365, 56);
+            this.btnIncluir.Location = new System.Drawing.Point(436, 45);
             this.btnIncluir.Margin = new System.Windows.Forms.Padding(2);
             this.btnIncluir.Name = "btnIncluir";
-            this.btnIncluir.Size = new System.Drawing.Size(106, 37);
+            this.btnIncluir.Size = new System.Drawing.Size(257, 48);
             this.btnIncluir.TabIndex = 88;
             this.btnIncluir.Text = "Incluir";
             this.btnIncluir.UseVisualStyleBackColor = false;
@@ -360,10 +354,10 @@
             this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(365, 19);
+            this.btnLimpiar.Location = new System.Drawing.Point(743, 61);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(106, 33);
+            this.btnLimpiar.Size = new System.Drawing.Size(71, 32);
             this.btnLimpiar.TabIndex = 90;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -372,11 +366,11 @@
             // lbCont
             // 
             this.lbCont.AutoSize = true;
-            this.lbCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCont.ForeColor = System.Drawing.Color.Red;
-            this.lbCont.Location = new System.Drawing.Point(329, 65);
+            this.lbCont.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCont.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbCont.Location = new System.Drawing.Point(343, 61);
             this.lbCont.Name = "lbCont";
-            this.lbCont.Size = new System.Drawing.Size(25, 25);
+            this.lbCont.Size = new System.Drawing.Size(32, 33);
             this.lbCont.TabIndex = 89;
             this.lbCont.Text = "0";
             // 
@@ -386,10 +380,10 @@
             this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMin.ForeColor = System.Drawing.Color.White;
-            this.btnMin.Location = new System.Drawing.Point(220, 56);
+            this.btnMin.Location = new System.Drawing.Point(17, 61);
             this.btnMin.Margin = new System.Windows.Forms.Padding(2);
             this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(50, 37);
+            this.btnMin.Size = new System.Drawing.Size(39, 34);
             this.btnMin.TabIndex = 85;
             this.btnMin.Text = "-";
             this.btnMin.UseVisualStyleBackColor = false;
@@ -401,10 +395,10 @@
             this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMax.ForeColor = System.Drawing.Color.White;
-            this.btnMax.Location = new System.Drawing.Point(274, 56);
+            this.btnMax.Location = new System.Drawing.Point(282, 61);
             this.btnMax.Margin = new System.Windows.Forms.Padding(2);
             this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(50, 37);
+            this.btnMax.Size = new System.Drawing.Size(39, 34);
             this.btnMax.TabIndex = 87;
             this.btnMax.Text = "+";
             this.btnMax.UseVisualStyleBackColor = false;
@@ -443,6 +437,7 @@
             this.Controls.Add(this.gbox);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Ordenes_View";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -483,7 +478,6 @@
         private System.Windows.Forms.Label lbProducto;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label lbMontoT;
-        private System.Windows.Forms.GroupBox gBox4;
         private System.Windows.Forms.GroupBox gBox3;
         private System.Windows.Forms.GroupBox gBox2;
         private System.Windows.Forms.Button btnIncluir;

@@ -52,11 +52,23 @@
     <Compile Include="Acercade.designer.cs">
       <DependentUpon>Acercade.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cierres_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cierres_View.Designer.cs">
+      <DependentUpon>Cierres_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Cobros_View.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Cobros_View.Designer.cs">
       <DependentUpon>Cobros_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Gastos_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gastos_View.Designer.cs">
+      <DependentUpon>Gastos_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Ordenes_View.cs">
       <SubType>Form</SubType>
@@ -69,6 +81,18 @@
     </Compile>
     <Compile Include="Productos_View.Designer.cs">
       <DependentUpon>Productos_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes_View.Designer.cs">
+      <DependentUpon>Reportes_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Seguridad\Bitacoras_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Seguridad\Bitacoras_View.Designer.cs">
+      <DependentUpon>Bitacoras_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Seguridad\Permisos_View.cs">
       <SubType>Form</SubType>
@@ -117,8 +141,14 @@
     <EmbeddedResource Include="Acercade.resx">
       <DependentUpon>Acercade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cierres_View.resx">
+      <DependentUpon>Cierres_View.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Cobros_View.resx">
       <DependentUpon>Cobros_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gastos_View.resx">
+      <DependentUpon>Gastos_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ordenes_View.resx">
       <DependentUpon>Ordenes_View.cs</DependentUpon>
@@ -128,6 +158,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Login_View.resx">
       <DependentUpon>Login_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes_View.resx">
+      <DependentUpon>Reportes_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Seguridad\Bitacoras_View.resx">
+      <DependentUpon>Bitacoras_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Seguridad\Permisos_View.resx">
       <DependentUpon>Permisos_View.cs</DependentUpon>
