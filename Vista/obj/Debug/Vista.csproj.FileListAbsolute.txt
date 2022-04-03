@@ -27,3 +27,6 @@ C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vist
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Gastos_View.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Reportes_View.resources
 C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\obj\Debug\Vista.Seguridad.Bitacoras_View.resources
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\itextsharp.dll
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\itextsharp.xml
+C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\bin\Debug\BouncyCastle.Crypto.dll

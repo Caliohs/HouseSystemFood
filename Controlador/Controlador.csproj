@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Reportes.cs" />
+    <Compile Include="ReportesHelper.cs" />
+    <Compile Include="Cierres.cs" />
+    <Compile Include="CierresHelper.cs" />
+    <Compile Include="Gastos.cs" />
+    <Compile Include="GastosHelper.cs" />
     <Compile Include="Cobros.cs" />
     <Compile Include="Ordenes.cs" />
     <Compile Include="CobrosHelper.cs" />

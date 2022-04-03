@@ -39,23 +39,33 @@ namespace HouseSystemFood.Vista
 
                     user = new Usuario();
                     user.User = this.txtUsuario.Text;
-                    user.Contraseña = Encriptar(this.txtContraseña.Text).ToString();
+                    user.Contraseña = Encriptar(this.txtContraseña.Text).ToString(); //encripto para comparar con la de bd
                     user.Opc = 6;
                     userH = new UsuarioHelper(user);
-                    datos = userH.validarLogin();
+                    datos = userH.validarLogin();  // valido si coinciden los datos de inicio de sesion
 
-                    if (datos.Rows.Count > 0)
+                    if (datos.Rows.Count > 0) // inicia la sesion
                     {
+                       
                         DataRow fila = datos.Rows[0];
                         user.Nombre = fila["Nombre"].ToString();
                         user.RolId = int.Parse(fila["RolId"].ToString());
                         user.Id = int.Parse(fila["UsuariosId"].ToString());
-                        MessageBox.Show("Bienvenid@ " + user.Nombre.ToString(), "¡Hola!",MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        //registro en bitacora
-                        RegistarEnBitacora();
-                        Principal inicio = new Principal(user);
-                        inicio.Show();
-                        this.Hide();
+
+                        //valido si el usuario esta inactivo
+                        if (fila["Estado"].Equals(false)){
+                            MessageBox.Show("Usuario inactivo, Contacte al admnistrador", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else // inicio la sesion
+                        {
+                            MessageBox.Show("Bienvenid@ " + user.Nombre.ToString(), "¡Hola!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            //registro en bitacora
+                            RegistarEnBitacora();
+                            Principal inicio = new Principal(user);  //mando el perfil para validar los permisos
+                            inicio.Show();
+                            this.Hide();
+                        }
+                       
                     }
                     else MessageBox.Show("Datos de inicio de sesion incorrectos","Alerta",MessageBoxButtons.OK, MessageBoxIcon.Error);
 
@@ -113,6 +123,10 @@ namespace HouseSystemFood.Vista
 
         }
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.txtUsuario.Focus();
+        }
     }
  }
 

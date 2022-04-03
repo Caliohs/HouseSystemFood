@@ -89,7 +89,7 @@ namespace HouseSystemFood.Vista
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -98,7 +98,7 @@ namespace HouseSystemFood.Vista
             this.btnCancelar.Location = new System.Drawing.Point(172, 188);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(93, 39);
+            this.btnCancelar.Size = new System.Drawing.Size(105, 43);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,7 +107,7 @@ namespace HouseSystemFood.Vista
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.WhiteSmoke;
@@ -116,7 +116,7 @@ namespace HouseSystemFood.Vista
             this.btnAceptar.Location = new System.Drawing.Point(53, 188);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(87, 39);
+            this.btnAceptar.Size = new System.Drawing.Size(99, 43);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -125,7 +125,7 @@ namespace HouseSystemFood.Vista
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.button1);
@@ -203,6 +203,7 @@ namespace HouseSystemFood.Vista
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.groupBox.ResumeLayout(false);

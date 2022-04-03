@@ -64,7 +64,7 @@
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCerrar.Location = new System.Drawing.Point(930, 3);
+            this.btnCerrar.Location = new System.Drawing.Point(945, 2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(53, 24);
             this.btnCerrar.TabIndex = 10;
@@ -86,17 +86,17 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.lbTitulo);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(986, 30);
+            this.panel2.Size = new System.Drawing.Size(1001, 30);
             this.panel2.TabIndex = 41;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
@@ -111,7 +111,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
@@ -222,11 +222,11 @@
             this.dtgUsuario.BackgroundColor = System.Drawing.Color.White;
             this.dtgUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgUsuario.ContextMenuStrip = this.contextMenuStrip1;
-            this.dtgUsuario.Location = new System.Drawing.Point(251, 64);
+            this.dtgUsuario.Location = new System.Drawing.Point(237, 64);
             this.dtgUsuario.Name = "dtgUsuario";
             this.dtgUsuario.ReadOnly = true;
             this.dtgUsuario.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgUsuario.Size = new System.Drawing.Size(680, 405);
+            this.dtgUsuario.Size = new System.Drawing.Size(720, 405);
             this.dtgUsuario.TabIndex = 48;
             // 
             // contextMenuStrip1
@@ -255,7 +255,7 @@
             // 
             this.lbBuscar.AutoSize = true;
             this.lbBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBuscar.Location = new System.Drawing.Point(615, 43);
+            this.lbBuscar.Location = new System.Drawing.Point(641, 43);
             this.lbBuscar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbBuscar.Name = "lbBuscar";
             this.lbBuscar.Size = new System.Drawing.Size(112, 15);
@@ -264,7 +264,7 @@
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(731, 38);
+            this.txtBuscar.Location = new System.Drawing.Point(757, 37);
             this.txtBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(200, 21);
@@ -292,7 +292,7 @@
             this.gbox.Controls.Add(this.lbPuesto);
             this.gbox.Location = new System.Drawing.Point(12, 49);
             this.gbox.Name = "gbox";
-            this.gbox.Size = new System.Drawing.Size(963, 550);
+            this.gbox.Size = new System.Drawing.Size(976, 550);
             this.gbox.TabIndex = 84;
             this.gbox.TabStop = false;
             this.gbox.Text = "Usuarios";
@@ -331,7 +331,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 630);
+            this.ClientSize = new System.Drawing.Size(1000, 630);
             this.Controls.Add(this.gbox);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

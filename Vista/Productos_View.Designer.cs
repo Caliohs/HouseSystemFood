@@ -86,7 +86,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.lbTitulo);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -96,7 +96,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
@@ -111,7 +111,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
@@ -281,7 +281,7 @@
             this.gbox.Controls.Add(this.cmbEstado);
             this.gbox.Controls.Add(this.txtNombre);
             this.gbox.Controls.Add(this.lbPrecio);
-            this.gbox.Location = new System.Drawing.Point(12, 36);
+            this.gbox.Location = new System.Drawing.Point(11, 50);
             this.gbox.Name = "gbox";
             this.gbox.Size = new System.Drawing.Size(963, 550);
             this.gbox.TabIndex = 84;

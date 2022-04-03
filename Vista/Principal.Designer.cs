@@ -187,6 +187,7 @@ namespace HouseSystemFood.Vista
             this.CierresItem.Size = new System.Drawing.Size(71, 25);
             this.CierresItem.Text = "Cierres";
             this.CierresItem.Visible = false;
+            this.CierresItem.Click += new System.EventHandler(this.CierresItem_Click);
             // 
             // GastosItem
             // 
@@ -194,6 +195,7 @@ namespace HouseSystemFood.Vista
             this.GastosItem.Size = new System.Drawing.Size(69, 25);
             this.GastosItem.Text = "Gastos";
             this.GastosItem.Visible = false;
+            this.GastosItem.Click += new System.EventHandler(this.GastosItem_Click);
             // 
             // ReportesItem
             // 
@@ -201,6 +203,7 @@ namespace HouseSystemFood.Vista
             this.ReportesItem.Size = new System.Drawing.Size(84, 25);
             this.ReportesItem.Text = "Reportes";
             this.ReportesItem.Visible = false;
+            this.ReportesItem.Click += new System.EventHandler(this.ReportesItem_Click);
             // 
             // acercaDeItem
             // 
@@ -244,7 +247,7 @@ namespace HouseSystemFood.Vista
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel1.BackColor = System.Drawing.Color.SeaGreen;
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(0, 0);

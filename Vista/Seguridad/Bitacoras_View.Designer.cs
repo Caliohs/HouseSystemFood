@@ -30,6 +30,7 @@
         {
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.gpbBuscar = new System.Windows.Forms.GroupBox();
+            this.cmbDato = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lbDato = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +44,6 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTitulo = new System.Windows.Forms.Label();
-            this.cmbDato = new System.Windows.Forms.ComboBox();
             this.groupBox.SuspendLayout();
             this.gpbBuscar.SuspendLayout();
             this.gbox3.SuspendLayout();
@@ -79,9 +79,23 @@
             this.gpbBuscar.TabStop = false;
             this.gpbBuscar.Text = "Campo de Bitacora";
             // 
+            // cmbDato
+            // 
+            this.cmbDato.FormattingEnabled = true;
+            this.cmbDato.Items.AddRange(new object[] {
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "LOGIN",
+            "LOGOUT"});
+            this.cmbDato.Location = new System.Drawing.Point(14, 59);
+            this.cmbDato.Name = "cmbDato";
+            this.cmbDato.Size = new System.Drawing.Size(164, 21);
+            this.cmbDato.TabIndex = 109;
+            // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnBuscar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -159,7 +173,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -185,7 +199,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -213,7 +227,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.lbTitulo);
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -232,20 +246,6 @@
             this.lbTitulo.Size = new System.Drawing.Size(76, 20);
             this.lbTitulo.TabIndex = 6;
             this.lbTitulo.Text = "Bitacoras";
-            // 
-            // cmbDato
-            // 
-            this.cmbDato.FormattingEnabled = true;
-            this.cmbDato.Items.AddRange(new object[] {
-            "INSERT",
-            "UPDATE",
-            "DELETE",
-            "LOGIN",
-            "LOGOUT"});
-            this.cmbDato.Location = new System.Drawing.Point(14, 59);
-            this.cmbDato.Name = "cmbDato";
-            this.cmbDato.Size = new System.Drawing.Size(164, 21);
-            this.cmbDato.TabIndex = 109;
             // 
             // Bitacoras_View
             // 

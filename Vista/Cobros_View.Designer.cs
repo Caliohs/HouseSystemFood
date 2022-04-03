@@ -113,7 +113,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.panel2.BackColor = System.Drawing.Color.SeaGreen;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Controls.Add(this.lbTitulo);
             this.panel2.ForeColor = System.Drawing.Color.Transparent;
@@ -124,7 +124,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
@@ -139,7 +139,7 @@
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.Firebrick;
+            this.btnAceptar.BackColor = System.Drawing.Color.Maroon;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
@@ -159,7 +159,7 @@
             this.dtgOrdenesPorCobrar.AllowUserToResizeRows = false;
             this.dtgOrdenesPorCobrar.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgOrdenesPorCobrar.BackgroundColor = System.Drawing.Color.White;
-            this.dtgOrdenesPorCobrar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dtgOrdenesPorCobrar.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.SeaGreen;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,12 +198,12 @@
             // lbPagaC
             // 
             this.lbPagaC.AutoSize = true;
-            this.lbPagaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPagaC.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbPagaC.Location = new System.Drawing.Point(17, 184);
+            this.lbPagaC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPagaC.ForeColor = System.Drawing.Color.Maroon;
+            this.lbPagaC.Location = new System.Drawing.Point(18, 195);
             this.lbPagaC.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPagaC.Name = "lbPagaC";
-            this.lbPagaC.Size = new System.Drawing.Size(84, 18);
+            this.lbPagaC.Size = new System.Drawing.Size(118, 25);
             this.lbPagaC.TabIndex = 83;
             this.lbPagaC.Text = "Paga con:";
             // 
@@ -246,7 +246,7 @@
             // 
             // gBox2
             // 
-            this.gBox2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gBox2.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gBox2.Controls.Add(this.lbtar);
             this.gBox2.Controls.Add(this.lbPag);
             this.gBox2.Controls.Add(this.lbApagar);
@@ -284,22 +284,22 @@
             // lbPag
             // 
             this.lbPag.AutoSize = true;
-            this.lbPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPag.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbPag.Location = new System.Drawing.Point(17, 155);
+            this.lbPag.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPag.ForeColor = System.Drawing.Color.Maroon;
+            this.lbPag.Location = new System.Drawing.Point(18, 155);
             this.lbPag.Name = "lbPag";
-            this.lbPag.Size = new System.Drawing.Size(87, 18);
+            this.lbPag.Size = new System.Drawing.Size(124, 25);
             this.lbPag.TabIndex = 107;
             this.lbPag.Text = "A pagar ₡:";
             // 
             // lbApagar
             // 
             this.lbApagar.AutoSize = true;
-            this.lbApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbApagar.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbApagar.Location = new System.Drawing.Point(106, 155);
+            this.lbApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbApagar.ForeColor = System.Drawing.Color.Maroon;
+            this.lbApagar.Location = new System.Drawing.Point(140, 155);
             this.lbApagar.Name = "lbApagar";
-            this.lbApagar.Size = new System.Drawing.Size(17, 18);
+            this.lbApagar.Size = new System.Drawing.Size(25, 25);
             this.lbApagar.TabIndex = 106;
             this.lbApagar.Text = "0";
             // 
@@ -383,11 +383,11 @@
             // 
             // mskMonto
             // 
-            this.mskMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mskMonto.Location = new System.Drawing.Point(20, 205);
+            this.mskMonto.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mskMonto.Location = new System.Drawing.Point(21, 223);
             this.mskMonto.Mask = "999999999";
             this.mskMonto.Name = "mskMonto";
-            this.mskMonto.Size = new System.Drawing.Size(103, 24);
+            this.mskMonto.Size = new System.Drawing.Size(144, 31);
             this.mskMonto.TabIndex = 97;
             this.mskMonto.ValidatingType = typeof(int);
             this.mskMonto.TextChanged += new System.EventHandler(this.mskMonto_TextChanged);
@@ -396,7 +396,7 @@
             // 
             this.lbn.AutoSize = true;
             this.lbn.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbn.ForeColor = System.Drawing.Color.Red;
+            this.lbn.ForeColor = System.Drawing.Color.Maroon;
             this.lbn.Location = new System.Drawing.Point(26, 31);
             this.lbn.Name = "lbn";
             this.lbn.Size = new System.Drawing.Size(108, 25);
@@ -407,7 +407,7 @@
             // 
             this.lbNorden.AutoSize = true;
             this.lbNorden.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNorden.ForeColor = System.Drawing.Color.Red;
+            this.lbNorden.ForeColor = System.Drawing.Color.Maroon;
             this.lbNorden.Location = new System.Drawing.Point(140, 31);
             this.lbNorden.Name = "lbNorden";
             this.lbNorden.Size = new System.Drawing.Size(25, 25);
@@ -417,28 +417,28 @@
             // lbC
             // 
             this.lbC.AutoSize = true;
-            this.lbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbC.ForeColor = System.Drawing.Color.SeaGreen;
+            this.lbC.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbC.ForeColor = System.Drawing.Color.Maroon;
             this.lbC.Location = new System.Drawing.Point(16, 363);
             this.lbC.Name = "lbC";
-            this.lbC.Size = new System.Drawing.Size(88, 18);
+            this.lbC.Size = new System.Drawing.Size(121, 25);
             this.lbC.TabIndex = 94;
             this.lbC.Text = "Cambio ₡:";
             // 
             // lbCambio
             // 
             this.lbCambio.AutoSize = true;
-            this.lbCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCambio.ForeColor = System.Drawing.Color.SeaGreen;
-            this.lbCambio.Location = new System.Drawing.Point(110, 363);
+            this.lbCambio.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCambio.ForeColor = System.Drawing.Color.Maroon;
+            this.lbCambio.Location = new System.Drawing.Point(140, 363);
             this.lbCambio.Name = "lbCambio";
-            this.lbCambio.Size = new System.Drawing.Size(17, 18);
+            this.lbCambio.Size = new System.Drawing.Size(25, 25);
             this.lbCambio.TabIndex = 91;
             this.lbCambio.Text = "0";
             // 
             // gboxT
             // 
-            this.gboxT.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.gboxT.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.gboxT.Controls.Add(this.lbIv);
             this.gboxT.Controls.Add(this.lbTotal);
             this.gboxT.Controls.Add(this.lbIva);
@@ -458,7 +458,7 @@
             // 
             this.lbIv.AutoSize = true;
             this.lbIv.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIv.ForeColor = System.Drawing.Color.Red;
+            this.lbIv.ForeColor = System.Drawing.Color.Maroon;
             this.lbIv.Location = new System.Drawing.Point(71, 58);
             this.lbIv.Name = "lbIv";
             this.lbIv.Size = new System.Drawing.Size(67, 20);
@@ -469,7 +469,7 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.ForeColor = System.Drawing.Color.Red;
+            this.lbTotal.ForeColor = System.Drawing.Color.Maroon;
             this.lbTotal.Location = new System.Drawing.Point(149, 78);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(19, 20);
@@ -480,7 +480,7 @@
             // 
             this.lbIva.AutoSize = true;
             this.lbIva.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIva.ForeColor = System.Drawing.Color.Red;
+            this.lbIva.ForeColor = System.Drawing.Color.Maroon;
             this.lbIva.Location = new System.Drawing.Point(149, 58);
             this.lbIva.Name = "lbIva";
             this.lbIva.Size = new System.Drawing.Size(19, 20);
@@ -491,7 +491,7 @@
             // 
             this.lbt.AutoSize = true;
             this.lbt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbt.ForeColor = System.Drawing.Color.Red;
+            this.lbt.ForeColor = System.Drawing.Color.Maroon;
             this.lbt.Location = new System.Drawing.Point(61, 78);
             this.lbt.Name = "lbt";
             this.lbt.Size = new System.Drawing.Size(82, 20);
@@ -502,7 +502,7 @@
             // 
             this.lbD.AutoSize = true;
             this.lbD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbD.ForeColor = System.Drawing.Color.Red;
+            this.lbD.ForeColor = System.Drawing.Color.Maroon;
             this.lbD.Location = new System.Drawing.Point(14, 37);
             this.lbD.Name = "lbD";
             this.lbD.Size = new System.Drawing.Size(124, 20);
@@ -513,7 +513,7 @@
             // 
             this.lbSubtotal.AutoSize = true;
             this.lbSubtotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSubtotal.ForeColor = System.Drawing.Color.Red;
+            this.lbSubtotal.ForeColor = System.Drawing.Color.Maroon;
             this.lbSubtotal.Location = new System.Drawing.Point(149, 17);
             this.lbSubtotal.Name = "lbSubtotal";
             this.lbSubtotal.Size = new System.Drawing.Size(19, 20);
@@ -524,7 +524,7 @@
             // 
             this.lbDescuento.AutoSize = true;
             this.lbDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDescuento.ForeColor = System.Drawing.Color.Red;
+            this.lbDescuento.ForeColor = System.Drawing.Color.Maroon;
             this.lbDescuento.Location = new System.Drawing.Point(149, 38);
             this.lbDescuento.Name = "lbDescuento";
             this.lbDescuento.Size = new System.Drawing.Size(19, 20);
@@ -536,7 +536,7 @@
             // 
             this.lbst.AutoSize = true;
             this.lbst.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbst.ForeColor = System.Drawing.Color.Red;
+            this.lbst.ForeColor = System.Drawing.Color.Maroon;
             this.lbst.Location = new System.Drawing.Point(33, 17);
             this.lbst.Name = "lbst";
             this.lbst.Size = new System.Drawing.Size(110, 20);

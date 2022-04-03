@@ -34,6 +34,8 @@ namespace HouseSystemFood.Vista
         private Ordenes_View Ordenes_View;
         private Cobros_View Cobros_View;
         private Gastos_View Gastos_View;
+        private Cierres_View Cierres_View;
+        private Reportes_View Reportes_View;
         private DataTable datos;
         private Acercade acercade;
         private Usuario user;
@@ -42,6 +44,7 @@ namespace HouseSystemFood.Vista
         private Roles roles;
         private Ordenes ordenes;
         private Cobros cobros;
+        private Gastos gastos;
         private Bitacoras bitacoras;
         private BitacorasHelper bitacorasH;
         public int IdUser;
@@ -255,6 +258,33 @@ namespace HouseSystemFood.Vista
             { xClick = e.X; yClick = e.Y; }
             else
             { this.Left = this.Left + (e.X - xClick); this.Top = this.Top + (e.Y - yClick); }
+        }
+
+        private void GastosItem_Click(object sender, EventArgs e)
+        {
+            user = new Usuario();
+            user.Id = IdUser;
+            this.Gastos_View = new Gastos_View(user);
+            this.Gastos_View.MdiParent = this;
+            this.Gastos_View.Show();
+        }
+
+        private void CierresItem_Click(object sender, EventArgs e)
+        {
+            user = new Usuario();
+            user.Id = IdUser;
+            this.Cierres_View = new Cierres_View(user);
+            this.Cierres_View.MdiParent = this;
+            this.Cierres_View.Show();
+        }
+
+        private void ReportesItem_Click(object sender, EventArgs e)
+        {
+            user = new Usuario();
+            user.Id = IdUser;
+            this.Reportes_View = new Reportes_View(user);
+            this.Reportes_View.MdiParent = this;
+            this.Reportes_View.Show();
         }
 
         public void RegistarEnBitacora()

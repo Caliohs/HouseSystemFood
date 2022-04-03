@@ -109,12 +109,12 @@ namespace HouseSystemFood.Vista
                     if (radio.Checked)
                         radioselect = radio.Text;
                 }
-                if (!this.mskMonto.Text.Equals("")) // para darleun valor 0 si esta en blanco
+                if (!this.mskMonto.Text.Equals("")) // para darle un valor 0 si esta en blanco
                 {
                     n1 = double.Parse(this.mskMonto.Text);
                 }              
                 n2 = double.Parse(this.lbApagar.Text);
-                //restrcciones y validaaciones
+                //restrcciones y validaciones
                 if (this.lbTotal.Text.Equals("0"))
                 {
                     MessageBox.Show("Información incompleta!, revise el TOTAL","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -151,7 +151,15 @@ namespace HouseSystemFood.Vista
                     RegistarEnBitacora("INSERT");
                     MessageBox.Show("Pago registrado exitosamente");
                     string cambio = ((double.Parse(this.mskMonto.Text)) - (double.Parse(this.lbApagar.Text))).ToString();
-                    this.lbCambio.Text = cambio;
+
+                    if (radioselect.Equals("Dolares"))
+                    {
+                        this.lbCambio.Text = cambio.Substring(0, 4);
+                    }
+                    else
+                    {
+                        this.lbCambio.Text = cambio;
+                    }
                     ReiniciarCobros();
                 }
                 
@@ -225,10 +233,10 @@ namespace HouseSystemFood.Vista
             this.lbTotal.Text = "0";
             this.lbNorden.Text = "0";
             this.lbApagar.Text = "0";
-                foreach (RadioButton radio in gbox3.Controls)
-                {
-                    radio.Checked = false;                       
-                }
+                //foreach (RadioButton radio in gbox3.Controls)
+                //{
+                //    radio.Checked = false;                       
+                //}
             this.mskMonto.Text = "";
             this.mskMonto.Enabled=true;
             this.btnAceptar.Text = "Pagar";           
@@ -420,11 +428,11 @@ namespace HouseSystemFood.Vista
                   {
                     cobros = new Cobros();
             
-                     cobros.Opc = 3;
+                    cobros.Opc = 3;
                     cobros.Id = int.Parse(this.mskDolar.Text);
                     cobrosH = new CobrosHelper(cobros);
                     cobrosH.ActualizaTipoCambio();
-                    RegistarEnBitacora("INSERT");
+                    RegistarEnBitacora("UPDATE-TIPOCAMBIO");
                  MessageBox.Show("Se actualizó el tipo de cambio a " + int.Parse(this.mskDolar.Text));
                     CargarTipoCambio();
                 this.mskDolar.Enabled = false;

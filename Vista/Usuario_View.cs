@@ -42,6 +42,7 @@ namespace HouseSystemFood.Vista
             cargarDatosDtg();
             cargarCmbRoles();
         }
+
         public void cargarDatosDtg()
         {
             try
@@ -73,7 +74,7 @@ namespace HouseSystemFood.Vista
             try
             { 
             
-                //obtengo elrol Id
+                //obtengo elrol Id para insertarlo en tabla usuarios
                 datos = rolesH.GetRolId(this.cmbRoles.Text);            
                 string[] dt = new string[datos.Rows.Count];           
                 dt[0] = datos.Rows[0]["RolId"].ToString();         
@@ -92,11 +93,15 @@ namespace HouseSystemFood.Vista
                         //Antes de registrar valido que exista el usuario
                         usuario.Opc = 7;
                         usuarioH = new UsuarioHelper(usuario);
-                        dataUser = usuarioH.validarLogin();
+                        dataUser = usuarioH.validarLogin(); 
                         //si existe
                         if (dataUser.Rows.Count > 0)
                         {
-                            MessageBox.Show("Ya existe el usuario");
+                            MessageBox.Show("Ya existe el usuario","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else if (validarCampos().Equals(1))        //si la bandera es 1 hay campos vacios y no hago el insert
+                        {
+                            MessageBox.Show("Debe completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                         }
                         else //hago el insert
                         {
@@ -104,7 +109,7 @@ namespace HouseSystemFood.Vista
                             usuarioH.Guardar();
                             //registro el evento
                             RegistarEnBitacora("INSERT");
-                            MessageBox.Show("Se ha almacenado un nuevo Usuario");
+                            MessageBox.Show("Se ha almacenado un nuevo Usuario","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
                         }
                        
@@ -121,7 +126,7 @@ namespace HouseSystemFood.Vista
                         //registro el evento
                         RegistarEnBitacora("UPDATE");
 
-                        MessageBox.Show("Se ha actualizó el Usuario");
+                        MessageBox.Show("Se actualizó el Usuario","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
                         Limpiar();
@@ -130,7 +135,7 @@ namespace HouseSystemFood.Vista
                 }
                 else
                 {
-                    MessageBox.Show("La contraseña y la confirmación no coinceden");
+                    MessageBox.Show("La contraseña y la confirmación no coinceden", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 cargarDatosDtg();
             }
@@ -302,7 +307,28 @@ namespace HouseSystemFood.Vista
 
 
         }
-
+    
+        //valida los campos vacios y no permite una ejecucion
+        public int validarCampos()
+        {
+            int bandera = 0;
+            string [] dato = new string [6];
+            
+            dato[0]= this.txtNombre.Text;
+            dato[1] = this.txtUsuario.Text;
+            dato[2] = this.txtContraeña.Text;
+            dato[3] = this.txtConfirmar.Text;
+            dato[4] = this.cmbRoles.Text;
+            dato[5] = this.cmbEstado.Text;
+            for(int i=0; i<6; i++)
+            {
+                if (dato[i].Equals(""))
+                {
+                    bandera = 1;
+                }
+            }
+            return bandera;
+        }
         //registro el evento
         public void RegistarEnBitacora(string accion)
         {

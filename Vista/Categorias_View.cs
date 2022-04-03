@@ -66,9 +66,17 @@ namespace HouseSystemFood.Vista
         {
             //guarda nueva categoria
             try
-            { 
-                    categorias = new Categorias(); 
-                    categorias.Nombre = this.txtNombre.Text;                   
+            {
+                //valido campo llenos
+                if (this.txtNombre.Text.Equals(""))
+                {
+                    MessageBox.Show("Debe llenar los campo", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+                else   //hago el isert o update
+                {
+                    categorias = new Categorias();
+                    categorias.Nombre = this.txtNombre.Text;
                     categorias.Estado = int.Parse(this.cmbEstado.SelectedIndex.ToString());
 
                     if (this.btnAceptar.Text.Equals("Aceptar"))
@@ -76,8 +84,8 @@ namespace HouseSystemFood.Vista
                         categorias.Opc = 1;
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Guardar();
-                    RegistarEnBitacora("INSERT");
-                        MessageBox.Show("Se ha almacenado una categoria");
+                        RegistarEnBitacora("INSERT");
+                        MessageBox.Show("Se ha almacenado una categoria", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -85,17 +93,20 @@ namespace HouseSystemFood.Vista
                         int indice = dtgCategorias.CurrentRow.Index;
                         DataRow fila = datos.Rows[indice];
 
-                        categorias.Opc = 4;                      
+                        categorias.Opc = 4;
                         categorias.Id = int.Parse(fila["IdCategoria"].ToString());
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Actualizar();
-                    RegistarEnBitacora("UPDATE");
-                        MessageBox.Show("Se ha actualizó la categoria");
+                        RegistarEnBitacora("UPDATE");
+                        MessageBox.Show("Se actualizó la categoria", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
-                    }    
-                
-                cargarDatosDtg();
+                    }
+
+                    cargarDatosDtg();
+                    this.txtNombre.Text = "";
+                }
+                   
             }
             catch (Exception ex)
             {
@@ -161,12 +172,12 @@ namespace HouseSystemFood.Vista
                 datos = (DataTable)dtgCategorias.DataSource;
                 if (datos == null)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
+                    MessageBox.Show("No hay registros por Eliminar","Aviso",MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result.Equals(DialogResult.Yes))
                     {
                         int indice = dtgCategorias.CurrentRow.Index;
