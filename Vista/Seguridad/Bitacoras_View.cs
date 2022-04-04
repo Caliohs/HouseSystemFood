@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+//using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HouseSystemFood.Controlador;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
+using System.Diagnostics;
 
 namespace Vista.Seguridad
 {
@@ -112,6 +116,10 @@ namespace Vista.Seguridad
                     {
                         dtgBitacoras.DataSource = datos;
                     }
+                    else
+                    {
+                        MessageBox.Show("No han encontrado registros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
               
             }
@@ -134,6 +142,90 @@ namespace Vista.Seguridad
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            GenerarReporte();
+        }
+
+        public void GenerarReporte()
+        {
+
+            string inicio = this.dtpFecha.Value.ToString("dd-MM-yyyy");
+            Document doc = new Document(PageSize.A4, 10, 10, 10, 10);
+            BaseColor colorf = new BaseColor(51, 204, 0);
+            Font fuente = new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN);
+            Image jpg = Image.GetInstance(@"C:\Restaurant\FRONTEND\img\snacklogo1.png"); jpg.Alignment = Image.RIGHT_ALIGN;
+            string filename = "C:\\Reportes\\Bitacora_" + inicio + ".pdf";
+            Chunk encab = new Chunk(" HOUSE RESTAURANT FOOD ", FontFactory.GetFont("ARIAL", 15, colorf));
+          
+            try
+            {
+
+                FileStream file = new FileStream
+               (filename, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
+                iTextSharp.text.pdf.PdfWriter.GetInstance(doc, file);
+                doc.Open();
+                doc.Add(jpg);
+                doc.Add(new Paragraph(encab));
+                doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph("Bitacora de seguridad"));
+                doc.Add(new Paragraph(" "));
+                GenerarDocumento(doc);
+                doc.Add(new Paragraph(" "));
+                doc.Add(new Paragraph("**FIN DEL REPORTE**"));
+                Process.Start(filename);
+                doc.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void GenerarDocumento(Document document)
+        {
+            PdfPTable datatable = new PdfPTable(dtgBitacoras.ColumnCount);
+            datatable.DefaultCell.Padding = 5;
+            datatable.WidthPercentage = 100;
+            datatable.DefaultCell.BorderWidth = 2;
+
+            iTextSharp.text.Font fuente = new iTextSharp.text.Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN);
+
+            DataGridViewCellStyle style = this.dtgBitacoras.ColumnHeadersDefaultCellStyle;
+
+            Phrase objP = new Phrase("A", fuente);
+
+            datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER;
+            for (int i = 0; i < dtgBitacoras.ColumnCount; i++)
+            {
+
+                objP = new Phrase(dtgBitacoras.Columns[i].HeaderText, fuente);
+                datatable.HorizontalAlignment = Element.ALIGN_CENTER;
+
+                datatable.AddCell(objP);
+            }
+            datatable.HeaderRows = 1;
+
+            datatable.DefaultCell.BorderColor = BaseColor.WHITE;
+            datatable.DefaultCell.BorderWidth = 1;
+
+
+
+            for (int i = 0; i < dtgBitacoras.RowCount; i++)
+            {
+                for (int j = 0; j < dtgBitacoras.ColumnCount; j++)
+                {
+                    objP = new Phrase(dtgBitacoras[j, i].Value.ToString(), fuente);
+
+                    datatable.AddCell(objP);
+                }
+                datatable.CompleteRow();
+            }
+
+            document.Add(datatable);
         }
     }
 }

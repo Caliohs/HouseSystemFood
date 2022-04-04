@@ -133,6 +133,7 @@ namespace HouseSystemFood.Vista
                 }
                 else  //haga el proceso
                 {
+                    string fecha = DateTime.Today.ToString("dd-MM-yyyy");
                     //guarda nuevo cobro/venta/pago              
                     cobros = new Cobros();
 
@@ -142,7 +143,7 @@ namespace HouseSystemFood.Vista
                     cobros.Iva = float.Parse(this.lbIva.Text);
                     cobros.Total = int.Parse(this.lbTotal.Text);
                     cobros.MetodoPago = radioselect;
-                    cobros.FechaVenta = DateTime.Today;
+                    cobros.FechaVenta = Convert.ToDateTime(fecha);
                     cobros.UsuarioId = UserId;
                     cobros.Opc = 1;
                     cobrosH = new CobrosHelper(cobros);
@@ -172,41 +173,41 @@ namespace HouseSystemFood.Vista
 
         private void toolStripEliminar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
+            try
+            {
 
-            //    datos = (DataTable)dtgOrdenesPorCobrar.DataSource;
-            //    if (datos == null)
-            //    {
-            //        MessageBox.Show("No hay registros por Eliminar");
+                datos = (DataTable)dtgOrdenesPorCobrar.DataSource;
+                if (datos == null)
+                {
+                    MessageBox.Show("No hay registros por Eliminar");
 
-            //    }
-            //    else
-            //    {
-            //        DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo);
-            //        if (result.Equals(DialogResult.Yes))
-            //        {
-            //            int indice = dtgOrdenesPorCobrar.CurrentRow.Index;
-            //            DataRow fila = datos.Rows[indice];
+                }
+                else
+                {
+                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo,MessageBoxIcon.Stop);
+                    if (result.Equals(DialogResult.Yes))
+                    {
+                        int indice = dtgOrdenesPorCobrar.CurrentRow.Index;
+                        DataRow fila = datos.Rows[indice];
 
-            //            productos = new Productos();
-            //            productos.Opc = 5;
-            //            productos.Id = int.Parse(fila["IdProducto"].ToString());
-            //            productosH = new ProductosHelper(productos);
-            //            productosH.Eliminar();
-            //RegistarEnBitacora(string accion);
-            //            MessageBox.Show("Se ha eliminado el registro");
-            //            cargarDatosDtg();
-            //        }
+                        ordenes = new Ordenes();
+                        ordenes.Opc = 5;
+                        ordenes.Num_Orden  = int.Parse(fila["num_Orden"].ToString());
+                        ordenesH = new OrdenesHelper(ordenes);
+                        ordenesH.Eliminar();
+                        RegistarEnBitacora("DELETE");
+                        MessageBox.Show("Se ha eliminado el registro");
+                        cargarDatosDtgOrdenes();
+                    }
 
 
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
+                }
+            }
+            catch (Exception ex)
+            {
 
-            //    MessageBox.Show(ex.Message);
-            //}
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -232,11 +233,7 @@ namespace HouseSystemFood.Vista
             this.lbDescuento.Text = "0";
             this.lbTotal.Text = "0";
             this.lbNorden.Text = "0";
-            this.lbApagar.Text = "0";
-                //foreach (RadioButton radio in gbox3.Controls)
-                //{
-                //    radio.Checked = false;                       
-                //}
+            this.lbApagar.Text = "0";              
             this.mskMonto.Text = "";
             this.mskMonto.Enabled=true;
             this.btnAceptar.Text = "Pagar";           
@@ -341,11 +338,6 @@ namespace HouseSystemFood.Vista
                 MessageBox.Show(ex.Message);
             }
         }
-
-        private void gBox2_Enter(object sender, EventArgs e)
-        {
-
-        }
         //gestiono las acciones de los radio BUtton
         private void rdbColon_CheckedChanged(object sender, EventArgs e)
         {
@@ -411,11 +403,6 @@ namespace HouseSystemFood.Vista
             {
                 MessageBox.Show(ex.Message);
             }
-
-        }
-
-        private void lbDescuento_Click(object sender, EventArgs e)
-        {
 
         }
 
@@ -490,6 +477,31 @@ namespace HouseSystemFood.Vista
                 MessageBox.Show(ex.Message);
             }
 
+        }
+
+        private void dtgOrdenesPorCobrar_SelectionChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int nOrden = int.Parse(dtgOrdenesPorCobrar.Rows[dtgOrdenesPorCobrar.CurrentRow.Index].Cells[0].Value.ToString());
+                ordenes = new Ordenes();
+                ordenes.Opc = 4;
+                ordenes.Num_Orden = nOrden;
+                ordenesH = new OrdenesHelper(ordenes);
+                datos = ordenesH.ListarOrden();
+                if (datos.Rows.Count > 0)
+                {
+                    dtgOrdenDetalle.DataSource = datos;
+                    this.cmbDescuento.SelectedIndex = 0;
+                    calcular();
+                }
+                this.lbNorden.Text = nOrden.ToString();
+                this.lbCambio.Text = "0";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 

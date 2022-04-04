@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Bitacoras_View));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox = new System.Windows.Forms.GroupBox();
             this.gpbBuscar = new System.Windows.Forms.GroupBox();
             this.cmbDato = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lbDato = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lbFecha = new System.Windows.Forms.Label();
             this.gbox3 = new System.Windows.Forms.GroupBox();
             this.rdbS = new System.Windows.Forms.RadioButton();
             this.rdbM = new System.Windows.Forms.RadioButton();
-            this.btnAceptar = new System.Windows.Forms.Button();
             this.dtgBitacoras = new System.Windows.Forms.DataGridView();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTitulo = new System.Windows.Forms.Label();
@@ -55,9 +57,7 @@
             // 
             this.groupBox.Controls.Add(this.gpbBuscar);
             this.groupBox.Controls.Add(this.gbox3);
-            this.groupBox.Controls.Add(this.btnAceptar);
             this.groupBox.Controls.Add(this.dtgBitacoras);
-            this.groupBox.Controls.Add(this.btnCancelar);
             this.groupBox.Location = new System.Drawing.Point(12, 36);
             this.groupBox.Name = "groupBox";
             this.groupBox.Size = new System.Drawing.Size(891, 468);
@@ -69,12 +69,14 @@
             // 
             this.gpbBuscar.Controls.Add(this.cmbDato);
             this.gpbBuscar.Controls.Add(this.btnBuscar);
+            this.gpbBuscar.Controls.Add(this.btnAceptar);
+            this.gpbBuscar.Controls.Add(this.btnCancelar);
             this.gpbBuscar.Controls.Add(this.lbDato);
             this.gpbBuscar.Controls.Add(this.dtpFecha);
             this.gpbBuscar.Controls.Add(this.lbFecha);
             this.gpbBuscar.Location = new System.Drawing.Point(23, 139);
             this.gpbBuscar.Name = "gpbBuscar";
-            this.gpbBuscar.Size = new System.Drawing.Size(275, 185);
+            this.gpbBuscar.Size = new System.Drawing.Size(294, 278);
             this.gpbBuscar.TabIndex = 106;
             this.gpbBuscar.TabStop = false;
             this.gpbBuscar.Text = "Campo de Bitacora";
@@ -95,18 +97,57 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnBuscar.BackColor = System.Drawing.Color.Transparent;
+            this.btnBuscar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnBuscar.Location = new System.Drawing.Point(14, 144);
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(14, 179);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(98, 27);
+            this.btnBuscar.Size = new System.Drawing.Size(84, 74);
             this.btnBuscar.TabIndex = 107;
             this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAceptar.Location = new System.Drawing.Point(101, 179);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(84, 74);
+            this.btnAceptar.TabIndex = 64;
+            this.btnAceptar.Text = "Exportar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(189, 179);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 74);
+            this.btnCancelar.TabIndex = 65;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lbDato
             // 
@@ -144,7 +185,7 @@
             this.gbox3.Controls.Add(this.rdbM);
             this.gbox3.Location = new System.Drawing.Point(23, 37);
             this.gbox3.Name = "gbox3";
-            this.gbox3.Size = new System.Drawing.Size(275, 76);
+            this.gbox3.Size = new System.Drawing.Size(294, 76);
             this.gbox3.TabIndex = 105;
             this.gbox3.TabStop = false;
             this.gbox3.Text = "Tipo de Bitacora";
@@ -152,7 +193,7 @@
             // rdbS
             // 
             this.rdbS.AutoSize = true;
-            this.rdbS.Location = new System.Drawing.Point(121, 38);
+            this.rdbS.Location = new System.Drawing.Point(148, 38);
             this.rdbS.Name = "rdbS";
             this.rdbS.Size = new System.Drawing.Size(57, 17);
             this.rdbS.TabIndex = 102;
@@ -163,54 +204,46 @@
             // rdbM
             // 
             this.rdbM.AutoSize = true;
-            this.rdbM.Location = new System.Drawing.Point(14, 38);
+            this.rdbM.Checked = true;
+            this.rdbM.Location = new System.Drawing.Point(41, 38);
             this.rdbM.Name = "rdbM";
             this.rdbM.Size = new System.Drawing.Size(84, 17);
             this.rdbM.TabIndex = 101;
+            this.rdbM.TabStop = true;
             this.rdbM.Text = "Movimientos";
             this.rdbM.UseVisualStyleBackColor = true;
             this.rdbM.CheckedChanged += new System.EventHandler(this.rdbM_CheckedChanged);
             // 
-            // btnAceptar
-            // 
-            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnAceptar.Location = new System.Drawing.Point(652, 409);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(98, 39);
-            this.btnAceptar.TabIndex = 64;
-            this.btnAceptar.Text = "Exportar";
-            this.btnAceptar.UseVisualStyleBackColor = false;
-            // 
             // dtgBitacoras
             // 
+            this.dtgBitacoras.AllowUserToAddRows = false;
+            this.dtgBitacoras.AllowUserToDeleteRows = false;
+            this.dtgBitacoras.AllowUserToOrderColumns = true;
+            this.dtgBitacoras.AllowUserToResizeColumns = false;
+            this.dtgBitacoras.AllowUserToResizeRows = false;
             this.dtgBitacoras.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgBitacoras.BackgroundColor = System.Drawing.Color.White;
+            this.dtgBitacoras.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgBitacoras.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBitacoras.Location = new System.Drawing.Point(323, 37);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgBitacoras.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dtgBitacoras.Location = new System.Drawing.Point(332, 37);
             this.dtgBitacoras.Name = "dtgBitacoras";
             this.dtgBitacoras.ReadOnly = true;
+            this.dtgBitacoras.RowHeadersVisible = false;
             this.dtgBitacoras.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgBitacoras.Size = new System.Drawing.Size(540, 358);
+            this.dtgBitacoras.ShowCellErrors = false;
+            this.dtgBitacoras.ShowCellToolTips = false;
+            this.dtgBitacoras.ShowEditingIcon = false;
+            this.dtgBitacoras.ShowRowErrors = false;
+            this.dtgBitacoras.Size = new System.Drawing.Size(540, 380);
             this.dtgBitacoras.TabIndex = 70;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnCancelar.Location = new System.Drawing.Point(754, 409);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 39);
-            this.btnCancelar.TabIndex = 65;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnCerrar
             // 

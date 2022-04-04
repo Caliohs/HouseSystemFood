@@ -26,8 +26,7 @@ namespace Vista
         private DataTable datosAcum;
         public int UserId;
 
-        public object PdfWriter { get; private set; }
-
+       
         public Reportes_View()
         {
             InitializeComponent();
@@ -38,59 +37,22 @@ namespace Vista
             UserId = obj.Id;
         }
 
-        private void lbCantidad_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbet1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             generarData();
         }
+
         public void generarData()
         {
             try
             {
                 dtgReportes.DataSource = null;
                 //selecciono tipo cierre
-                int tipo = 0;
-                foreach (RadioButton radio in gbox3.Controls)
-                {
-                    if (radio.Checked)
-                    {
-                        this.lbReporte.Text = "Reporte de " + radio.Text;
-                        switch (radio.Text)
-                        {
-                            case "Gastos": tipo = 1; break;
-                            case "Ventas": tipo = 2; break;
-                            case "Cierres": tipo = 3; break;
-                        }
-                    }
-
-                }
+                int tipo = ObtenerTipoReporte();
+               
                 //selecciono tipo moneda
-                int moneda = 0;
-                foreach (RadioButton radio in gboxM.Controls)
-                {
-                    if (radio.Checked)
-                    {
-                        this.lbMoneda.Text = "en " + radio.Text;
-                        switch (radio.Text)
-                        {                       
-                            case "Colones": moneda = 1;
-                                           this.lbSimbol.Text = "₡";
-                                break;
-                            case "Dolares": moneda = 2;
-                                           this.lbSimbol.Text = "$";
-                            break;
-                        }
-                    }
-                }
+                int moneda = ObtenerTipoMoneda();
+               
                 reportes = new Reportes();
 
                 reportes.Opc = tipo;
@@ -108,8 +70,10 @@ namespace Vista
                     MessageBox.Show("No hay datos por generar","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 }
                 this.lbCantidad.Text = datos.Rows.Count.ToString();
+                //OBTENGO EL ACUMULADO DEL REPORTE SUMANDO LA COLLUMNA MONTO
                 datosAcum = reportesH.calcularAcumulado(tipo);
                 string Acum = "";
+                //VALIDO SI ES DOLAR O COLON PARA CAMBIAR EL LENGHT SI ES MUY GRANDE
                 if (moneda.Equals(2) && Acum.Length > 4)
                 {
                    Acum = datosAcum.Rows[0][0].ToString();
@@ -127,6 +91,64 @@ namespace Vista
             }
         }
 
+        public int ObtenerTipoReporte()
+        {
+            int tipo = 0;
+            try
+            {
+                foreach (RadioButton radio in gbox3.Controls)
+                {
+                    if (radio.Checked)
+                    {
+                        this.lbReporte.Text = "Reporte de " + radio.Text;
+                        switch (radio.Text)
+                        {
+                            case "Gastos": tipo = 1; break;
+                            case "Ventas": tipo = 2; break;
+                            case "Cierres": tipo = 3; break;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return tipo;
+        }
+
+        public int ObtenerTipoMoneda()
+        {
+            int moneda = 0;
+            try
+            {
+                foreach (RadioButton radio in gboxM.Controls)
+                {
+                    if (radio.Checked)
+                    {
+                        this.lbMoneda.Text = "en " + radio.Text;
+                        switch (radio.Text)
+                        {
+                            case "Colones":
+                                moneda = 1;
+                                this.lbSimbol.Text = "₡";
+                                break;
+                            case "Dolares":
+                                moneda = 2;
+                                this.lbSimbol.Text = "$";
+                                break;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return moneda;
+        }
+
         public void GenerarReporte()
         {
            
@@ -138,6 +160,8 @@ namespace Vista
             Image jpg = Image.GetInstance(@"C:\Restaurant\FRONTEND\img\snacklogo1.png"); jpg.Alignment = Image.RIGHT_ALIGN;
             string filename = "C:\\Reportes\\"+this.lbReporte.Text+" "+this.lbMoneda.Text+inicio+" al "+fin+".pdf";
             Chunk encab = new Chunk(" HOUSE RESTAURANT FOOD ", FontFactory.GetFont("ARIAL", 15, colorf));
+            Chunk acumulado = new Chunk("Acumulado: " + this.lbSimbol.Text+ this.lbAcum.Text, FontFactory.GetFont("ARIAL", 20));
+            Chunk cantidad = new Chunk("Cantidad : " + this.lbCantidad.Text, FontFactory.GetFont("ARIAL", 20));
             string Titulo = this.lbReporte.Text + " " + this.lbMoneda.Text + " " + inicio  +" al "+ fin;
             
             try
@@ -152,13 +176,15 @@ namespace Vista
                 doc.Add(new Paragraph(" "));
                 doc.Add(new Paragraph(Titulo));
                 doc.Add(new Paragraph(" "));
-                GenerarDocumento(doc);
-                doc.Add(new Paragraph("Cantidad : "+ this.lbCantidad.Text));
-                doc.Add(new Paragraph("Acumulado: "+ this.lbAcum.Text));
+                GenerarDocumento(doc);             
+                doc.Add(new Paragraph(cantidad));
+                doc.Add(new Paragraph(acumulado));
                 doc.Add(new Paragraph(" "));
                 doc.Add(new Paragraph("**FIN DEL REPORTE**"));
                 Process.Start(filename);
                 doc.Close();
+
+                RegistarEnBitacora("REPORTE");
             }
 
             catch (Exception ex)
@@ -170,10 +196,7 @@ namespace Vista
         public void GenerarDocumento(Document document)
         {
             PdfPTable datatable = new PdfPTable(dtgReportes.ColumnCount);
-            datatable.DefaultCell.Padding = 5;
-           // float[] headerwidths = GetTamañoColumnas(dtgReportes);
-
-           // datatable.SetWidths(headerwidths);
+            datatable.DefaultCell.Padding = 5;      
             datatable.WidthPercentage = 100;
             datatable.DefaultCell.BorderWidth = 2;
 
@@ -212,26 +235,7 @@ namespace Vista
 
             document.Add(datatable);
         }
-
-        //public float[] GetTamañoColumnas(DataGridView dg)
-        //{
-        //    float[] values = new float[dg.ColumnCount];
-        //    for (int i = 0; i < dg.ColumnCount; i++)
-        //    {
-        //        values[i] = (float)dg.Columns[i].Width;
-        //    }
-        //    return values;
-        //}
-        private void dtgReportes_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void groupBox3_Enter(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -246,5 +250,27 @@ namespace Vista
         {
             GenerarReporte();
         }
+
+        public void RegistarEnBitacora(string accion)
+        {
+            try
+            {
+                bitacoras = new Bitacoras();
+                //registro el evento
+                bitacoras.Opc = 1;
+                bitacoras.IdUser = UserId;
+                bitacoras.Accion = accion;
+                bitacoras.Tabla = "REPORTES";
+                bitacoras.Fecha = DateTime.Now;
+                bitacorasH = new BitacorasHelper(bitacoras);
+                bitacorasH.InsertarEnBitacora();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
     }
 }

@@ -36,7 +36,15 @@ namespace Vista.Seguridad
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Guardar_Rol();
+            if (this.txtNombre.Text.Equals("") || this.cmbEstado.Text.Equals(""))
+            {
+                MessageBox.Show("Debe completar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                Guardar_Rol();
+            }
         }
 
         public void Guardar_Rol()
@@ -54,7 +62,7 @@ namespace Vista.Seguridad
                 rolesH = new RolesHelper(roles);
                 rolesH.Guardar();
                     RegistarEnBitacora("INSERT");
-                MessageBox.Show("Se ha registrado un nuevo Rol o puesto");
+                MessageBox.Show("Se ha registrado un nuevo Rol o puesto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                
                 }
                 else
@@ -71,7 +79,7 @@ namespace Vista.Seguridad
                     rolesH = new RolesHelper(roles);
                     rolesH.Actualizar();
                     RegistarEnBitacora("UPDATE");
-                    MessageBox.Show("Se ha actualizó el Rol");
+                    MessageBox.Show("Se actualizó el Rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.btnAceptar.Text = "Aceptar";
                 }
@@ -156,6 +164,7 @@ namespace Vista.Seguridad
                 {
                     dtgRoles.DataSource = datos;
                 }
+               
             }
             catch (Exception ex)
             {
@@ -198,12 +207,12 @@ namespace Vista.Seguridad
                 datos = (DataTable)dtgRoles.DataSource;
                 if (datos == null)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
+                    MessageBox.Show("No hay registros por Eliminar","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                     if (result.Equals(DialogResult.Yes))
                     {
                         int indice = dtgRoles.CurrentRow.Index;
@@ -215,7 +224,7 @@ namespace Vista.Seguridad
                         rolesH = new RolesHelper(roles);
                         rolesH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
+                        MessageBox.Show("Se ha eliminado el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarDatosDtg();
                     }
 

@@ -39,14 +39,25 @@ namespace Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Guardar_Menu();
+            if(this.txtNombre.Text.Equals("") || this.cmbEstado.Text.Equals(""))
+            {
+                MessageBox.Show("Debe completar los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+            else
+            {
+                Guardar_Menu();
+            }
+          
 
         }
+
         public void Guardar_Menu()
         {
             //guarda un nuevo menu
             try
             {
+
                 menu = new Menus();
                 if (this.btnAceptar.Text.Equals("Aceptar"))
                 {
@@ -57,7 +68,7 @@ namespace Vista
                     menuH = new MenusHelper(menu);
                     menuH.Guardar();
                     RegistarEnBitacora("INSERT");
-                    MessageBox.Show("Se ha reigstrado un nuevo item de menu");
+                    MessageBox.Show("Se ha registrado un nuevo item de menu","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -73,7 +84,7 @@ namespace Vista
                     menuH = new MenusHelper(menu);
                     menuH.Actualizar();
                     RegistarEnBitacora("UPDATE");
-                    MessageBox.Show("Se ha actualizado el item menu");
+                    MessageBox.Show("Se ha actualizado el item menu", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                    
                     this.btnAceptar.Text = "Aceptar";
                 }
@@ -106,11 +117,6 @@ namespace Vista
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void toolStripEditar_Click(object sender, EventArgs e)
@@ -169,11 +175,11 @@ namespace Vista
                 datos = (DataTable)dtgMenus.DataSource;
                 if (datos == null)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
+                    MessageBox.Show("No hay registros por Eliminar","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 } else
                 {
-                    DialogResult result= MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo);
+                    DialogResult result= MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                     if( result.Equals(DialogResult.Yes))
                     {
                         int indice = dtgMenus.CurrentRow.Index;
@@ -185,7 +191,7 @@ namespace Vista
                         menuH = new MenusHelper(menu);
                         menuH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
+                        MessageBox.Show("Se ha eliminado el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarDatosDtg();
                     }
                    

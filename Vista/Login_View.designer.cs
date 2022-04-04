@@ -98,10 +98,9 @@ namespace HouseSystemFood.Vista
             this.btnCancelar.Location = new System.Drawing.Point(172, 188);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(105, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(111, 43);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -116,16 +115,16 @@ namespace HouseSystemFood.Vista
             this.btnAceptar.Location = new System.Drawing.Point(53, 188);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(99, 43);
+            this.btnAceptar.Size = new System.Drawing.Size(105, 43);
             this.btnAceptar.TabIndex = 3;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.button1);
@@ -136,14 +135,14 @@ namespace HouseSystemFood.Vista
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
+            this.button2.BackColor = System.Drawing.Color.Maroon;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(312, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(55, 24);
             this.button2.TabIndex = 5;
-            this.button2.Text = "x";
+            this.button2.Text = "X";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -155,7 +154,7 @@ namespace HouseSystemFood.Vista
             this.label3.ForeColor = System.Drawing.Color.Transparent;
             this.label3.Image = ((System.Drawing.Image)(resources.GetObject("label3.Image")));
             this.label3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label3.Location = new System.Drawing.Point(3, 4);
+            this.label3.Location = new System.Drawing.Point(12, 4);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 6;
@@ -174,6 +173,7 @@ namespace HouseSystemFood.Vista
             // 
             // groupBox
             // 
+            this.groupBox.BackColor = System.Drawing.SystemColors.ControlLight;
             this.groupBox.Controls.Add(this.btnCancelar);
             this.groupBox.Controls.Add(this.lblUsuario);
             this.groupBox.Controls.Add(this.txtUsuario);
@@ -182,9 +182,9 @@ namespace HouseSystemFood.Vista
             this.groupBox.Controls.Add(this.txtContraseña);
             this.groupBox.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox.ForeColor = System.Drawing.Color.SeaGreen;
-            this.groupBox.Location = new System.Drawing.Point(24, 64);
+            this.groupBox.Location = new System.Drawing.Point(24, 55);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(321, 277);
+            this.groupBox.Size = new System.Drawing.Size(321, 286);
             this.groupBox.TabIndex = 34;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "House System Food";

@@ -29,6 +29,7 @@ namespace HouseSystemFood.Vista
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MantenimientoItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CategoriasItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -94,7 +95,7 @@ namespace HouseSystemFood.Vista
             // CategoriasItem
             // 
             this.CategoriasItem.Name = "CategoriasItem";
-            this.CategoriasItem.Size = new System.Drawing.Size(154, 26);
+            this.CategoriasItem.Size = new System.Drawing.Size(180, 26);
             this.CategoriasItem.Text = "Categorias";
             this.CategoriasItem.Visible = false;
             this.CategoriasItem.Click += new System.EventHandler(this.CategoriasItem_Click);
@@ -102,7 +103,7 @@ namespace HouseSystemFood.Vista
             // ProductosItem
             // 
             this.ProductosItem.Name = "ProductosItem";
-            this.ProductosItem.Size = new System.Drawing.Size(154, 26);
+            this.ProductosItem.Size = new System.Drawing.Size(180, 26);
             this.ProductosItem.Text = "Productos";
             this.ProductosItem.Visible = false;
             this.ProductosItem.Click += new System.EventHandler(this.ProductosItem_Click);
@@ -110,7 +111,7 @@ namespace HouseSystemFood.Vista
             // UsuariosItem
             // 
             this.UsuariosItem.Name = "UsuariosItem";
-            this.UsuariosItem.Size = new System.Drawing.Size(154, 26);
+            this.UsuariosItem.Size = new System.Drawing.Size(180, 26);
             this.UsuariosItem.Text = "Usuarios";
             this.UsuariosItem.Visible = false;
             this.UsuariosItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
@@ -123,7 +124,7 @@ namespace HouseSystemFood.Vista
             this.MenuItem,
             this.BitacorasItem});
             this.SeguridadItem.Name = "SeguridadItem";
-            this.SeguridadItem.Size = new System.Drawing.Size(154, 26);
+            this.SeguridadItem.Size = new System.Drawing.Size(180, 26);
             this.SeguridadItem.Text = "Seguridad";
             this.SeguridadItem.Visible = false;
             // 
@@ -248,6 +249,7 @@ namespace HouseSystemFood.Vista
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.SeaGreen;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.Controls.Add(this.lbTitle);
             this.panel1.Controls.Add(this.btnSalir);
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -260,17 +262,20 @@ namespace HouseSystemFood.Vista
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTitle.ForeColor = System.Drawing.Color.White;
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.ForeColor = System.Drawing.Color.AntiqueWhite;
+            this.lbTitle.Image = ((System.Drawing.Image)(resources.GetObject("lbTitle.Image")));
+            this.lbTitle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbTitle.Location = new System.Drawing.Point(615, 3);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(151, 24);
+            this.lbTitle.Size = new System.Drawing.Size(197, 24);
             this.lbTitle.TabIndex = 6;
-            this.lbTitle.Text = "Modulo Principal";
+            this.lbTitle.Text = "     Modulo Principal";
+            this.lbTitle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnSalir
             // 
-            this.btnSalir.BackColor = System.Drawing.Color.Transparent;
+            this.btnSalir.BackColor = System.Drawing.Color.Maroon;
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.ForeColor = System.Drawing.Color.White;
             this.btnSalir.Location = new System.Drawing.Point(1290, 3);

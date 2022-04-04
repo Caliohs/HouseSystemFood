@@ -46,14 +46,15 @@ namespace HouseSystemFood.Vista
 
                     if (datos.Rows.Count > 0) // inicia la sesion
                     {
-                       
+
                         DataRow fila = datos.Rows[0];
                         user.Nombre = fila["Nombre"].ToString();
                         user.RolId = int.Parse(fila["RolId"].ToString());
                         user.Id = int.Parse(fila["UsuariosId"].ToString());
 
                         //valido si el usuario esta inactivo
-                        if (fila["Estado"].Equals(false)){
+                        if (fila["Estado"].Equals(false))
+                        {
                             MessageBox.Show("Usuario inactivo, Contacte al admnistrador", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else // inicio la sesion
@@ -65,9 +66,9 @@ namespace HouseSystemFood.Vista
                             inicio.Show();
                             this.Hide();
                         }
-                       
+
                     }
-                    else MessageBox.Show("Datos de inicio de sesion incorrectos","Alerta",MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    else MessageBox.Show("Datos de inicio de sesion incorrectos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
                 else MessageBox.Show("Debe completar los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -128,5 +129,5 @@ namespace HouseSystemFood.Vista
             this.txtUsuario.Focus();
         }
     }
- }
+}
 

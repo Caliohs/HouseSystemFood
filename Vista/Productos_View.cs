@@ -62,15 +62,22 @@ namespace HouseSystemFood.Vista
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Guardar();
+            if (validarCampos().Equals(1))        //si la bandera es 1 hay campos vacios y no hago el insert
+            {
+                MessageBox.Show("Debe completar todos los campos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                Guardar();
+            }
+           
         }
 
         public void Guardar()
         {
-            //guarda nueva categoria
+            //guarda nueva producto
             try
             {
-
                 //obtengo categoriaId
                 datos = categoriasH.GetIdCat(this.cmbCategorias.Text);
                 string[] dt = new string[datos.Rows.Count];
@@ -90,7 +97,7 @@ namespace HouseSystemFood.Vista
                         productosH = new ProductosHelper(productos);
                         productosH.Guardar();
                          RegistarEnBitacora("INSERT");
-                        MessageBox.Show("Se ha almacenado un nuevo Producto");
+                        MessageBox.Show("Se ha almacenado un nuevo Producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -103,7 +110,7 @@ namespace HouseSystemFood.Vista
                         productosH = new ProductosHelper(productos);
                         productosH.Actualizar();
                         RegistarEnBitacora("UPDATE");
-                        MessageBox.Show("Se actualizó el Producto");
+                        MessageBox.Show("Se actualizó el Producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
                     }
@@ -180,7 +187,7 @@ namespace HouseSystemFood.Vista
                 datos = (DataTable)dtgProductos.DataSource;
                 if (datos == null)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
+                    MessageBox.Show("No hay registros por Eliminar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else
@@ -197,7 +204,7 @@ namespace HouseSystemFood.Vista
                         productosH = new ProductosHelper(productos);
                         productosH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
+                        MessageBox.Show("Se ha eliminado el registro","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarDatosDtg();
                     }
 
@@ -269,6 +276,33 @@ namespace HouseSystemFood.Vista
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        //valida los campos vacios y no permite una ejecucion
+        public int validarCampos()
+        {
+            int bandera = 0;
+            string[] dato = new string[6];
+
+            dato[0] = this.txtNombre.Text;
+            dato[1] = this.txtDescripcion.Text;
+            dato[2] = this.mskPrecio.Text;
+            dato[3] = this.mskStock.Text;
+            dato[4] = this.cmbCategorias.Text;
+            dato[5] = this.cmbEstado.Text;
+            for (int i = 0; i < 6; i++)
+            {
+                if (dato[i].Equals(""))
+                {
+                    bandera = 1;
+                }
+            }
+            return bandera;
+        }
+
+        private void dtgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

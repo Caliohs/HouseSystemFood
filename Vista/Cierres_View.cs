@@ -395,8 +395,9 @@ namespace Vista
         public void Guardar()
         {
             try
-            {              
-                    //guarda nuevo cierre            
+            {
+                string fecha = DateTime.Today.ToString("dd/MM/yyyy");
+                //guarda nuevo cierre            
                 cierres = new Cierres();
 
                 cierres.InicialColon = int.Parse(this.mskColon.Text);
@@ -409,7 +410,7 @@ namespace Vista
                 cierres.RetiroDolar = float.Parse(this.lbAcumRD.Text);
                 cierres.DiferenciasColon = int.Parse(this.lbCompareC .Text);
                 cierres.DiferenciasDolar = float.Parse(this.lbCompareD.Text);
-                cierres.FechaCierre = DateTime.Today;    
+                cierres.FechaCierre =  Convert.ToDateTime(fecha);   
                 cierres.Opc = 1;
                 cierresH = new CierresHelper(cierres);
                 cierresH.Guardar();

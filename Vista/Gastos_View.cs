@@ -69,7 +69,7 @@ namespace Vista
                 }
                 else // campos , ejecuto
                 {
-                                    
+                   
                     gastos = new Gastos();
                     gastos.Tipo = ObtenerTipo();
                     gastos.Justificacion = this.txtJustificacion.Text;
@@ -78,7 +78,7 @@ namespace Vista
                     if (this.rdbColon.Checked.Equals(true)) { gastos.Moneda = "Colones"; }
                     else { gastos.Moneda = "Dolares"; }
 
-                    gastos.Fecha = this.dtpFecha.Value;
+                    gastos.Fecha = Convert.ToDateTime(this.dtpFecha.Value.ToString("dd/MM/yyyy"));
                     
                     if (this.btnAceptar.Text.Equals("Aceptar"))
                     {

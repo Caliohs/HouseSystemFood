@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Productos_View));
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lbTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -96,31 +97,35 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelar.BackColor = System.Drawing.Color.Transparent;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(124, 365);
+            this.btnCancelar.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
+            this.btnCancelar.Location = new System.Drawing.Point(122, 394);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(98, 39);
+            this.btnCancelar.Size = new System.Drawing.Size(98, 55);
             this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.BackColor = System.Drawing.Color.SeaGreen;
+            this.btnAceptar.BackColor = System.Drawing.Color.Transparent;
             this.btnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(22, 365);
+            this.btnAceptar.ForeColor = System.Drawing.Color.SeaGreen;
+            this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
+            this.btnAceptar.Location = new System.Drawing.Point(20, 394);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(98, 39);
+            this.btnAceptar.Size = new System.Drawing.Size(98, 55);
             this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
@@ -128,7 +133,7 @@
             // 
             this.lbStock.AutoSize = true;
             this.lbStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbStock.Location = new System.Drawing.Point(21, 191);
+            this.lbStock.Location = new System.Drawing.Point(19, 216);
             this.lbStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbStock.Name = "lbStock";
             this.lbStock.Size = new System.Drawing.Size(106, 15);
@@ -139,8 +144,9 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(22, 116);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(157, 21);
+            this.txtDescripcion.Size = new System.Drawing.Size(157, 51);
             this.txtDescripcion.TabIndex = 2;
             // 
             // lblDesc
@@ -177,7 +183,7 @@
             // 
             this.lbPrecio.AutoSize = true;
             this.lbPrecio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecio.Location = new System.Drawing.Point(21, 144);
+            this.lbPrecio.Location = new System.Drawing.Point(19, 169);
             this.lbPrecio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbPrecio.Name = "lbPrecio";
             this.lbPrecio.Size = new System.Drawing.Size(42, 15);
@@ -191,7 +197,7 @@
             this.cmbEstado.Items.AddRange(new object[] {
             "Inactivo",
             "Activo"});
-            this.cmbEstado.Location = new System.Drawing.Point(24, 319);
+            this.cmbEstado.Location = new System.Drawing.Point(22, 344);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(157, 23);
             this.cmbEstado.TabIndex = 6;
@@ -200,7 +206,7 @@
             // 
             this.lbEstado.AutoSize = true;
             this.lbEstado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEstado.Location = new System.Drawing.Point(21, 297);
+            this.lbEstado.Location = new System.Drawing.Point(19, 322);
             this.lbEstado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbEstado.Name = "lbEstado";
             this.lbEstado.Size = new System.Drawing.Size(45, 15);
@@ -219,6 +225,7 @@
             this.dtgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgProductos.Size = new System.Drawing.Size(701, 451);
             this.dtgProductos.TabIndex = 9;
+            this.dtgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellContentClick);
             // 
             // contextMenuStrip1
             // 
@@ -290,7 +297,7 @@
             // 
             // mskStock
             // 
-            this.mskStock.Location = new System.Drawing.Point(24, 209);
+            this.mskStock.Location = new System.Drawing.Point(22, 234);
             this.mskStock.Mask = "99999";
             this.mskStock.Name = "mskStock";
             this.mskStock.Size = new System.Drawing.Size(155, 21);
@@ -299,7 +306,7 @@
             // 
             // mskPrecio
             // 
-            this.mskPrecio.Location = new System.Drawing.Point(24, 162);
+            this.mskPrecio.Location = new System.Drawing.Point(22, 187);
             this.mskPrecio.Mask = "99999";
             this.mskPrecio.Name = "mskPrecio";
             this.mskPrecio.Size = new System.Drawing.Size(155, 21);
@@ -310,7 +317,7 @@
             // 
             this.cmbCategorias.FormattingEnabled = true;
             this.cmbCategorias.ItemHeight = 15;
-            this.cmbCategorias.Location = new System.Drawing.Point(24, 260);
+            this.cmbCategorias.Location = new System.Drawing.Point(22, 285);
             this.cmbCategorias.Name = "cmbCategorias";
             this.cmbCategorias.Size = new System.Drawing.Size(157, 23);
             this.cmbCategorias.TabIndex = 5;
@@ -319,7 +326,7 @@
             // 
             this.lbCat.AutoSize = true;
             this.lbCat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCat.Location = new System.Drawing.Point(21, 242);
+            this.lbCat.Location = new System.Drawing.Point(19, 267);
             this.lbCat.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbCat.Name = "lbCat";
             this.lbCat.Size = new System.Drawing.Size(60, 15);
