@@ -276,7 +276,47 @@ namespace HouseSystemFood.Controlador
             return tblDatos;
         }
 
-        
+        public DataTable CambiarClave()
+        {
+
+            tblDatos = new DataTable();
+
+            try
+            {
+                cnGeneral = new Datos();
+
+                SqlParameter[] parParameter = new SqlParameter[3];
+
+               
+                parParameter[0] = new SqlParameter();
+                parParameter[0].ParameterName = "@Contrasena";
+                parParameter[0].SqlDbType = SqlDbType.VarChar;
+                parParameter[0].Size = 30;
+                parParameter[0].SqlValue = obj.Contraseña;
+              
+                parParameter[1] = new SqlParameter();
+                parParameter[1].ParameterName = "@Opc";
+                parParameter[1].SqlDbType = SqlDbType.Int;
+                parParameter[1].SqlValue = obj.Opc;
+
+                parParameter[2] = new SqlParameter();
+                parParameter[2].ParameterName = "@Id";
+                parParameter[2].SqlDbType = SqlDbType.Int;
+                parParameter[2].SqlValue = obj.Id;
+
+
+
+                tblDatos = cnGeneral.RetornaTabla(parParameter, "SPUsuario");
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+
+            return tblDatos;
+        }
+
     }
 
 }

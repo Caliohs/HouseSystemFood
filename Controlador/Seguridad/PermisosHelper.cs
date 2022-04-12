@@ -99,7 +99,7 @@ namespace HouseSystemFood.Controlador
             return tblDatos;
         }
 
-        public DataTable Buscar(int IdRol)
+        public DataTable Buscar(int Id)
         {
 
             tblDatos = new DataTable();
@@ -108,7 +108,7 @@ namespace HouseSystemFood.Controlador
             {
                 cnGeneral = new Datos();
 
-                SqlParameter[] parParameter = new SqlParameter[2];
+                SqlParameter[] parParameter = new SqlParameter[3];
 
                 parParameter[0] = new SqlParameter();
                 parParameter[0].ParameterName = "@opc";
@@ -123,7 +123,7 @@ namespace HouseSystemFood.Controlador
                 parParameter[2] = new SqlParameter();
                 parParameter[2].ParameterName = "@IdRol";
                 parParameter[2].SqlDbType = SqlDbType.Int;
-                parParameter[2].SqlValue = IdRol;
+                parParameter[2].SqlValue = Id;
 
                 tblDatos = cnGeneral.RetornaTabla(parParameter, "SPPermisos");
 

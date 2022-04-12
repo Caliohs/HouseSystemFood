@@ -97,7 +97,9 @@ namespace HouseSystemFood.Vista
                         productosH = new ProductosHelper(productos);
                         productosH.Guardar();
                          RegistarEnBitacora("INSERT");
-                        MessageBox.Show("Se ha almacenado un nuevo Producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    cargarDatosDtg();
+                    MessageBox.Show("Se ha almacenado un nuevo Producto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -110,13 +112,14 @@ namespace HouseSystemFood.Vista
                         productosH = new ProductosHelper(productos);
                         productosH.Actualizar();
                         RegistarEnBitacora("UPDATE");
-                        MessageBox.Show("Se actualizó el Producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    cargarDatosDtg();
+                    MessageBox.Show("Se actualizó el Producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
                     }
-                    
-               
-                cargarDatosDtg();
+
+                Limpiar();
             }
             catch (Exception ex)
             {
@@ -204,8 +207,9 @@ namespace HouseSystemFood.Vista
                         productosH = new ProductosHelper(productos);
                         productosH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarDatosDtg();
+                        MessageBox.Show("Se ha eliminado el registro","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                      
                     }
 
 
@@ -304,6 +308,16 @@ namespace HouseSystemFood.Vista
         private void dtgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        public void Limpiar()
+        {
+            this.txtNombre.Clear();
+            this.txtDescripcion.Clear();
+            this.mskPrecio.Clear();
+            this.mskStock.Clear();
+            this.cmbCategorias.SelectedIndex = 1;
+            this.cmbEstado.SelectedIndex = 1;
         }
     }
 

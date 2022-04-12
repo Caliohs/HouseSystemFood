@@ -61,6 +61,7 @@ namespace Vista.Seguridad
                 roles.Estado = int.Parse(this.cmbEstado.SelectedIndex.ToString());
                 rolesH = new RolesHelper(roles);
                 rolesH.Guardar();
+                    cargarDatosDtg();
                     RegistarEnBitacora("INSERT");
                 MessageBox.Show("Se ha registrado un nuevo Rol o puesto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                
@@ -78,13 +79,14 @@ namespace Vista.Seguridad
                     roles.Id = int.Parse(fila["RolId"].ToString());
                     rolesH = new RolesHelper(roles);
                     rolesH.Actualizar();
+                    cargarDatosDtg();
                     RegistarEnBitacora("UPDATE");
-                    MessageBox.Show("Se actualizó el Rol", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Se actualizó el Rol", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.btnAceptar.Text = "Aceptar";
                 }
-                cargarDatosDtg();
 
+                this.txtNombre.Text = "";
             }
             catch (Exception ex)
             {
@@ -223,17 +225,18 @@ namespace Vista.Seguridad
                         roles.Id = int.Parse(fila["RolId"].ToString());
                         rolesH = new RolesHelper(roles);
                         rolesH.Eliminar();
+                        cargarDatosDtg();
                         RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cargarDatosDtg();
+                       
                     }
 
                 }
             }
-            catch (Exception ex)
+            catch
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se puede eliminar porque otro registro depende este", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

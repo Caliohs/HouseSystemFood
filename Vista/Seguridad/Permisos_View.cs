@@ -184,10 +184,12 @@ namespace Vista.Seguridad
         {
             try
             {
+               
                 permisos = new Permisos();
                 permisos.Opc = 3;
                 permisos.Nombre = this.txtBuscar.Text;
                 permisosH = new PermisosHelper(permisos);
+                IdRol = ObtenerRolId(this.lbRol.Text);
                 datos = permisosH.Buscar(IdRol);
 
                 if (datos.Rows.Count > 0)
@@ -201,7 +203,27 @@ namespace Vista.Seguridad
             }
         }
 
-        public void RegistarEnBitacora(string accion)
+        public int ObtenerRolId(string rol)
+        {
+            int id = 0;
+            try
+            {
+              
+                roles = new Roles();
+                roles.Opc = 6;
+                datos = rolesH.GetRolId(rol);
+                id =  int.Parse(datos.Rows[0][0].ToString());
+
+            }
+            catch
+            {
+                MessageBox.Show("Seleccione un Rol","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            return id;
+        }
+
+
+    public void RegistarEnBitacora(string accion)
         {
             try
             {

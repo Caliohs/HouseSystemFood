@@ -150,10 +150,10 @@ namespace HouseSystemFood.Vista
                     cobrosH.Guardar();
  
                     RegistarEnBitacora("INSERT");
-                    MessageBox.Show("Pago registrado exitosamente");
-                    string cambio = ((double.Parse(this.mskMonto.Text)) - (double.Parse(this.lbApagar.Text))).ToString();
 
-                    if (radioselect.Equals("Dolares"))
+                    string cambio = ((float.Parse(this.mskMonto.Text)) - (float.Parse(this.lbApagar.Text))).ToString();
+
+                    if (cambio.Length > 4 && radioselect.Equals("Dolares"))
                     {
                         this.lbCambio.Text = cambio.Substring(0, 4);
                     }
@@ -161,6 +161,9 @@ namespace HouseSystemFood.Vista
                     {
                         this.lbCambio.Text = cambio;
                     }
+                    MessageBox.Show("Pago registrado exitosamente","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                 
+                  
                     ReiniciarCobros();
                 }
                 

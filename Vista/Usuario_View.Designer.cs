@@ -54,6 +54,7 @@
             this.cmbRoles = new System.Windows.Forms.ComboBox();
             this.lbConfirmar = new System.Windows.Forms.Label();
             this.txtConfirmar = new System.Windows.Forms.TextBox();
+            this.toolStripCambiarClave = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgUsuario)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
@@ -238,21 +239,22 @@
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripEditar,
+            this.toolStripCambiarClave,
             this.toolStripEliminar});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(118, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(183, 92);
             // 
             // toolStripEditar
             // 
             this.toolStripEditar.Name = "toolStripEditar";
-            this.toolStripEditar.Size = new System.Drawing.Size(117, 22);
+            this.toolStripEditar.Size = new System.Drawing.Size(182, 22);
             this.toolStripEditar.Text = "Editar";
             this.toolStripEditar.Click += new System.EventHandler(this.toolStripEditar_Click);
             // 
             // toolStripEliminar
             // 
             this.toolStripEliminar.Name = "toolStripEliminar";
-            this.toolStripEliminar.Size = new System.Drawing.Size(117, 22);
+            this.toolStripEliminar.Size = new System.Drawing.Size(182, 22);
             this.toolStripEliminar.Text = "Eliminar";
             this.toolStripEliminar.Click += new System.EventHandler(this.toolStripEliminar_Click);
             // 
@@ -332,6 +334,13 @@
             this.txtConfirmar.TabIndex = 5;
             this.txtConfirmar.UseSystemPasswordChar = true;
             // 
+            // toolStripCambiarClave
+            // 
+            this.toolStripCambiarClave.Name = "toolStripCambiarClave";
+            this.toolStripCambiarClave.Size = new System.Drawing.Size(182, 22);
+            this.toolStripCambiarClave.Text = "Cambiar Contraseña";
+            this.toolStripCambiarClave.Click += new System.EventHandler(this.toolStripCambiarClave_Click);
+            // 
             // Usuario_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -381,5 +390,6 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripEditar;
         private System.Windows.Forms.ToolStripMenuItem toolStripEliminar;
         private System.Windows.Forms.ComboBox cmbRoles;
+        private System.Windows.Forms.ToolStripMenuItem toolStripCambiarClave;
     }
 }

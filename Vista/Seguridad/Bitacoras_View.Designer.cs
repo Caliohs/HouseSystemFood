@@ -37,7 +37,6 @@
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lbDato = new System.Windows.Forms.Label();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lbFecha = new System.Windows.Forms.Label();
             this.gbox3 = new System.Windows.Forms.GroupBox();
             this.rdbS = new System.Windows.Forms.RadioButton();
@@ -46,6 +45,7 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbTitulo = new System.Windows.Forms.Label();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.groupBox.SuspendLayout();
             this.gpbBuscar.SuspendLayout();
             this.gbox3.SuspendLayout();
@@ -60,23 +60,23 @@
             this.groupBox.Controls.Add(this.dtgBitacoras);
             this.groupBox.Location = new System.Drawing.Point(12, 36);
             this.groupBox.Name = "groupBox";
-            this.groupBox.Size = new System.Drawing.Size(891, 468);
+            this.groupBox.Size = new System.Drawing.Size(891, 465);
             this.groupBox.TabIndex = 86;
             this.groupBox.TabStop = false;
             this.groupBox.Text = "Bitacoras";
             // 
             // gpbBuscar
             // 
+            this.gpbBuscar.Controls.Add(this.dtpFecha);
             this.gpbBuscar.Controls.Add(this.cmbDato);
             this.gpbBuscar.Controls.Add(this.btnBuscar);
             this.gpbBuscar.Controls.Add(this.btnAceptar);
             this.gpbBuscar.Controls.Add(this.btnCancelar);
             this.gpbBuscar.Controls.Add(this.lbDato);
-            this.gpbBuscar.Controls.Add(this.dtpFecha);
             this.gpbBuscar.Controls.Add(this.lbFecha);
-            this.gpbBuscar.Location = new System.Drawing.Point(23, 139);
+            this.gpbBuscar.Location = new System.Drawing.Point(23, 119);
             this.gpbBuscar.Name = "gpbBuscar";
-            this.gpbBuscar.Size = new System.Drawing.Size(294, 278);
+            this.gpbBuscar.Size = new System.Drawing.Size(294, 280);
             this.gpbBuscar.TabIndex = 106;
             this.gpbBuscar.TabStop = false;
             this.gpbBuscar.Text = "Campo de Bitacora";
@@ -90,7 +90,7 @@
             "DELETE",
             "LOGIN",
             "LOGOUT"});
-            this.cmbDato.Location = new System.Drawing.Point(14, 59);
+            this.cmbDato.Location = new System.Drawing.Point(14, 34);
             this.cmbDato.Name = "cmbDato";
             this.cmbDato.Size = new System.Drawing.Size(164, 21);
             this.cmbDato.TabIndex = 109;
@@ -103,7 +103,7 @@
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(14, 179);
+            this.btnBuscar.Location = new System.Drawing.Point(16, 130);
             this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(84, 74);
@@ -122,7 +122,7 @@
             this.btnAceptar.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnAceptar.Location = new System.Drawing.Point(101, 179);
+            this.btnAceptar.Location = new System.Drawing.Point(103, 130);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(84, 74);
@@ -139,7 +139,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.SystemColors.ControlDark;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(189, 179);
+            this.btnCancelar.Location = new System.Drawing.Point(191, 130);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(86, 74);
@@ -153,26 +153,18 @@
             // 
             this.lbDato.AutoSize = true;
             this.lbDato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDato.Location = new System.Drawing.Point(11, 41);
+            this.lbDato.Location = new System.Drawing.Point(11, 16);
             this.lbDato.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbDato.Name = "lbDato";
             this.lbDato.Size = new System.Drawing.Size(87, 15);
             this.lbDato.TabIndex = 108;
             this.lbDato.Text = "Buscar  Accion";
             // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFecha.Location = new System.Drawing.Point(14, 110);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(164, 20);
-            this.dtpFecha.TabIndex = 82;
-            // 
             // lbFecha
             // 
             this.lbFecha.AutoSize = true;
             this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFecha.Location = new System.Drawing.Point(11, 92);
+            this.lbFecha.Location = new System.Drawing.Point(15, 67);
             this.lbFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(41, 15);
@@ -242,7 +234,7 @@
             this.dtgBitacoras.ShowCellToolTips = false;
             this.dtgBitacoras.ShowEditingIcon = false;
             this.dtgBitacoras.ShowRowErrors = false;
-            this.dtgBitacoras.Size = new System.Drawing.Size(540, 380);
+            this.dtgBitacoras.Size = new System.Drawing.Size(540, 397);
             this.dtgBitacoras.TabIndex = 70;
             // 
             // btnCerrar
@@ -280,11 +272,19 @@
             this.lbTitulo.TabIndex = 6;
             this.lbTitulo.Text = "Bitacoras";
             // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecha.Location = new System.Drawing.Point(18, 85);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(160, 20);
+            this.dtpFecha.TabIndex = 110;
+            // 
             // Bitacoras_View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 516);
+            this.ClientSize = new System.Drawing.Size(915, 512);
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -310,7 +310,6 @@
         private System.Windows.Forms.GroupBox gpbBuscar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lbDato;
-        private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lbFecha;
         private System.Windows.Forms.GroupBox gbox3;
         private System.Windows.Forms.RadioButton rdbS;
@@ -322,5 +321,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.ComboBox cmbDato;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

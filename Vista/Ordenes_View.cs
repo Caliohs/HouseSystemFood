@@ -103,12 +103,12 @@ namespace HouseSystemFood.Vista
                         
                     }
                     RegistarEnBitacora("INSERT");
-                    MessageBox.Show("Se ha almacenado la orden n° " + Num_orden);
+                    MessageBox.Show("Se ha almacenado la orden n° " + Num_orden, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ReiniciarOrdenes();
                 }
             else
             {
-                MessageBox.Show("Selecciones el numero de mesa","Alerta");
+                MessageBox.Show("Seleccione el numero de mesa en la opcion 'Numero de Mesa'","Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
            
                
@@ -254,7 +254,7 @@ namespace HouseSystemFood.Vista
                 }
                 else
                 {
-                   MessageBox.Show("Verifique la cantidad seleccionada o el Stock del producto", "Alerta");
+                   MessageBox.Show("Verifique la cantidad seleccionada o el Stock del producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
              
             }

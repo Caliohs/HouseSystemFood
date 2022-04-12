@@ -104,7 +104,7 @@ namespace Vista.Seguridad
                     {
                         bitacoras.Tabla = "S";
                     }
-
+                   
                     //para filtrar busqueda
                     bitacoras.Accion = this.cmbDato.Text;
                     bitacoras.Opc = 4;
@@ -152,7 +152,8 @@ namespace Vista.Seguridad
         public void GenerarReporte()
         {
 
-            string inicio = this.dtpFecha.Value.ToString("dd-MM-yyyy");
+           string inicio = this.dtpFecha.Value.ToString("dd-MM-yyyy");
+           
             Document doc = new Document(PageSize.A4, 10, 10, 10, 10);
             BaseColor colorf = new BaseColor(51, 204, 0);
             Font fuente = new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN);

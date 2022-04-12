@@ -68,6 +68,7 @@ namespace Vista
                     menuH = new MenusHelper(menu);
                     menuH.Guardar();
                     RegistarEnBitacora("INSERT");
+                    cargarDatosDtg();
                     MessageBox.Show("Se ha registrado un nuevo item de menu","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
@@ -84,13 +85,14 @@ namespace Vista
                     menuH = new MenusHelper(menu);
                     menuH.Actualizar();
                     RegistarEnBitacora("UPDATE");
+                    cargarDatosDtg();
                     MessageBox.Show("Se ha actualizado el item menu", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                    
                     this.btnAceptar.Text = "Aceptar";
                 }
                    
-                cargarDatosDtg();
-
+              
+                this.txtNombre.Text = "";
                 
             }
             catch (Exception ex)
@@ -190,9 +192,10 @@ namespace Vista
                         menu.Id = int.Parse(fila["MenuId"].ToString());
                         menuH = new MenusHelper(menu);
                         menuH.Eliminar();
+                        cargarDatosDtg();
                         RegistarEnBitacora("DELETE");
                         MessageBox.Show("Se ha eliminado el registro", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        cargarDatosDtg();
+                       
                     }
                    
 
@@ -201,7 +204,7 @@ namespace Vista
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se puede eliminar porque otro registro depende este", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

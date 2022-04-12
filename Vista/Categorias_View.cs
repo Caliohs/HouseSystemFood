@@ -85,6 +85,7 @@ namespace HouseSystemFood.Vista
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Guardar();
                         RegistarEnBitacora("INSERT");
+                        cargarDatosDtg();
                         MessageBox.Show("Se ha almacenado una categoria", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -98,12 +99,13 @@ namespace HouseSystemFood.Vista
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Actualizar();
                         RegistarEnBitacora("UPDATE");
+                        cargarDatosDtg();
                         MessageBox.Show("Se actualizó la categoria", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
                     }
 
-                    cargarDatosDtg();
+                   
                     this.txtNombre.Text = "";
                 }
                    
@@ -189,17 +191,17 @@ namespace HouseSystemFood.Vista
                         categoriasH = new CategoriasHelper(categorias);
                         categoriasH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
+                        MessageBox.Show("Se ha eliminado el registro","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                     }
 
 
                 }
             }
-            catch (Exception ex)
+            catch
             {
-
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("No se puede eliminar este registro, porque tiene dependencia de otros", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 

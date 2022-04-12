@@ -109,12 +109,13 @@ namespace HouseSystemFood.Vista
                             usuarioH.Guardar();
                             //registro el evento
                             RegistarEnBitacora("INSERT");
+                            cargarDatosDtg();
                             MessageBox.Show("Se ha almacenado un nuevo Usuario","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Limpiar();
                         }
                        
                     }
-                    else
+                    else if(this.btnAceptar.Text.Equals("Actualizar"))
                     {
                         datos = (DataTable)dtgUsuario.DataSource;
                         int indice = dtgUsuario.CurrentRow.Index;
@@ -125,19 +126,36 @@ namespace HouseSystemFood.Vista
                         usuarioH.Actualizar();
                         //registro el evento
                         RegistarEnBitacora("UPDATE");
-
+                        cargarDatosDtg();
                         MessageBox.Show("Se actualizó el Usuario","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
                         Limpiar();
                     }
-                   
+                    else //cambiar clave
+                    {
+                        datos = (DataTable)dtgUsuario.DataSource;
+                        int indice = dtgUsuario.CurrentRow.Index;
+                        DataRow fila = datos.Rows[indice];
+                        usuario.Opc = 8;
+                        usuario.Id = int.Parse(fila["UsuariosId"].ToString());
+                        usuarioH = new UsuarioHelper(usuario);
+                        usuarioH.CambiarClave();
+                        //registro el evento
+                        RegistarEnBitacora("UPDATE-CLAVE");
+                        cargarDatosDtg();
+                        MessageBox.Show("Se cambio la contraseña", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        this.btnAceptar.Text = "Aceptar";
+                        Limpiar();
+                    }
+                    
                 }
                 else
                 {
                     MessageBox.Show("La contraseña y la confirmación no coinceden", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                cargarDatosDtg();
+                
             }
             catch (Exception ex)
             {
@@ -208,12 +226,12 @@ namespace HouseSystemFood.Vista
                 datos = (DataTable)dtgUsuario.DataSource;
                 if (datos == null)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
+                    MessageBox.Show("No hay registros por Eliminar","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
 
                 }
                 else
                 {
-                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo);
+                    DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                     if (result.Equals(DialogResult.Yes))
                     {
                         int indice = dtgUsuario.CurrentRow.Index;
@@ -224,10 +242,11 @@ namespace HouseSystemFood.Vista
                         usuario.Id = int.Parse(fila["UsuariosId"].ToString());
                         usuarioH = new UsuarioHelper(usuario);
                         usuarioH.Eliminar();
-                        //registro el evento                       
-                        RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
+                        //registro el evento  
                         cargarDatosDtg();
+                        RegistarEnBitacora("DELETE");
+                        MessageBox.Show("Se ha eliminado el registro","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        
                     }
 
 
@@ -304,7 +323,9 @@ namespace HouseSystemFood.Vista
             this.txtContraeña.Clear();
             this.txtConfirmar.Clear();
             this.cmbRoles.SelectedIndex = - 1;
-
+            this.txtNombre.Enabled = true;
+            this.cmbRoles.Enabled = true;
+            this.cmbEstado.Enabled = true;
 
         }
     
@@ -348,6 +369,21 @@ namespace HouseSystemFood.Vista
             {
                 MessageBox.Show(ex.Message);
             }
+
+        }
+
+        private void toolStripCambiarClave_Click(object sender, EventArgs e)
+        {
+            this.btnAceptar.Text = "Cambiar";
+            datos = (DataTable)dtgUsuario.DataSource;
+
+            int indice = dtgUsuario.CurrentRow.Index;
+            DataRow fila = datos.Rows[indice];
+            this.txtUsuario.Text = fila["Usuario"].ToString();                   
+            this.txtUsuario.Enabled = false;
+            this.txtNombre.Enabled = false;
+            this.cmbRoles.Enabled = false;
+            this.cmbEstado.Enabled = false;
 
         }
     }
