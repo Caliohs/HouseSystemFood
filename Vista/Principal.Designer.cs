@@ -95,7 +95,7 @@ namespace HouseSystemFood.Vista
             // CategoriasItem
             // 
             this.CategoriasItem.Name = "CategoriasItem";
-            this.CategoriasItem.Size = new System.Drawing.Size(180, 26);
+            this.CategoriasItem.Size = new System.Drawing.Size(154, 26);
             this.CategoriasItem.Text = "Categorias";
             this.CategoriasItem.Visible = false;
             this.CategoriasItem.Click += new System.EventHandler(this.CategoriasItem_Click);
@@ -103,7 +103,7 @@ namespace HouseSystemFood.Vista
             // ProductosItem
             // 
             this.ProductosItem.Name = "ProductosItem";
-            this.ProductosItem.Size = new System.Drawing.Size(180, 26);
+            this.ProductosItem.Size = new System.Drawing.Size(154, 26);
             this.ProductosItem.Text = "Productos";
             this.ProductosItem.Visible = false;
             this.ProductosItem.Click += new System.EventHandler(this.ProductosItem_Click);
@@ -111,7 +111,7 @@ namespace HouseSystemFood.Vista
             // UsuariosItem
             // 
             this.UsuariosItem.Name = "UsuariosItem";
-            this.UsuariosItem.Size = new System.Drawing.Size(180, 26);
+            this.UsuariosItem.Size = new System.Drawing.Size(154, 26);
             this.UsuariosItem.Text = "Usuarios";
             this.UsuariosItem.Visible = false;
             this.UsuariosItem.Click += new System.EventHandler(this.UsuariosUsuatoolStripMenuItem_Click);
@@ -124,7 +124,7 @@ namespace HouseSystemFood.Vista
             this.MenuItem,
             this.BitacorasItem});
             this.SeguridadItem.Name = "SeguridadItem";
-            this.SeguridadItem.Size = new System.Drawing.Size(180, 26);
+            this.SeguridadItem.Size = new System.Drawing.Size(154, 26);
             this.SeguridadItem.Text = "Seguridad";
             this.SeguridadItem.Visible = false;
             // 
@@ -296,6 +296,7 @@ namespace HouseSystemFood.Vista
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Principal";

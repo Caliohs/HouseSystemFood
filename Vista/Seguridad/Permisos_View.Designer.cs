@@ -54,7 +54,7 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(585, 30);
+            this.panel2.Size = new System.Drawing.Size(588, 30);
             this.panel2.TabIndex = 34;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -101,7 +101,7 @@
             this.btnCancelar.ForeColor = System.Drawing.Color.SeaGreen;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(453, 352);
+            this.btnCancelar.Location = new System.Drawing.Point(453, 476);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 39);
@@ -119,7 +119,7 @@
             this.btnAceptar.ForeColor = System.Drawing.Color.SeaGreen;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(351, 352);
+            this.btnAceptar.Location = new System.Drawing.Point(351, 476);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(85, 39);
@@ -168,7 +168,7 @@
             this.dtgPermisos.Location = new System.Drawing.Point(27, 106);
             this.dtgPermisos.Name = "dtgPermisos";
             this.dtgPermisos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgPermisos.Size = new System.Drawing.Size(528, 226);
+            this.dtgPermisos.Size = new System.Drawing.Size(528, 365);
             this.dtgPermisos.TabIndex = 69;
             // 
             // txtBuscar
@@ -218,7 +218,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(585, 442);
+            this.ClientSize = new System.Drawing.Size(587, 547);
             this.Controls.Add(this.chkLock);
             this.Controls.Add(this.cmbRoles);
             this.Controls.Add(this.lbBuscar);

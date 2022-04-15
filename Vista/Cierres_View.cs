@@ -33,11 +33,12 @@ namespace Vista
 
         private void Cierres_View_Load(object sender, EventArgs e)
         {
-            cargarDatosDtgCierres();
+            cargarDatosDtgCierresCol();
+            cargarDatosDtgCierresDol();
             CargarMontosIniciales();
         }
 
-        public void cargarDatosDtgCierres()
+        public void cargarDatosDtgCierresCol()
         {
             try
             {
@@ -52,8 +53,33 @@ namespace Vista
                 }
                 else
                 {
-                    dtgCierres.DataSource = datos;
+                    dtgCierresColon.DataSource = datos;
                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        public void cargarDatosDtgCierresDol()
+        {
+            try
+            {
+
+                cierres = new Cierres();
+                cierres.Opc = 8;
+                cierresH = new CierresHelper(cierres);
+                datos = cierresH.Listar();
+                if (datos.Rows.Count.Equals(0))
+                {
+                    MessageBox.Show("No hay Cierres por listar", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dtgCierresDolar.DataSource = datos;
+
                 }
             }
             catch (Exception ex)
@@ -116,13 +142,13 @@ namespace Vista
             }
         }
 
-        public void cargarDatosDtgCierresFiltro()
+        public void cargarDtgCierresFiltroColon()
         {
             try
             {
                 cierres = new Cierres();
                 cierres.Opc = 5;
-                cierres.FechaCierre = this.dtpFecha.Value;
+                cierres.FechaCierre = this.dtpFechaCol.Value;
                 cierresH = new CierresHelper(cierres);
                 datos = cierresH.Buscar();
                 if (datos.Rows.Count.Equals(0))
@@ -131,8 +157,8 @@ namespace Vista
                 }
                 else
                 {
-                    dtgCierres.DataSource = datos;
-                    this.dtgCierres.Columns[0].Visible = false;
+                    dtgCierresColon.DataSource = datos;
+                    this.dtgCierresColon.Columns[0].Visible = false;
                 }
 
             }
@@ -142,9 +168,30 @@ namespace Vista
             }
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        public void cargarDtgCierresFiltroDolar()
         {
+            try
+            {
+                cierres = new Cierres();
+                cierres.Opc = 9;
+                cierres.FechaCierre = this.dtpFechaDol.Value;
+                cierresH = new CierresHelper(cierres);
+                datos = cierresH.Buscar();
+                if (datos.Rows.Count.Equals(0))
+                {
+                    MessageBox.Show("No hay Cierres para esta fecha", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    dtgCierresDolar.DataSource = datos;
+                    this.dtgCierresDolar.Columns[0].Visible = false;
+                }
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         
         //actualiza tipo cambio
@@ -278,11 +325,6 @@ namespace Vista
 
         }
 
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
-        {
-            cargarDatosDtgCierresFiltro();
-        }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Desea salir? ", "Alerta", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -330,7 +372,7 @@ namespace Vista
                             string moneda = dtgVentas.Rows[i].Cells[6].Value.ToString();
                             if (moneda.Equals("Dolares"))
                             {
-                                ventasD = ventasD + (int.Parse(dtgVentas.Rows[i].Cells[5].Value.ToString())/ int.Parse(this.mskTipoCambio.Text));
+                                ventasD = ventasD + (float.Parse(dtgVentas.Rows[i].Cells[5].Value.ToString()) / float.Parse(this.mskTipoCambio.Text));
                             }
                             else
                             {
@@ -338,9 +380,9 @@ namespace Vista
                             }
                 
                     }
-                    this.lbAcumC.Text = ventasC.ToString();
-                    this.lbAcumD.Text = ventasD.ToString();
-
+                    this.lbAcumC.Text = ventasC.ToString();      
+                    this.lbAcumD.Text = ventasD.ToString("0.00");
+                    
                     int retiroC = 0;
                     double retiroD = 0;
 
@@ -353,7 +395,7 @@ namespace Vista
                             if (moneda.Equals("Dolares"))
                             {
 
-                                retiroD = retiroD + (int.Parse(dtgRetiros.Rows[i].Cells[2].Value.ToString()) / int.Parse(this.mskTipoCambio.Text));
+                                retiroD = retiroD + (int.Parse(dtgRetiros.Rows[i].Cells[2].Value.ToString()) /*/ int.Parse(this.mskTipoCambio.Text)*/);
                             }
                             else
                             {
@@ -362,16 +404,16 @@ namespace Vista
 
                     }
                     this.lbAcumRC.Text = retiroC.ToString();
-                    this.lbAcumRD.Text = retiroD.ToString();
+                    this.lbAcumRD.Text = retiroD.ToString("0.00");
 
                     //calcula colones
                     int compareC = (int.Parse(this.mskColon.Text) + int.Parse(this.lbAcumC.Text) - int.Parse(this.lbAcumRC.Text));
                     this.lbCompareC.Text = (int.Parse(this.mskFColon.Text)  - compareC ).ToString();
                     this.lbNinicialC.Text = (int.Parse(this.mskColon.Text) - int.Parse(this.lbAcumRC.Text)).ToString();
                     //calcula dolares
-                    float compareD = (float.Parse(this.mskDolar.Text) + float.Parse(this.lbAcumD.Text) - float.Parse(this.lbAcumRD.Text));
-                    this.lbCompareD.Text = (float.Parse(this.mskFDolar.Text) - compareD ).ToString();
-                    this.lbNinicialD.Text = (float.Parse(this.mskDolar.Text) - int.Parse(this.lbAcumRD.Text)).ToString();
+                    float compareD = (float.Parse(this.mskDolar.Text) + float.Parse(this.lbAcumD.Text) - float.Parse(this.lbAcumRD.Text));                  
+                    this.lbCompareD.Text = (float.Parse(this.mskFDolar.Text) - compareD).ToString("0.00");                  
+                    this.lbNinicialD.Text = (float.Parse(this.mskDolar.Text) - float.Parse(this.lbAcumRD.Text)).ToString("00.00");
 
                 }
 
@@ -380,11 +422,6 @@ namespace Vista
             {
                 MessageBox.Show(ex.Message);
             }
-        }
-
-        private void gbox4_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -396,6 +433,7 @@ namespace Vista
         {
             try
             {
+              
                 string fecha = DateTime.Today.ToString("dd/MM/yyyy");
                 //guarda nuevo cierre            
                 cierres = new Cierres();
@@ -416,8 +454,10 @@ namespace Vista
                 cierresH.Guardar();
 
                 RegistarEnBitacora("INSERT");
+                cargarDatosDtgCierresCol();
+                cargarDatosDtgCierresDol();
                 MessageBox.Show("Cierre registrado exitosamente","Aviso", MessageBoxButtons.OK,MessageBoxIcon.Information);
-                cargarDatosDtgCierres();
+              
             }
             catch (Exception ex)
             {
@@ -425,9 +465,22 @@ namespace Vista
             }
         }
 
-        private void groupBox_Enter(object sender, EventArgs e)
+        //cargar busquedas de cierres
+        private void dtpFechaDol_ValueChanged(object sender, EventArgs e)
         {
+            cargarDtgCierresFiltroDolar();
+        }
 
+        private void dtpFechaCol_ValueChanged(object sender, EventArgs e)
+        {
+            cargarDtgCierresFiltroColon();
+        }
+
+        private void btnRecargar_Click(object sender, EventArgs e)
+        {
+            cargarDatosDtgCierresCol();
+            cargarDatosDtgCierresDol();
+           
         }
     }
 }

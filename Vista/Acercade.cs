@@ -31,5 +31,10 @@ namespace HouseSystemFood.Vista
         {
             this.Close();
         }
+
+        private void btnAceptar_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

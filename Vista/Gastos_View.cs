@@ -86,6 +86,7 @@ namespace Vista
                         gastosH = new GastosHelper(gastos);
                         gastosH.Guardar();
                         RegistarEnBitacora("INSERT");
+                        cargarDatosDtg();
                         MessageBox.Show("Se ha almacenado un nuevo Gasto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
@@ -99,12 +100,13 @@ namespace Vista
                         gastosH = new GastosHelper(gastos);
                         gastosH.Actualizar();
                         RegistarEnBitacora("UPDATE");
+                        cargarDatosDtg();
                         MessageBox.Show("Se actualizó el Gasto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         this.btnAceptar.Text = "Aceptar";
                     }
 
-                    cargarDatosDtg();
+                   
                     //limpio
                     this.txtJustificacion.Text="";
                     this.mskMonto.Text = "";
@@ -261,8 +263,9 @@ namespace Vista
                         gastosH = new GastosHelper(gastos);
                         gastosH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
                         cargarDatosDtg();
+                        MessageBox.Show("Se ha eliminado el registro","Aviso",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        
                     }
                 }
             }

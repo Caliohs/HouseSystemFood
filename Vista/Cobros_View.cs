@@ -151,16 +151,9 @@ namespace HouseSystemFood.Vista
  
                     RegistarEnBitacora("INSERT");
 
-                    string cambio = ((float.Parse(this.mskMonto.Text)) - (float.Parse(this.lbApagar.Text))).ToString();
-
-                    if (cambio.Length > 4 && radioselect.Equals("Dolares"))
-                    {
-                        this.lbCambio.Text = cambio.Substring(0, 4);
-                    }
-                    else
-                    {
-                        this.lbCambio.Text = cambio;
-                    }
+                    string cambio = ((float.Parse(this.mskMonto.Text)) - (float.Parse(this.lbApagar.Text))).ToString("0.00");   
+                    this.lbCambio.Text = cambio;
+                  
                     MessageBox.Show("Pago registrado exitosamente","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                  
                   
@@ -182,7 +175,7 @@ namespace HouseSystemFood.Vista
                 datos = (DataTable)dtgOrdenesPorCobrar.DataSource;
                 if (datos == null)
                 {
-                    MessageBox.Show("No hay registros por Eliminar");
+                    MessageBox.Show("No hay registros por Eliminar","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 else
@@ -190,6 +183,8 @@ namespace HouseSystemFood.Vista
                     DialogResult result = MessageBox.Show("Desea eliminar el registro?", "Alerta", MessageBoxButtons.YesNo,MessageBoxIcon.Stop);
                     if (result.Equals(DialogResult.Yes))
                     {
+                        MessageBox.Show("Debe devolver estos productos al Stock", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
                         int indice = dtgOrdenesPorCobrar.CurrentRow.Index;
                         DataRow fila = datos.Rows[indice];
 
@@ -199,7 +194,7 @@ namespace HouseSystemFood.Vista
                         ordenesH = new OrdenesHelper(ordenes);
                         ordenesH.Eliminar();
                         RegistarEnBitacora("DELETE");
-                        MessageBox.Show("Se ha eliminado el registro");
+                        MessageBox.Show("Se ha eliminado la Orden","Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         cargarDatosDtgOrdenes();
                     }
 
@@ -362,7 +357,7 @@ namespace HouseSystemFood.Vista
             try
             {
                 this.lbPag.Text = "A pagar $";
-                this.lbApagar.Text = (double.Parse(this.lbTotal.Text) / double.Parse(this.mskDolar.Text)).ToString().Substring(0, 4);
+                this.lbApagar.Text = (double.Parse(this.lbTotal.Text) / double.Parse(this.mskDolar.Text)).ToString("0.00");
                 this.btnAceptar.Text = "Pagar $" + this.lbApagar.Text;
                 this.mskMonto.Text = "";
                 this.mskMonto.Enabled = true;
