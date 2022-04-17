@@ -157,8 +157,8 @@ namespace Vista.Seguridad
             Document doc = new Document(PageSize.A4, 10, 10, 10, 10);
             BaseColor colorf = new BaseColor(51, 204, 0);
             Font fuente = new Font(iTextSharp.text.Font.FontFamily.TIMES_ROMAN);
-            Image jpg = Image.GetInstance(@"C:\Users\cca\Documents\..Universidad\..PROYECTO_PROFESIONAL\HouseSystemFood\Vista\img\logo_rest.jpg"); jpg.Alignment = Image.RIGHT_ALIGN;
-            string filename = "C:\\Reportes\\Bitacora_" + inicio + ".pdf";
+            Image jpg = Image.GetInstance(@"C:\HouseSystemFood\Vista\img\logo_rest.jpg"); jpg.Alignment = Image.RIGHT_ALIGN;
+            string filename = "C:\\HouseSystemFood\\Reportes\\Bitacora_" + inicio + ".pdf";
             Chunk encab = new Chunk(" HOUSE RESTAURANT FOOD ", FontFactory.GetFont("ARIAL", 15, colorf));
           
             try

@@ -41,6 +41,7 @@ namespace HouseSystemFood.Vista
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.groupBox.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +50,7 @@ namespace HouseSystemFood.Vista
             // 
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.Location = new System.Drawing.Point(50, 79);
+            this.lblUsuario.Location = new System.Drawing.Point(50, 98);
             this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(55, 16);
@@ -59,7 +60,7 @@ namespace HouseSystemFood.Vista
             // txtUsuario
             // 
             this.txtUsuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(130, 79);
+            this.txtUsuario.Location = new System.Drawing.Point(130, 98);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(135, 27);
@@ -68,7 +69,7 @@ namespace HouseSystemFood.Vista
             // txtContraseña
             // 
             this.txtContraseña.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContraseña.Location = new System.Drawing.Point(130, 124);
+            this.txtContraseña.Location = new System.Drawing.Point(130, 143);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
@@ -80,7 +81,7 @@ namespace HouseSystemFood.Vista
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(50, 125);
+            this.label2.Location = new System.Drawing.Point(50, 144);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 16);
@@ -95,7 +96,7 @@ namespace HouseSystemFood.Vista
             this.btnCancelar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(172, 188);
+            this.btnCancelar.Location = new System.Drawing.Point(172, 207);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 43);
@@ -112,7 +113,7 @@ namespace HouseSystemFood.Vista
             this.btnAceptar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnAceptar.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptar.Image")));
             this.btnAceptar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptar.Location = new System.Drawing.Point(53, 188);
+            this.btnAceptar.Location = new System.Drawing.Point(53, 207);
             this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(105, 43);
@@ -174,6 +175,7 @@ namespace HouseSystemFood.Vista
             // groupBox
             // 
             this.groupBox.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.groupBox.Controls.Add(this.panel1);
             this.groupBox.Controls.Add(this.btnCancelar);
             this.groupBox.Controls.Add(this.lblUsuario);
             this.groupBox.Controls.Add(this.txtUsuario);
@@ -189,6 +191,15 @@ namespace HouseSystemFood.Vista
             this.groupBox.TabStop = false;
             this.groupBox.Text = "House System Food";
             // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(130, 26);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(72, 55);
+            this.panel1.TabIndex = 30;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -197,6 +208,7 @@ namespace HouseSystemFood.Vista
             this.Controls.Add(this.groupBox);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(370, 370);
             this.MinimumSize = new System.Drawing.Size(370, 370);
@@ -224,6 +236,7 @@ namespace HouseSystemFood.Vista
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

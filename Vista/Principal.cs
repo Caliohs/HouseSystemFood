@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -287,6 +288,18 @@ namespace HouseSystemFood.Vista
             this.Reportes_View.Show();
         }
 
+        private void AyudaItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Process.Start("msedge.exe", "C:\\HouseSystemFood\\ManualDeUsuario.pdf");
+            }
+            catch
+            {
+                MessageBox.Show("Error al abrir el manual","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
         public void RegistarEnBitacora()
         {
             try
@@ -294,7 +307,7 @@ namespace HouseSystemFood.Vista
                 bitacoras = new Bitacoras();
                 //registro el evento
                 bitacoras.Opc = 2;
-                bitacoras.IdUser = user.Id;
+                bitacoras.IdUser = IdUser;
                 bitacoras.Accion = "LOGOUT";
                 bitacoras.Fecha = DateTime.Now;
                 bitacorasH = new BitacorasHelper(bitacoras);

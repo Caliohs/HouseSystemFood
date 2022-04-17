@@ -220,6 +220,7 @@ namespace HouseSystemFood.Vista
             this.AyudaItem.Size = new System.Drawing.Size(73, 25);
             this.AyudaItem.Text = "Ayuda?";
             this.AyudaItem.Visible = false;
+            this.AyudaItem.Click += new System.EventHandler(this.AyudaItem_Click);
             // 
             // CerrarSesionItem
             // 
